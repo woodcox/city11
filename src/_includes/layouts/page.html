@@ -1,0 +1,17 @@
+---
+layout: layouts/base.html
+---
+
+  <section class="content-section {{ bg-color }}">
+    <article>
+      <div class="container {{ style }}">
+        {%- if title %}
+        <div class="text-center">
+          {%- include modules/nav-back.html %}
+        </div>
+        <h1>{{ title | upcase }}</h1>
+        {%- endif %}
+        {{ content }}
+      </div>
+    </article>
+  </section>
