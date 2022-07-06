@@ -29,9 +29,8 @@ module.exports = function (eleventyConfig) {
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
-  // Watch the tailwind css files
-  eleventyConfig.addWatchTarget('./assets/css/tailwind.config.js');
-  eleventyConfig.addWatchTarget('./assets/css/tailwind.css');
+  // Watch the scss files
+  eleventyConfig.addWatchTarget('./assets/scss/city.scss');
 
   eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './assets/css/style.css' });
   
