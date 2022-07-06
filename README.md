@@ -1,11 +1,10 @@
 | ![11up](https://user-images.githubusercontent.com/64870518/159159826-4794d713-2a4b-433c-bfd3-aeb7aa244326.jpg) |
 | -------------------------------------------------------------------------------------------------------------- |
 
-# [11up](https://woodcock3.github.io/11up/)
+# [city11](https://woodcock3.github.io/city11/)
 
-11up is a starter repo to test out how I could build websites fast using [Eleventy](https://www.11ty.dev), [Tailwind CSS](https://tailwindcss.com), and [Alpinejs](https://alpinejs.dev). [ESbuild](https://esbuild.github.io/) is also used as a JS build pipeline. I might make use of the css plugins for ESbuild in the future as this repo by [arslanakram](https://github.com/arslanakram/custom-esbuild-with-scss-purgecss-and-liveserver) has an interesting setup. Details of this set up are also available on [Stack Overflow](https://stackoverflow.com/questions/70325815/how-to-setup-custom-esbuild-with-scss-purgecss-liveserver).
-
-I am hoping I can transfer my jekyll projects to the TEAstack + ESbuild. 
+city11 is an oppinionated starter repo to test out how I could build websites fast using [Eleventy](https://www.11ty.dev), [SASS](https://sass-lang.com), and [Alpinejs](https://alpinejs.dev). [ESbuild](https://esbuild.github.io/) is also used as a JS build pipeline. I might make use of the css plugins for ESbuild in the future as this repo by [arslanakram](https://github.com/arslanakram/custom-esbuild-with-scss-purgecss-and-liveserver) has an interesting setup. Details of this set up are also available on [Stack Overflow](https://stackoverflow.com/questions/70325815/how-to-setup-custom-esbuild-with-scss-purgecss-liveserver).
+ 
 
 ## Live Demo
 
@@ -16,10 +15,10 @@ I am hoping I can transfer my jekyll projects to the TEAstack + ESbuild.
 - [Netlify CMS](https://www.netlifycms.org/)
 - [Eleventy](https://www.11ty.dev/)
 - [Alpine.js](https://github.com/alpinejs/alpine)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Sass](https://sass-lang.com)
 - [ESbuild](https://esbuild.github.io/)
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/woodcock3/11up&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/woodcock3/city11&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
 
 ## Getting Started
 
