@@ -1,9 +1,9 @@
 {
   "scripts": {
     "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --serve",
-    "dev:sass": "sass  --no-source-map --watch assets/sass:_site/assets/css",
+    "dev:sass": "sass  --no-source-map --watch assets/scss:_site/assets/css",
     "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --pathprefix=city11",
-    "build:sass": "sass  --no-source-map assets/sass:_site/assets/css",
+    "build:sass": "sass  --no-source-map assets/scss:_site/assets/css",
     "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=city11",
     "build": "NODE_ENV=dev npm-run-all build:sass build:eleventy",
     "minify": "NODE_ENV=production npm-run-all build:sass minify:eleventy",
