@@ -6,7 +6,7 @@
     "build:sass": "sass  --no-source-map assets/scss:./_tmp/style.css",
     "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=city11",
     "build": "NODE_ENV=dev npm-run-all build:sass build:eleventy",
-    "postbuild": "postcss assets/css/*.css -u autoprefixer -r --no-map",
+    "postbuild": "postcss ./assets/css/*.css -u autoprefixer -r --no-map",
     "minify": "NODE_ENV=production npm-run-all build:sass minify:eleventy",
     "start": "npm-run-all --parallel dev:*"
   },
