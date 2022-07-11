@@ -1,7 +1,8 @@
 {% render "partials/head.html" %}
 {% render "partials/navbar.html" %}
 
-<main class="content" id="main-content" tabindex="-1">
+<main class="content {{ page.bg-color }}" id="main-content" tabindex="-1">
+{%- include templates/navbar.html %}
 {{ content }}
 </main>
 
