@@ -1,0 +1,56 @@
+.hero {
+  /* flexbox */
+  @include flex-config(column nowrap, space-evenly);
+  //flex:1
+  
+  /* Sizing */
+  height: 100vh;
+
+  /* Background styles */
+  background-image: linear-gradient(rgba($primary-color, 0.95),rgba($primary-color, 0.40)), url('../img/600/city-building-corner.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  
+  /* Text styles */
+
+  .hero-text {
+    text-align: center;
+    flex: 1;
+    
+    .hero-text-h1 {
+      color: white;
+      font-size: calc(2em + 3vmin);
+    }
+    a {
+      text-decoration: none;
+      pointer-events: none;
+      font-size: calc(0.7em + 0.5vmin);
+    }
+  }
+  .hero-buttons {
+    flex: 1;
+  }
+}
+
+@include small-breakpoint {
+  .hero {
+    height: 70vh;
+    background-image: linear-gradient(rgba($primary-color, 0.95),rgba($primary-color, 0.40)), url('../img/800/city-building-corner.jpg');
+  }
+}
+
+@include medium-breakpoint {
+  .hero {
+    height: 70vh;
+    background-image: linear-gradient(rgba($primary-color, 0.95),rgba($primary-color, 0.40)), url('../img/1000/city-building-corner.jpg');
+  }
+}
+
+@include large-breakpoint {
+  .hero {
+    height: 70vh;
+    background-image: linear-gradient(rgba($primary-color, 0.95),rgba($primary-color, 0.40)), url('../img/1160/city-building-corner.jpg');
+  }
+}
