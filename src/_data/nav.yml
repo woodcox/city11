@@ -1,10 +1,86 @@
 ---
-items:
-  - text: Menu One
-    url: "#"
-  - text: Menu Two
-    url: "#"
-  - text: Menu Three
-    url: "#"
-  - text: Blog
-    url: "/blog"
+# This is the configuration for the sites primary and footer navigation. 
+# The secondary navigation on a page is controlled by the .md files created in the relevant collection.
+primary:
+  - text: Home
+    href: /
+  - text: Sunday
+    href: /sunday/
+  - text: What's on
+    href: /whats-on/
+  - text: About us
+    href: /about/
+  - text: Connect
+    href: /connect/
+  - text: Kids + Youth
+    href: /under18/
+  - text: Students
+    href: /students/
+  - text: Media
+    href: /media/
+
+home_hero_buttons:
+  - text: Sunday
+    href: /sunday/
+  - text: I'm new
+    href: /connect/
+  - text: Catch up
+    href: /media/
+
+secondary:
+  sunday:
+    - text: Booking
+      href: /#booking/
+  whats-on:
+    - text: Featured Events
+      href: /#featured
+    - text: Growth groups
+      href: /growth/
+    - text: Prayer meeting
+      href: /prayer/
+    - text: Calendar
+      href: /calendar/
+  about:
+    - text: Leaders
+      href: /leaders/
+    - text: Beliefs
+      href: /beliefs/
+    - text: Values
+      href: /values/
+  connect:
+    - text: Here our stories
+      href: /stories/
+    - text: Join a bible course 
+      href: /bible-course/
+    - text: Join a team
+      href: /teams/
+    - text: Giving
+      href: /giving/
+    - text: Baptism
+      href: /baptism/
+  kids & youth:
+    - text: Kids
+      href: /kids/
+    - text: Youth
+      href: /youth/
+  media:
+    - text: Talks
+      href: /#talks
+    - text: Videos
+      href: /#videos
+
+footer:
+  policy:
+    - text: Privacy
+      href: /privacy/
+    - text: Documentation
+      href: /docs/
+    - text: Cookies
+      href: /cookies/
+    - text: Our beliefs
+      href: /beliefs/
+    - text: Safeguarding
+      href: /safeguarding/
+  external:
+    - text: ChurchSuite Login
+      href: https://login.churchsuite.co.uk/
