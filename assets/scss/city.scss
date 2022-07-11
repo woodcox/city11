@@ -34,9 +34,9 @@
  * Core
  * =========================== */
 
-// @import "core/scaffolding";
-// @import "core/grid";
-// @import "core/helpers";
+@import "core/scaffolding";
+@import "core/grid";
+@import "core/helpers";
 
 /* ===========================
  * Components
@@ -57,6 +57,6 @@
  * Layouts
  * =========================== */
 
-// @import "layouts/navigation";
-// @import "layouts/hero";
-// @import "layouts/footer";
+@import "layouts/navigation";
+@import "layouts/hero";
+@import "layouts/footer";
