@@ -2,5 +2,6 @@
   "templateEngine": "liquid, md",
   "type": "home",
   "tags": "home",
+  "layout": "section",
   "permalink": false  
 }
