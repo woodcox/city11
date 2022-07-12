@@ -1,6 +1,6 @@
 ---
 title: "about test"
-permalink: test/
+permalink: about/
 heading: 1
 layout: layouts/sections.html
 ---
