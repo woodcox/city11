@@ -7,10 +7,10 @@ layout: layouts/base.html
 {%- assign id = crumbs.last %}
   <section id="{{id}}" class="content-section {{ bg-color }}">
     <article>
-      <div class="{{ container-size }}{%- if container-size == "small" or container-size == "medium" %}-{%- endif %}container {{ style }}">
-        {%- if title %}<h{{ heading }}>{{ title | upcase }}</h{{ heading }}>{% endif %}
+      <div class="{{ section.container-size }}{%- if section.container-size == "small" or section.container-size == "medium" %}-{%- endif %}container {{ section.style }}">
+        {%- if section.title %}<h{{ section.heading }}>{{ section.title | upcase }}</h{{ section.heading }}>{% endif %}
         {%- capture font %}{% render "partials/components/impact-font.html" %}{% endcapture %}
-        {%- if impact-font %}{{ font }}{%- endif %}
+        {%- if section.impact-font %}{{ font }}{%- endif %}
         {{ section.templateContent }}
       </div>
     </article>
