@@ -1,6 +1,6 @@
 ---
 title: "about test"
 permalink: about/
-heading: 1
+section_type: about
 layout: layouts/sections.html
 ---
