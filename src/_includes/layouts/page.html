@@ -7,7 +7,7 @@ layout: layouts/base.html
       <div class="container {{ style }}">
         {%- if title %}
         <div class="text-center">
-          {%- include modules/nav-back.html %}
+          {%- render "partials/modules/nav-back.html" %}
         </div>
         <h1>{{ title | upcase }}</h1>
         {%- endif %}
