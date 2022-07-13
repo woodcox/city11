@@ -5,7 +5,7 @@ layout: layouts/base.html
 {%- for section in collections[section_type] -%}
 {%- assign crumbs = section.inputPath | split: '/' %}
 {%- assign id = crumbs.last %}
-  <section id="{{id}}" class="content-section {{ bg-color }}">
+  <section id="{{id}}" class="content-section {{ section.bg-color }}">
     <article>
       <div class="{{ section.container-size }}{%- if section.container-size == "small" or section.container-size == "medium" %}-{%- endif %}container {{ section.style }}">
         {%- if section.title %}<h{{ section.heading }}>{{ section.title | upcase }}</h{{ section.heading }}>{% endif %}
