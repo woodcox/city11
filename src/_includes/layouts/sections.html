@@ -9,7 +9,7 @@ layout: layouts/base.html
     <article>
       <div class="{{ container-size }}{%- if container-size == "small" or container-size == "medium" %}-{%- endif %}container {{ style }}">
         {%- if title %}<h{{ heading }}>{{ title | upcase }}</h{{ heading }}>{% endif %}
-        {%- capture font %}{% include partials/components/impact-font.html %}{% endcapture %}
+        {%- capture font %}{% render partials/components/impact-font.html %}{% endcapture %}
         {%- if impact-font %}{{ font }}{%- endif %}
         {{ section.templateContent }}
       </div>
