@@ -1,6 +1,5 @@
 {
   "templateEngine": "liquid, md",
-  "section_type": "home",
-  "layout": "layouts/sections.html",
+  "tags": "home",
   "permalink": false  
 }
