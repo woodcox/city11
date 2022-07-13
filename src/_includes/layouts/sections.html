@@ -5,12 +5,12 @@ layout: layouts/base.html
 {%- for section in collections[section_type] -%}
 {%- assign crumbs = section.inputPath | split: '/' %}
 {%- assign id = crumbs.last %}
-  <section id="{{id}}" class="content-section {{ section.bg-color }}">
+  <section id="{{id}}" class="content-section {{ section.data.bg-color }}">
     <article>
-      <div class="{{ section.container-size }}{%- if section.container-size == "small" or section.container-size == "medium" %}-{%- endif %}container {{ section.style }}">
-        {%- if section.title %}<h{{ section.heading }}>{{ section.title | upcase }}</h{{ section.heading }}>{% endif %}
+      <div class="{{ section.data.container-size }}{%- if section.data.container-size == "small" or section.data.container-size == "medium" %}-{%- endif %}container {{ section.data.style }}">
+        {%- if section.data.title %}<h{{ section.data.heading }}>{{ section.data.title | upcase }}</h{{ section.data.heading }}>{% endif %}
         {%- capture font %}{% render "partials/components/impact-font.html" %}{% endcapture %}
-        {%- if section.impact-font %}{{ font }}{%- endif %}
+        {%- if section.data.impact-font %}{{ font }}{%- endif %}
         {{ section.templateContent }}
       </div>
     </article>
