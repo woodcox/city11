@@ -8,7 +8,7 @@ city11 is an oppinionated starter repo to test out how I could build websites fa
 
 ## Live Demo
 
-[https://woodcock3.github.io/11up/](https://woodcock3.github.io/city11/)
+[woodcock3.github.io/city11](https://woodcock3.github.io/city11/)
 
 ### Technologies used:
 
