@@ -62,5 +62,5 @@ The theme is available as open source under the terms of the [MIT License](https
 
 See `LICENSE` for more information.
 
-## To do
-- Check out my [to do list]() for the planned roadmap.
+## Roadmap
+- Check out my [to do list](https://github.com/woodcock3/city11/blob/master/TODO.md) for the planned roadmap.
