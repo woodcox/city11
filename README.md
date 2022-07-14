@@ -3,19 +3,20 @@
 
 # [city11](https://woodcock3.github.io/city11/)
 
-city11 is an oppinionated starter repo to test out how I could build websites fast using [Eleventy](https://www.11ty.dev), [SASS](https://sass-lang.com), and [Alpinejs](https://alpinejs.dev). [ESbuild](https://esbuild.github.io/) is also used as a JS build pipeline. I might make use of the css plugins for ESbuild in the future as this repo by [arslanakram](https://github.com/arslanakram/custom-esbuild-with-scss-purgecss-and-liveserver) has an interesting setup. Details of this set up are also available on [Stack Overflow](https://stackoverflow.com/questions/70325815/how-to-setup-custom-esbuild-with-scss-purgecss-liveserver).
+city11 is an oppinionated starter repo to test out how I could build websites fast using [Eleventy](https://www.11ty.dev), [Sass](https://sass-lang.com), [Postcss](https://postcss.org/) and [Alpinejs](https://alpinejs.dev). [ESbuild](https://esbuild.github.io/) is also used as a JS build pipeline. I might make use of the css plugins for ESbuild in the future as this repo by [arslanakram](https://github.com/arslanakram/custom-esbuild-with-scss-purgecss-and-liveserver) has an interesting setup. Details of this set up are also available on [Stack Overflow](https://stackoverflow.com/questions/70325815/how-to-setup-custom-esbuild-with-scss-purgecss-liveserver).
  
 
 ## Live Demo
 
-[https://woodcock3.github.io/11up/](https://woodcock3.github.io/11up/)
+[https://woodcock3.github.io/11up/](https://woodcock3.github.io/city11/)
 
 ### Technologies used:
 
+- [Sass](https://sass-lang.com)
 - [Netlify CMS](https://www.netlifycms.org/)
 - [Eleventy](https://www.11ty.dev/)
 - [Alpine.js](https://github.com/alpinejs/alpine)
-- [Sass](https://sass-lang.com)
+- [Postcss](https://postcss.org/)
 - [ESbuild](https://esbuild.github.io/)
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/woodcock3/city11&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
@@ -26,7 +27,7 @@ city11 is an oppinionated starter repo to test out how I could build websites fa
 ### 1. Clone this repository
 
 ```
-git clone https://github.com/woodcock3/11up.git my-website-name
+git clone https://github.com/woodcock3/city11.git my-website-name
 ```
 
 ### 2. Navigate to the directory
@@ -62,4 +63,4 @@ The theme is available as open source under the terms of the [MIT License](https
 See `LICENSE` for more information.
 
 ## To do
-- add partytown for analytics
+- Check out my [to do list]() for the planned roadmap.
