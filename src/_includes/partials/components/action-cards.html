@@ -1,0 +1,9 @@
+<div class="flex-row justify-center align-stretch">{% for item in page.action-card %}
+  <div class="flex-small sm-one-third">
+    <div class="card {{ item.bg }} text-center">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.content }}</p>
+      {% if item.href %}<a class="button muted-button arrow-right-icon" href="{{ item.href }}">{% if item.linktext %}{{ item.linktext }}{% else %}Find out more{% endif %} </a>{% endif %}
+    </div>
+  </div>{% endfor %}
+</div>
