@@ -1,0 +1,141 @@
+/* Colors */
+
+// Font outlines
+@mixin text-outline($alternate-bg, $text-outline-color, $text-fill-color){
+  .outline-#{$alternate-bg} {
+    text-shadow:
+      3px  3px 0 $text-outline-color,
+      -1px -1px 0 $text-outline-color,  
+      1px -1px 0 $text-outline-color,
+      -1px  1px 0 $text-outline-color,
+      1px  1px 0 $text-outline-color;
+  }
+  @supports (-webkit-text-stroke: 1px $text-outline-color){
+    .outline-#{$alternate-bg} {
+      -webkit-text-stroke: 1px $text-outline-color;
+      -webkit-text-fill-color: $text-fill-color;
+    }
+  }
+}
+
+@include text-outline(text, $font-color, white);
+
+@include text-outline(text-primary, $alternate-color, $primary-color);
+
+// Gradient text
+.gradient-text {
+  background-color: $primary-color;
+  // Create the gradient.
+  background-image: linear-gradient(45deg, $primary-color, $secondary-color);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+// Backgrounds
+%alternate-background {
+  background-color: $alternate-background;
+ 
+  .text-link {
+    color: $link-color;
+  }
+  .timeline {
+    color: $alternate-color;
+    
+    ul li {
+      .date {
+        color: $calendar-white;
+      }
+      .calendar-title {
+        border-bottom: 1px solid $alternate-color;
+      }
+    }
+  }
+}
+
+.alternate-background,  {
+  @extend %alternate-background;
+}
+
+.bg-navy,
+.bg-black,
+.bg-dark,
+.bg-primary,
+.bg-secondary,
+.bg-third,
+.alternate-background {
+  color: $alternate-color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  select {
+    color: $alternate-color;
+  }
+  p a {
+    color: $secondary-color;
+  }
+}
+
+// Curved backgrounds
+%curved-background {
+  @extend %alternate-background;
+  position: relative;
+  height: 50vh;
+}
+
+.curved-bg-top {
+  @extend %curved-background;
+
+  &::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: $background;
+    height: 20%;
+  }
+}
+
+.curved-bg-bottom {
+  @extend %curved-background;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+// Gradient backgrounds 
+.bg-navy {
+  background-color: #113a5c;
+  background: radial-gradient(lighten(#113a5c, 15%), darken(#113a5c, 20%));
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+  background: radial-gradient(lighten($secondary-color, 15%), darken($secondary-color, 20%));
+}
+
+.bg-third {
+  background-color: $third-color;
+  background: radial-gradient($third-color, darken($third-color, 20%));
+}
+
+.bg-primary {
+  background-color: $primary-color;
+  background: radial-gradient(lighten($primary-color, 15%), darken($primary-color, 20%));
+}
+
+.bg-dark {
+  background-color: darken($accent-color, 50%);
+  background: radial-gradient(darken($accent-color, 20%), black);
+}
+
+.bg-black {
+  background-color: black;
+}
