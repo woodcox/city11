@@ -1,0 +1,53 @@
+/* Preloader screen */
+@keyframes loading-fadeout {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#splash {
+  align-items: center; 
+  display: flex; 
+  justify-content: center; 
+  min-height: 100%;
+  width: 100%; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 300;  
+  pointer-events: none;
+  background: $splash-background;
+  animation-name: loading-fadeout; 
+  animation-delay: 0.9s; 
+  animation-duration: 0.3s; 
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  > div {
+    text-align: center;
+
+    .city-svg-logo {
+      viewBox: 0 0 40 40;
+      width: 20%;
+      height: auto;
+        
+      .city-logo-black-fill { 
+        fill: black;
+      }
+    }
+  }
+}
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
