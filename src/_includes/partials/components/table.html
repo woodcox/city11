@@ -1,0 +1,19 @@
+{%- if page.table %}
+<div class="contain-table">
+  <table class="striped-table">
+    <thead>
+      <tr>{% for head in page.table.heading %}
+        <th>{{ head.title }}</th>{% endfor %}
+      </tr>
+    </thead>{% if page.table.footer %}
+    <tfoot>
+      <tr>{% for foot in page.table.footer %}
+        <th>{{ foot.total }}</th>{% endfor %}
+      </tr>
+    </tfoot>{% endif %}
+    <tbody>{% tablerow column in page.table.rows %}
+      {{ column.content }}
+    {% endtablerow -%}
+    </tbody>
+  </table>
+</div>{% endif %}
