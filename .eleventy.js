@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
     "./assets/js/site.js": "./assets/js/site.js",
     "./node_modules/alpinejs/dist/cdn.min.js": './assets/js/alpine.js',
     "./node_modules/htmx.org/dist/htmx.min.js": './assets/js/htmx.js',
+    "./assets/webfonts": "./assets/webfonts",
   });
 
   // Copy Image Folder to /_site
