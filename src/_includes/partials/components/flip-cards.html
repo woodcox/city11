@@ -1,0 +1,18 @@
+<div class="flex-row justify-center">{% for item in page.flip-card %}
+    <div class="flex-small sm-half flex-medium med-one-third" ontouchstart="this.classList.toggle('hover');">
+      <div class="card-container">
+        <div class="front" style="background-image: url({{ item.url }})">
+          <div class="inner">
+            <p>{{ item.title }}</p>
+            <span>{{ item.subtitle }}</span>
+          </div>
+        </div>
+        <div class="back">
+          <div class="inner">
+            <p>{{ item.content }}</p>
+            <a class="button accent-button arrow-right-icon" href="{{ item.href | relative_url }}">More about {{ item.title | downcase }} </a>
+          </div>
+        </div>
+      </div>
+    </div>{% endfor %}
+  </div>
