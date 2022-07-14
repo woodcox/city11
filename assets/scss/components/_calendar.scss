@@ -1,0 +1,39 @@
+.timeline {
+  color: $calendar-color;
+    
+  ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    padding-bottom: $calendar-margin-padding;
+    
+    li {
+      @include flex-config (row nowrap, space-evenly, flex-start);
+      margin-top: $calendar-margin-padding;
+          
+      .date {
+        @include flex-config (column, center, center);
+        font-size: $calendar-date-font-size;
+        flex-basis: 10%;
+        color: $calendar-black;
+            
+        .month {
+          font-size: $calendar-month-font-size;
+        }
+      }
+      
+      .calendar-title {
+        flex-basis: 70%;
+        font-size: $calendar-title-font-size;
+        min-height: 3.5rem;
+        padding-bottom: $calendar-margin-padding;
+        border-bottom: 1px solid $calendar-color;
+    
+        .calendar-subtitle {
+          font-size: $calendar-subtitle-font-size;
+          color: $calendar-accent-color;
+        }
+      }
+    }
+  }
+}
