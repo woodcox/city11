@@ -9,4 +9,4 @@ section_type: "about"
 {{ section.templateContent }}
 {% endfor %}
 
-{% render "partials/talking.php" %}
+{% render "partials/components/talking.php" %}
