@@ -478,7 +478,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -922,7 +923,8 @@ pre {
   border-radius: 4px;
   background: transparent;
   padding: 1rem;
-  tab-size: 2;
+  -o-tab-size: 2;
+     tab-size: 2;
   color: #404040;
   font-family: Menlo, monospace;
   font-size: 14px;
@@ -1931,7 +1933,8 @@ caption {
   background-size: cover;
   background-position: center;
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   text-align: center;
   padding: 0px;
   min-height: 280px;
@@ -1955,7 +1958,8 @@ caption {
   display: block;
   opacity: 0.75;
   background-color: #259cd3;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   border-radius: 20px;
 }
 
@@ -2234,11 +2238,13 @@ caption {
   cursor: pointer;
   transition: color 0.4s ease;
   color: #b4b4b4;
-  text-decoration-line: none;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 .animate-nav-link:active, .animate-nav-link:hover {
   color: #be6d0c;
-  text-decoration-line: none;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 .animate-nav-link:active:after, .animate-nav-link:hover:after {
   width: 100%;
@@ -2337,7 +2343,8 @@ caption {
   border-radius: 2em;
   cursor: pointer;
   transition: box-shadow 0.4s ease;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2376,7 +2383,8 @@ caption {
   pointer-events: none;
   visibility: hidden;
   overflow: hidden;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   outline: 1px solid transparent;
   display: flex;
   align-items: center;
@@ -2391,7 +2399,8 @@ caption {
   transition: all 0.4s ease;
   flex: none;
   transform: scale(0);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   overflow: hidden;
   display: flex;
   align-items: center;
