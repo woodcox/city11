@@ -48,8 +48,7 @@ npm run start
 ## Credits
 
 This theme was inspired by: 
-  - [Surjith S M](https://surjithctly.in/) and his [Neat Starter](https://github.com/surjithctly/neat-starter)
-  - [Greg Wolanski](https://gregwolanski.com/) for writing the article on [CSS Trick](https://css-tricks.com/eleventy-starter-with-tailwind-css-alpine-js/) and his [TEAstack](https://github.com/gregwolanski/eleventy-tailwindcss-alpinejs-starter) starter repo
+  - [Tania Rascia](https://www.taniarascia.com) and her [Primitive UI](https://taniarascia.github.io/primitive)
   - [Tim O'Brien](http://t413.com) for creating [SinglePaged](http://github.io/t413/SinglePaged) jekyll site
 
 
