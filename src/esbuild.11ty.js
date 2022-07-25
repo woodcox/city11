@@ -20,6 +20,4 @@ module.exports = class {
       target: isProd ? 'es6' : 'esnext'
     })
   }
-  .then(() => console.log("⚡ Build complete! ⚡")),
-  .catch(() => process.exit(1));
 }
