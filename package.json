@@ -4,8 +4,9 @@
     "dev:sass": "sass  --no-source-map --watch assets/scss:./_tmp/style.css",
     "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --pathprefix=city11",
     "build:sass": "sass  --no-source-map assets/scss:./_tmp/style.css",
+    "build:postcss": "postcss assets/scss:./_tmp/style.css -o assets/scss:./_tmp/postcss.css",
     "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=city11",
-    "build": "NODE_ENV=dev npm-run-all build:sass build:eleventy",
+    "build": "NODE_ENV=dev npm-run-all build:sass build:postcss build:eleventy",
     "minify": "NODE_ENV=production npm-run-all build:sass minify:eleventy",
     "start": "npm-run-all --parallel dev:*"
   },
