@@ -12,7 +12,7 @@ module.exports = class {
 
   async render() {
     await esbuild.build({
-      entryPoints: glob.sync(['assets/css/*.css', 'assets/js/*.js']),
+      entryPoints: glob.sync(['_tmp/*.css', 'assets/js/*.js']),
       bundle: true,
       minify: isProd,
       outdir: './dist/assets',
