@@ -7,7 +7,7 @@
     "build:postcss": "postcss ./_tmp/style.css -r",
     "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=city11",
     "build": "NODE_ENV=dev npm-run-all build:sass build:postcss build:eleventy",
-    "minify": "NODE_ENV=production npm-run-all build:sass minify:eleventy",
+    "minify": "NODE_ENV=production npm-run-all build:sass build:postcss minify:eleventy",
     "start": "npm-run-all --parallel dev:*"
   },
   "devDependencies": {
