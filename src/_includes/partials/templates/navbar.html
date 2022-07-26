@@ -4,13 +4,13 @@
       <div></div>
     </div>
     <div class="flex-medium med-one-fourth">
-      <ul class="navbar-menu">{% for menu in site.data.nav.primary limit:4 %}{% capture menuhref %}{{ menu.href | relative_url }}{% endcapture %}
+      <ul class="navbar-menu">{% for menu in nav.primary limit:4 %}{% capture menuhref %}{{ menu.href | url }}{% endcapture %}
         <li><a href="{{ menuhref }}" class="animate-nav-link{% if menu.href == page.url %} current{% elsif page.layout == "single-page" and page.bg-color != "alternate-background" %} black-menu{% endif %}">{{ menu.text }}</a></li>{% endfor %}
       </ul>
     </div>
     <div class="flex-medium med-one-fourth">
-      <ul class="navbar-menu">{% for menu in site.data.nav.primary offset:4 %}{% capture menuhref %}{{ menu.href | relative_url }}{% endcapture %}
-        <li><a href="{{ menuhref }}" class="animate-nav-link{% if menu.href == page.url %} current{% elsif page.layout == "single-page" and page.bg-color != "alternate-background" %} black-menu{% endif %}">{{ menu.text }}</a></li>{% endfor %}
+      <ul class="navbar-menu">{% for menu in nav.primary offset:4 %}{% capture menuhref %}{{ menu.href | url }}{% endcapture %}
+        <li><a href="{{ menuhref }}" class="animate-nav-link{% if menu.href == page.url %} current{% elsif layout == "page" and bg-color != "alternate-background" %} black-menu{% endif %}">{{ menu.text }}</a></li>{% endfor %}
       </ul>
     </div>
   </div>
