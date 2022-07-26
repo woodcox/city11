@@ -1,20 +1,20 @@
 <footer class="footer text-center padding-top">
   <div class="container">
     <div class="contacts-wrapper">
-      <h2>Contact us</h2>{% for cec in site.data.contact.office %}
+      <h2>Contact us</h2>{% for cec in contact.office %}
       <p class="footer-link external-link-icon">{{ cec.address }} - {{ cec.maplocation }} </p>
       <p class="footer-link">{{ cec.phone }}</p>
       <p class="footer-link">{{ cec.mailing }}{% endfor %}</p>
-      <p class="footer-link">{% for ml in site.data.contact.pastor %}{{ ml.mailing }}{% endfor %}</p>
-      {% include components/contact-button.html %}<a class="button muted-button round-button external-link-icon" href="https://login.churchsuite.co.uk/" target="_blank" rel="noopener">ChurchSuite Login </a>
+      <p class="footer-link">{% for ml in contact.pastor %}{{ ml.mailing }}{% endfor %}</p>
+      {% render "partials/components/contact-button.html" %}<a class="button muted-button round-button external-link-icon" href="https://login.churchsuite.co.uk/" target="_blank" rel="noopener">ChurchSuite Login </a>
     </div>
     <div class="social-wrapper">
     <h3>Follow us</h3>
       <ul class="social-box">
-        <li><a class="social-button twitter-icon" aria-label="twitter" href="{{ site.data.contact.twitter }}" target="_blank" rel="noopener"></a></li>
-        <li><a class="social-button instagram-icon" aria-label="instagram" href="{{ site.data.contact.instagram }}" target="_blank" rel="noopener"></a></li>
-        <li><a class="social-button facebook-icon" aria-label="facebook" href="{{ site.data.contact.facebook }}" target="_blank" rel="noopener"></a></li>
-        <li><a class="social-button youtube-icon" aria-label="youtube" href="{{ site.data.contact.youtube }}" target="_blank" rel="noopener"></a></li>
+        <li><a class="social-button twitter-icon" aria-label="twitter" href="{{ contact.twitter }}" target="_blank" rel="noopener"></a></li>
+        <li><a class="social-button instagram-icon" aria-label="instagram" href="{{ contact.instagram }}" target="_blank" rel="noopener"></a></li>
+        <li><a class="social-button facebook-icon" aria-label="facebook" href="{{ contact.facebook }}" target="_blank" rel="noopener"></a></li>
+        <li><a class="social-button youtube-icon" aria-label="youtube" href="{{ contact.youtube }}" target="_blank" rel="noopener"></a></li>
       </ul>
     </div>
   </div>
@@ -23,14 +23,14 @@
     <div class="flex-row">
       <div class="flex-small sm-one-third">
         <h4>Sitemap</h4>
-        <p class="footer-link">{% for menu in site.data.nav.primary limit:3 %}<a href="{{ menu.href | relative_url }}">{{ menu.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
-        <p class="footer-link">{% for menu in site.data.nav.primary offset:3 limit:3 %}<a href="{{ menu.href | relative_url }}">{{ menu.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
-        <p class="footer-link">{% for menu in site.data.nav.primary offset:6 %}<a href="{{ menu.href | relative_url }}">{{ menu.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
+        <p class="footer-link">{% for menu in nav.primary limit:3 %}<a href="{{ menu.href | url }}">{{ menu.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
+        <p class="footer-link">{% for menu in nav.primary offset:3 limit:3 %}<a href="{{ menu.href | url }}">{{ menu.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
+        <p class="footer-link">{% for menu in nav.primary offset:6 %}<a href="{{ menu.href | url }}">{{ menu.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
       </div>
       <div class="flex-small sm-one-third">
         <h4>Policies</h4>
-        <p class="footer-link">{% for policy in site.data.nav.footer.policy  limit:3 %}<a href="{{ policy.href | relative_url }}">{{ policy.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
-        <p class="footer-link">{% for policy in site.data.nav.footer.policy  offset:3 %}<a href="{{ policy.href | relative_url }}">{{ policy.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
+        <p class="footer-link">{% for policy in nav.footer.policy  limit:3 %}<a href="{{ policy.href | url }}">{{ policy.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
+        <p class="footer-link">{% for policy in nav.footer.policy  offset:3 %}<a href="{{ policy.href | url }}">{{ policy.text }}</a>{% unless forloop.last %} | {% endunless %}{% endfor %}</p>
       </div>
       <div class="flex-small sm-one-third">
         <h4>Credits</h4>
@@ -42,10 +42,10 @@
   </div>
 </footer>
 
-{%- assign buildversion = site.time | date:'?v=%s' %}
-<script src="{{ '/assets/js/snap-slider.min.js' | append: buildversion | relative_url }}"></script>
-<script src="{{ '/assets/js/site.js' | append: buildversion | relative_url }}"></script>
-<script src="{{ '/assets/js/smoothscroll-polyfill.js' | append: buildversion | relative_url }}"></script>
+{%- capture buildversion %}?v={% version %}{% endcapture %}
+<script src="{{ '/assets/js/snap-slider.min.js' | append: buildversion | url }}"></script>
+<script src="{{ '/assets/js/site.js' | append: buildversion | url }}"></script>
+<script src="{{ '/assets/js/smoothscroll-polyfill.js' | append: buildversion | url }}"></script>
 
 {%- render "partials/modules/cookie-consent.html" %}
 </body>
