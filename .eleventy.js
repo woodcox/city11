@@ -3,6 +3,8 @@ const htmlmin = require('html-minifier');
 const now = String(Date.now());
 const svgContent = require('./config/shortcodes/svgcontent.js');
 const iconShortcode = require('./config/shortcodes/feathericons.js');
+const sass = require("sass");
+
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -15,6 +17,7 @@ module.exports = function (eleventyConfig) {
   // You may remove this if you can use JSON
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
+  // COPY
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
@@ -30,19 +33,19 @@ module.exports = function (eleventyConfig) {
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
-  // Watch the scss files
+  // WATCH the scss files
   eleventyConfig.addWatchTarget('./assets/scss/city.scss');
   eleventyConfig.addPassthroughCopy({ './_tmp': './assets/css' });
   
-  // Watch the js files for esbuild in scripts.11ty.js
+  // WATCH the js files for esbuild in scripts.11ty.js
   eleventyConfig.addWatchTarget('./assets/js');
 
-  // Sections
+  // SECTIONS
   // eleventyConfig.addCollection("sections", function(collectionApi) {
   //  return collectionApi.getFilteredByGlob("sections/**/*.md");
   // });
 
-  // Shortcodes
+  // SHORTCODES
   // Add cache busting with {% version %} time string
   eleventyConfig.addShortcode('version', function () {
     return now
@@ -53,6 +56,13 @@ module.exports = function (eleventyConfig) {
   
   // Insert a feather-icon with {% icon "github" %} from https://feathericons.com/
   eleventyConfig.addShortcode('icon', iconShortcode);
+
+  // FILTERS
+  // add sass filter to template engine
+  eleventyConfig.addFilter("scssify", code => {
+    return sass.compileString(code).css.toString();
+  });
+
 
   // Change things based on the envirnoment
   let env = process.env.ELEVENTY_ENV;
