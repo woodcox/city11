@@ -40,10 +40,6 @@ elders:
     role: Associate Pastor and Elder
     info: ahahah anahaha
     photo: '../assets/img/master/elder-dl.jpeg'
-  - name: John Keane
-    role: Elder
-    info: John works as a Doctor and has served the church for 15 years as an elder. He is married to Emily and has 3 children.
-    photo: '../assets/img/master/elder-jk.jpeg'
   - name: Andrew Smith
     role: Elder
     info: Andrew became an elder in June 2020. He is married to Lianna and they have two daughters.
