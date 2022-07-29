@@ -1,6 +1,4 @@
 ---
-# This is the configuration for the sites primary and footer navigation. 
-# The secondary navigation on a page is controlled by the .md files created in the relevant collection.
 primary:
   - text: Home
     href: /
