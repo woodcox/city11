@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   // Merge data instead of overriding
-  eleventyConfig.setDataDeepMerge(true);
+  // eleventyConfig.setDataDeepMerge(true);
 
   // To Support .yaml Extension in _data
   // You may remove this if you can use JSON
