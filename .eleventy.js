@@ -7,14 +7,8 @@ const sass = require("sass");
 
 
 module.exports = function (eleventyConfig) {
-  // Disable automatic use of your .gitignore
-  eleventyConfig.setUseGitIgnore(false);
-
-  // Merge data instead of overriding
-  // eleventyConfig.setDataDeepMerge(true);
 
   // To Support .yaml Extension in _data
-  // You may remove this if you can use JSON
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
   // COPY
@@ -40,18 +34,13 @@ module.exports = function (eleventyConfig) {
   // WATCH the js files for esbuild in scripts.11ty.js
   eleventyConfig.addWatchTarget('./assets/js');
 
-  // SECTIONS
-  // eleventyConfig.addCollection("sections", function(collectionApi) {
-  //  return collectionApi.getFilteredByGlob("sections/**/*.md");
-  // });
-
   // SHORTCODES
   // Add cache busting with {% version %} time string
   eleventyConfig.addShortcode('version', function () {
     return now
   });
 
-  // Insert any .svg file with {% icon "github" %} saved in .assets/images/svg/
+  // Insert any .svg file with {% svg "github" %} saved in .assets/images/svg/
   eleventyConfig.addShortcode('svg', svgContent);
   
   // Insert a feather-icon with {% icon "github" %} from https://feathericons.com/
