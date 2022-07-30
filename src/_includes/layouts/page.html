@@ -2,14 +2,14 @@
 layout: layouts/base.html
 ---
 
-  <section class="content-section {{ bg-color }}">
+  <section class="content-section {{ page.data.bg-color }}">
     <article>
-      <div class="container {{ style }}">
+      <div class="container {{ page.data.style }}">
         {%- if title %}
         <div class="text-center">
           {%- render "partials/modules/nav-back.html" %}
         </div>
-        <h1>{{ title | upcase }}</h1>
+        <h1>{{ page.data.title | upcase }}</h1>
         {%- endif %}
         {{ content }}
       </div>
