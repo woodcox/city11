@@ -10,13 +10,13 @@ touch_icon: /assets/img/favicon/apple-touch-icon.png
 safari_pinned_tab: /assets/img/favicon/safari-pinned-tab.svg
 
 typewriter:
-  - 
+  - text
     message: Welcome
-  - 
+  - text
     message: Sundays: 10:45am and 6:30pm
-  - 
+  - text
     message: A city church with a community presence.
-  - 
+  - text
     message: We believe Jesus is good news.
 
 counter_web_analytics: rusticola
