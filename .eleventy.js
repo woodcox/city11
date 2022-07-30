@@ -5,6 +5,8 @@ const svgContent = require('./config/shortcodes/svgcontent.js');
 const iconShortcode = require('./config/shortcodes/feathericons.js');
 const sass = require("sass");
 
+const TEMPLATE_ENGINE = 'liquid';
+
 
 module.exports = function (eleventyConfig) {
 
@@ -82,10 +84,10 @@ module.exports = function (eleventyConfig) {
   // 11ty.js template format also picks up on the esbuild.11ty.js script
 
   return {
-    markdownTemplateEngine: 'liquid',
-    templateFormats: ['html', 'liquid', 'md', '11ty.js'],
-    dataTemplateEngine: 'liquid',
-    htmlTemplateEngine: 'liquid',
+    dataTemplateEngine: TEMPLATE_ENGINE,
+    markdownTemplateEngine: TEMPLATE_ENGINE,
+    htmlTemplateEngine: TEMPLATE_ENGINE,
+    templateFormats: ['html', 'md', '11ty.js', TEMPLATE_ENGINE],
     dir: {
       input: 'src',
       output: 'dist',
