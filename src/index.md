@@ -9,4 +9,6 @@ section_type: "about"
 {{ section.templateContent }}
 {% endfor %}
 
+{{ site.companyName }}
+
 {% render "partials/components/talking.php" %}
