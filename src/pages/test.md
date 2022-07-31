@@ -1,5 +1,4 @@
 ---
-templateEngine: liquid,md
 section_type: about
 permalink: test/
 ---
