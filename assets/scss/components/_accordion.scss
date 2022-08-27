@@ -150,11 +150,11 @@
         border-radius: $round-accordion;
     }
     li input:checked + label {
-        border-top-right-radius: $round-accordion * 5 / 8;
-        border-top-left-radius: $round-accordion * 5 / 8;
+        border-top-right-radius: calc($round-accordion * 5 / 8);
+        border-top-left-radius: calc($round-accordion * 5 / 8);
         + .accord-content {
-          border-bottom-right-radius: $round-accordion * 5 / 8;
-          border-bottom-left-radius: $round-accordion * 5 / 8;
+          border-bottom-right-radius: calc($round-accordion * 5 / 8);
+          border-bottom-left-radius: calc($round-accordion * 5 / 8);
         }
     }
 }
