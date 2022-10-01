@@ -2238,13 +2238,11 @@ caption {
   cursor: pointer;
   transition: color 0.4s ease;
   color: #b4b4b4;
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 .animate-nav-link:active, .animate-nav-link:hover {
   color: #be6d0c;
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 .animate-nav-link:active:after, .animate-nav-link:hover:after {
   width: 100%;
