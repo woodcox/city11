@@ -42,10 +42,9 @@
   </div>
 </footer>
 
-{%- capture buildversion %}?v={% version %}{% endcapture %}
-<script src="{{ '/assets/js/snap-slider.min.js' | append: buildversion | url }}"></script>
-<script src="{{ '/assets/js/site.js' | append: buildversion | url }}"></script>
-<script src="{{ '/assets/js/smoothscroll-polyfill.js' | append: buildversion | url }}"></script>
+<script src="{{ '/assets/js/snap-slider.min.js' | url | version }}"></script>
+<script src="{{ '/assets/js/site.js' | url | version }}"></script>
+<script src="{{ '/assets/js/smoothscroll-polyfill.js' | url | version }}"></script>
 
 {%- render "partials/modules/cookie-consent.html" %}
 </body>
