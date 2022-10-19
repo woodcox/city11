@@ -37,9 +37,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./assets/js');
 
   // SHORTCODES
-  // Add cache busting with {% version %} time string
-  eleventyConfig.addShortcode('version', function () {
-    return now
+  // Add cache busting with {{ 'myurl' | version }} time string
+  eleventyConfig.addFilter("version", (url) => {
+    const [urlPart, paramPart] = url.split("?");
+    const params = new URLSearchParams(paramPart || "");
+    params.set("v", `${now}`);
+    console.log(params);
+    return `${urlPart}?${params}`;
   });
 
   // Insert any .svg file with {% svg "github" %} saved in .assets/images/svg/
