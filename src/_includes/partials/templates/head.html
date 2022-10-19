@@ -9,7 +9,7 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.author }}">
   <!-- CSS  -->
-  <link rel="stylesheet" href="{{ '/assets/css/city.css?v=' | url }}{% version %}" />
+  <link rel="stylesheet" href="{{ '/assets/css/city.css' | url | version }}" />
   {%- if site.touch_icon %}<link rel="apple-touch-icon" sizes="180x180" href="{{ site.touch_icon | url }}" />{% endif %}
     {%- if site.favicon_32 %}<link rel="icon" type="image/png" sizes="32x32" href="{{ site.favicon_32 | url }}" />{% endif %}
     {%- if site.favicon_16 %}<link rel="icon" type="image/png" sizes="16x16" href="{{ site.favicon_16 | url }}" />{% endif %}
@@ -21,7 +21,7 @@
     <meta name="msapplication-config" content="{{ '/browserconfig.xml' | url }}">
     <meta name="theme-color" content="{{ site.colors.cityblue }}">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-  <script src="{{ '/assets/js/contacts.js?v=' | url }}{% version %}"></script>
+  <script src="{{ '/assets/js/contacts.js' | url | version }}"></script>
   {%- if site.counter_web_analytics %}<!-- Web Analytics -->
   <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"{{ site.counter_web_analytics }}",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>{% endif %}
   {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
