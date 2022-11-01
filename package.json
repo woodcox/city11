@@ -14,7 +14,7 @@
     "@11ty/eleventy": "^1.0.2",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tannerhodges/snap-slider": "^2.0.3",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.13",
     "eleventy-plugin-compress": "^1.0.4",
     "esbuild": "^0.15.10",
