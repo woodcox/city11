@@ -9,22 +9,32 @@ jobs:
   build_deploy_eleventy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ env.UPDATE_NPM }}
-      - uses: actions/checkout@v3
-        if: env.UPDATE_NPM != 'true'
-        with:
-          fetch-depth: 1
-      - name: Use Node.js 16.x
-        if: env.UPDATE_NPM != 'true'
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 16.x
         uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'npm'
-      - name: Install & Build
+
+      - name: Install dependencies
+        run: npm i # npm i # npm update --save
+        
+      - name: Npm Build
         if: env.UPDATE_NPM != 'true'
-        run: |
-          npm install
-          npm run build
+        run: npm run minify
+        
+      - name: Commit changes
+        if: env.UPDATE_NPM != 'true'
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: "Update json files"
+          add: '["*.json"]'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
       - name: Deploy
         if: env.UPDATE_NPM != 'true'
         uses: peaceiris/actions-gh-pages@v3
@@ -35,29 +45,9 @@ jobs:
 
 
   # Update NPM if env.UPDATE_NPM = true
-  npm-update:
-    name: npm update
-    runs-on: ubuntu-latest
-    steps:
-      # condition - if UPDATE_NPM = true
-      - run: echo '${{ env.UPDATE_NPM }}'
-      - name: Checkout
-        if: env.UPDATE_NPM == 'true'
-        uses: actions/checkout@v3
-      - name: Setup Node
-        if: env.UPDATE_NPM == 'true'
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      # - run: npm init -y
-      #  if: env.UPDATE_NPM == 'true'
-      - run: npm install
-        if: env.UPDATE_NPM == 'true'
-      # - run: npm uninstall @11ty/eleventy alpinejs html-minifier npm-run-all tailwindcss @builder.io/partytown @tannerhodges/snap-slider
-      # - run: npm update # update packages
       - name: pull request on npm update
         if: env.UPDATE_NPM == 'true'
-        uses: woodcock3/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update dependencies
