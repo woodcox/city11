@@ -16,7 +16,7 @@
     "@11ty/eleventy": "^2.0.0-canary.18",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tannerhodges/snap-slider": "^2.0.3",
-    "esbuild": "^0.15.18",
+    "esbuild": "^0.16.6",
     "esbuild-plugin-manifest": "^0.5.0",
     "feather-icons": "^4.29.0",
     "glob-all": "^3.3.1",
