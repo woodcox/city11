@@ -9,6 +9,9 @@ const TEMPLATE_ENGINE = 'liquid';
 
 
 module.exports = function (eleventyConfig) {
+  
+  // BUILD HOOK
+  eleventyConfig.on("eleventy.before", esbuildPipeline);
 
   // To Support .yaml Extension in _data
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
@@ -44,6 +47,15 @@ module.exports = function (eleventyConfig) {
     params.set("v", `${now}`);
     console.log(params);
     return `${urlPart}?${params}`;
+  });
+  
+  // Use this filter only if the asset is processed by esbuild and is in _data/manifest.json. Use {{ 'myurl' | hash }}
+  eleventyConfig.addFilter("hash", (url) => {
+    const urlbase = path.basename(url);
+    const [basePart, ...paramPart] = urlbase.split(".");
+    const urldir = path.dirname(url);
+    let hashedBasename = manifest[basePart];
+    return `${urldir}/${hashedBasename}`;
   });
 
   // Insert any .svg file with {% svg "github" %} saved in .assets/images/svg/
@@ -91,7 +103,7 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: TEMPLATE_ENGINE,
     markdownTemplateEngine: TEMPLATE_ENGINE,
     htmlTemplateEngine: TEMPLATE_ENGINE,
-    templateFormats: ['html', 'md', '11ty.js', TEMPLATE_ENGINE],
+    templateFormats: ['html', 'md', TEMPLATE_ENGINE],
     dir: {
       input: 'src',
       output: 'dist',
