@@ -4,6 +4,7 @@ const now = String(Date.now());
 const svgContent = require('./config/shortcodes/svgcontent.js');
 const iconShortcode = require('./config/shortcodes/feathericons.js');
 const sass = require("sass");
+const esbuildPipeline = require('./config/build/esbuild.js');
 
 const TEMPLATE_ENGINE = 'liquid';
 
