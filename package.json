@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "clean": "node config/clean/clean.js",
     "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy-dev-server --input=dist",
     "dev:sass": "sass  --no-source-map --watch assets/scss:./_tmp",
     "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --pathprefix=city11",
