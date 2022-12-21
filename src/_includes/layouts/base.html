@@ -1,8 +1,8 @@
-{% render "partials/templates/head.html" %}
-{% render "partials/templates/navbar.html" %}
+{% include "partials/templates/head.html" %}
+{% include "partials/templates/navbar.html" %}
 
 <main class="content {{ page.bg-color }}" id="main-content" tabindex="-1">
 {{ content }}
 </main>
 
-{% render "partials/templates/footer.html" %}
+{% include "partials/templates/footer.html" %}
