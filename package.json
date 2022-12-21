@@ -16,7 +16,7 @@
     "@11ty/eleventy": "^2.0.0-canary.18",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tannerhodges/snap-slider": "^2.0.3",
-    "esbuild": "^0.16.6",
+    "esbuild": "^0.16.10",
     "esbuild-plugin-manifest": "^0.5.0",
     "feather-icons": "^4.29.0",
     "glob-all": "^3.3.1",
@@ -27,7 +27,7 @@
     "postcss": "^8.4.20",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
-    "sass": "^1.56.2"
+    "sass": "^1.57.1"
   },
   "name": "city11",
   "description": "A starter repository showing how to build a website with the [Eleventy](https://www.11ty.dev) and [Esbuild](https://esbuild.github.io/).",
