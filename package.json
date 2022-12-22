@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.18",
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tannerhodges/snap-slider": "^2.0.3",
     "esbuild": "^0.16.10",
     "esbuild-plugin-manifest": "^0.5.0",
@@ -26,9 +25,6 @@
     "js-yaml": "^4.1.0",
     "lightningcss-cli": "^1.17.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.20",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
     "sass": "^1.57.1"
   },
   "name": "city11",
