@@ -19,7 +19,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm i -D esbuild-plugin-purgecss-2 # npm i # npm update --save
+        run: npm i # npm i # npm update --save
         
       - name: Npm Build
         if: env.UPDATE_NPM != 'true'
