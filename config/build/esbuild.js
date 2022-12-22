@@ -3,6 +3,7 @@ const esbuild = require('esbuild');
 const glob = require('glob-all'); // to enable * glob pattern in esbuild
 const isProd = process.env.ELEVENTY_ENV === 'prod' ? true : false;
 const manifestPlugin = require('esbuild-plugin-manifest');
+const purgecssPlugin2 = require("esbuild-plugin-purgecss-2")
 const fs = require('fs');
 const path = require("path");
 
@@ -28,6 +29,14 @@ module.exports = async () => {
               `${path.basename(to)}`,
             ])
           ),
+        }),
+        purgecssPlugin2({
+          content: glob.sync([
+            "./*.html",
+            "./views/**/*.html",
+            "./src/scripts/*.js",
+            "./src/scripts/**/*.js",
+          ])
         })
     ],
     minify: isProd,
