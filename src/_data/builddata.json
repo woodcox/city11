@@ -1,1 +1,1 @@
-{"inputs":{"assets/js/contact.js":{"bytes":1036,"imports":[]}},"outputs":{"dist/assets/js/contact-KHLHRW62.min.js":{"imports":[],"exports":[],"entryPoint":"assets/js/contact.js","inputs":{"assets/js/contact.js":{"bytesInOutput":129}},"bytes":141}}}
+{"inputs":{"assets/js/contact.js":{"bytes":1036,"imports":[]}},"outputs":{"dist/assets/contact-KHLHRW62.min.js":{"imports":[],"exports":[],"entryPoint":"assets/js/contact.js","inputs":{"assets/js/contact.js":{"bytesInOutput":129}},"bytes":141}}}
