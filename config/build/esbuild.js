@@ -18,7 +18,7 @@ module.exports = async () => {
     plugins: [
       manifestPlugin({
         // NOTE: Save to src/_data. This is always relative to `outdir`.
-        filename: '../../../src/_data/manifest.json',
+        filename: '../../src/_data/manifest.json',
         shortNames: true,
         extensionless: 'input',
         // Generate manifest.json - https://github.com/pellebjerkestrand/pokesite/blob/main/source/build/build-client.js
