@@ -21,9 +21,6 @@ module.exports = function (eleventyConfig) {
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
-    "./assets/js/site.js": "./assets/js/site.js",
-    "./node_modules/alpinejs/dist/cdn.min.js": './assets/js/alpine.js',
-    "./node_modules/htmx.org/dist/htmx.min.js": './assets/js/htmx.js',
     "./assets/webfonts": "./assets/webfonts",
   });
 
@@ -35,9 +32,8 @@ module.exports = function (eleventyConfig) {
 
   // WATCH the scss files
   eleventyConfig.addWatchTarget('./assets/scss/city.scss');
-  eleventyConfig.addPassthroughCopy({ './_tmp': './assets/css' });
   
-  // WATCH the js files for esbuild in scripts.11ty.js
+  // WATCH the js files for esbuild
   eleventyConfig.addWatchTarget('./assets/js');
 
   // SHORTCODES
@@ -98,7 +94,6 @@ module.exports = function (eleventyConfig) {
   
   // Let Eleventy transform HTML files as liquidjs
   // So that we can use .html instead of .liquid
-  // 11ty.js template format also picks up on the esbuild.11ty.js script
 
   return {
     dataTemplateEngine: TEMPLATE_ENGINE,
