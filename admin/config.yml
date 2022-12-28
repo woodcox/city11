@@ -1,68 +1,57 @@
 backend:
-  # Use netlify identity as backend
   name: git-gateway
-  branch: master
-  ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/neat-starter
-media_folder: "src/static/img"
-public_folder: "/static/img"
+  branch: master # Branch to update (optional; defaults to master)
 
-# Please run "npx netlify-cms-proxy-server" for local backend
-local_backend: true
-# publish_mode: editorial_workflow
+# This line should *not* be indented
+media_folder: "assets/img/master" # Where Media files will be stored in the repo
+public_folder: "assets/img/master" # The src attribute for uploaded media will begin with /assets/img/master
+
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
-    create: true
-    editor:
-      preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
-  - label: "Settings"
-    name: "settings"
-    editor:
-      preview: false
-    files:
-      - label: "Navigation"
-        name: "items"
-        file: "src/_data/navigation.yaml"
-        fields:
-          - label: Nav Items
-            name: items
-            widget: list
-            allow_add: false
-            collapsed: false
-            fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
-        name: "settings"
-        file: "src/_data/settings.yaml"
-        fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+  - name: "Home" # Used in routes, e.g., /admin/collections/blog
+    label: "Home" # Used in the UI
+    folder: "pages/_home" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "/" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "home"}
+      - {label: "Collection_type", name: "collection_type", widget: "hidden", default: "home"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Container-size", name: "container-size", widget: "string", default: "medium"}
+      - {label: "Heading", name: "heading", widget: "string", default: "1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "Sunday" # Used in routes, e.g., /admin/collections/blog
+    label: "Sunday" # Used in the UI
+    folder: "pages/_sunday" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "/sunday" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "sunday"}
+      - {label: "Collection_type", name: "collection_type", widget: "hidden", default: "sunday"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Container-size", name: "container-size", widget: "string", default: "medium"}
+      - {label: "Heading", name: "heading", widget: "string", default: "1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "Media" # Used in routes, e.g., /admin/collections/blog
+    label: "Media" # Used in the UI
+    folder: "pages/_media" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "/media" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "media"}
+      - {label: "Collection_type", name: "collection_type", widget: "hidden", default: "media"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Container-size", name: "container-size", widget: "string", default: "medium"}
+      - {label: "Heading", name: "heading", widget: "string", default: "1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "Docs" # Used in routes, e.g., /admin/collections/blog
+    label: "Docs" # Used in the UI
+    folder: "_docs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "/docs" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "docs"}
+      - {label: "Collection_type", name: "collection_type", widget: "hidden", default: "docs"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Container-size", name: "container-size", widget: "string", default: "medium"}
+      - {label: "Heading", name: "heading", widget: "string", default: "1"}
+      - {label: "Body", name: "body", widget: "markdown"}
