@@ -32,10 +32,7 @@ module.exports = async () => {
         }),
         purgecssPlugin2({
           content: glob.sync([
-            "./*.html",
-            "./views/**/*.html",
-            "./src/scripts/*.js",
-            "./src/scripts/**/*.js",
+            "./dist/*.html",
           ])
         })
     ],
