@@ -32,6 +32,7 @@ module.exports = function (eleventyConfig) {
 
   // WATCH the scss files
   eleventyConfig.addWatchTarget('./assets/scss/city.scss');
+  eleventyConfig.addPassthroughCopy({ './_tmp': './assets/css' });
   
   // WATCH the js files for esbuild
   eleventyConfig.addWatchTarget('./assets/js');
