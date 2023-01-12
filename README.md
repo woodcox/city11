@@ -5,7 +5,7 @@ city11 is a repo for City Evangelical Church, Leeds website using [Eleventy](htt
 
 ## Live Demo
 
-[woodcox.github.io/city11](https://woodcock3.github.io/city11/)
+[woodcox.github.io/city11](https://woodcox.github.io/city11/)
 
 ### Technologies used:
 
@@ -57,4 +57,4 @@ The theme is available as open source under the terms of the [MIT License](https
 See `LICENSE` for more information.
 
 ## Roadmap
-- Check out my [to do list](https://github.com/woodcock3/city11/blob/master/TODO.md) for the planned roadmap.
+- Check out my [to do list](https://github.com/woodcox/city11/blob/master/TODO.md) for the planned roadmap.
