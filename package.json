@@ -15,7 +15,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.18",
     "@tannerhodges/snap-slider": "^2.0.3",
-    "esbuild": "^0.16.10",
+    "esbuild": "^0.16.17",
     "esbuild-plugin-manifest": "^0.5.0",
     "esbuild-plugin-purgecss-2": "^1.0.1",
     "feather-icons": "^4.29.0",
