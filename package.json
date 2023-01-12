@@ -32,7 +32,7 @@
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/woodcock3/city11.git"
+    "url": "git+https://github.com/woodcox/city11.git"
   },
   "keywords": [
     "Eleventy",
@@ -41,12 +41,12 @@
     "Esbuild",
     "Starter"
   ],
-  "author": "woodcock3",
+  "author": "woodcox",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/woodcock3/city11/issues"
+    "url": "https://github.com/woodcox/city11/issues"
   },
-  "homepage": "https://github.com/woodcock3/city11#readme",
+  "homepage": "https://github.com/woodcox/city11#readme",
   "browserslist": [
     "> 0.2%",
     "last 2 versions",
