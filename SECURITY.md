@@ -25,7 +25,7 @@ The city11 theme uses the following [npm packages](https://www.npmjs.com/) to ge
 
 If there are any vulnerabilities in the city-jekyll theme, don't hesitate to _report them_.
 
-1. Please open an issue on [GitHub](https://github.com/woodcox/city11). If you do not have a GitHub account please use any of the [email addresses](https://woodcock3.github.io/city11/) on the webpages to inform the webmaster. 
+1. Please open an issue on [GitHub](https://github.com/woodcox/city11). If you do not have a GitHub account please use any of the [email addresses](https://woodcox.github.io/city11/) on the webpages to inform the webmaster. 
 
 2. In the issue or email you should:
 
