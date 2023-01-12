@@ -14,7 +14,7 @@ city11 is a repo for City Evangelical Church, Leeds website using [Eleventy](htt
 - [Eleventy](https://www.11ty.dev/)
 - [ESbuild](https://esbuild.github.io/)
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/woodcock3/city11&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/woodcox/city11&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
 
 ## Getting Started
 
