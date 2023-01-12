@@ -1,11 +1,11 @@
-# [city11](https://woodcock3.github.io/city11/)
+# [city11](https://woodcox.github.io/city11/)
 
 city11 is a repo for City Evangelical Church, Leeds website using [Eleventy](https://www.11ty.dev), [Sass](https://sass-lang.com) and [ESbuild](https://esbuild.github.io/). [ESbuild](https://esbuild.github.io/) is also used as a JS build pipeline.
  
 
 ## Live Demo
 
-[woodcock3.github.io/city11](https://woodcock3.github.io/city11/)
+[woodcox.github.io/city11](https://woodcock3.github.io/city11/)
 
 ### Technologies used:
 
@@ -22,7 +22,7 @@ city11 is a repo for City Evangelical Church, Leeds website using [Eleventy](htt
 ### 1. Clone this repository
 
 ```
-git clone https://github.com/woodcock3/city11.git my-website-name
+git clone https://github.com/woodcox/city11.git my-website-name
 ```
 
 ### 2. Navigate to the directory
