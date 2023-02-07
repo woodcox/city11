@@ -1,52 +1,45 @@
 {
+  "name": "City-11",
+  "version": "1.1.0",
+  "description": "A minimal HTML5 template and the esbuild setup to compile your Solidjs app alongside 11ty.",
+  "main": ".eleventy.js",
   "scripts": {
     "clean": "node config/clean/clean.js",
-    "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy-dev-server --input=dist",
-    "dev:sass": "sass  --no-source-map --watch assets/scss:./_tmp",
-    "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --pathprefix=city11",
-    "build:sass": "sass  --no-source-map assets/scss:./_tmp",
-    "build:css": "BROWSERSLIST_CONFIG='./package.json' lightningcss ./_tmp/*.css -o assets/css/*.css",
-    "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=city11",
-    "minify:css": "BROWSERSLIST_CONFIG='./package.json' lightningcss --minify ./_tmp/*.css -o assets/css/*.css",
-    "build": "NODE_ENV=dev npm-run-all clean build:sass build:css build:eleventy",
-    "minify": "NODE_ENV=production npm-run-all clean build:sass minify:css minify:eleventy",
-    "start": "npm-run-all --parallel dev:*"
+    "dev:sass": "sass --no-source-map --watch assets/sass:./dist/assets/css",
+    "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --serve --output=dist",
+    "build:sass": "sass --no-source-map assets/sass:./dist/assets/css",
+    "build:eleventy": "npx @11ty/eleventy",
+    "prefix": "lightningcss --browserslist ./dist/assets/css/*.css -o ./dist/assets/css/*.css",
+    "start": "NODE_ENV=dev conc --kill-others 'npm:dev:*'",
+    "cloud": "npm run clean && npm run build:sass && NODE_ENV=staging ELEVENTY_ENV=staging npm run build:eleventy",
+    "build": "npm run clean && npm run build:sass && npm run prefix && NODE_ENV=staging ELEVENTY_ENV=staging npm run build:eleventy -- --pathprefix=city11",
+    "minify": "npm run clean && npm run build:sass && npm run prefix -- --minify && NODE_ENV=production ELEVENTY_ENV=prod npm run build:eleventy -- --pathprefix=city11"
   },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.18",
-    "@tannerhodges/snap-slider": "^2.0.3",
-    "esbuild": "^0.16.10",
-    "esbuild-plugin-manifest": "^0.5.0",
-    "esbuild-plugin-purgecss-2": "^1.0.1",
-    "feather-icons": "^4.29.0",
-    "glob-all": "^3.3.1",
-    "html-minifier": "^4.0.0",
-    "js-yaml": "^4.1.0",
-    "lightningcss-cli": "^1.17.1",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.57.1"
-  },
-  "name": "city11",
-  "description": "A starter repository showing how to build a website with the [Eleventy](https://www.11ty.dev) and [Esbuild](https://esbuild.github.io/).",
-  "version": "1.0.0",
-  "main": ".eleventy.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/woodcox/city11.git"
   },
-  "keywords": [
-    "Eleventy",
-    "11ty",
-    "Sass",
-    "Esbuild",
-    "Starter"
-  ],
   "author": "woodcox",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/woodcox/city11/issues"
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-beta.3",
+    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "@11ty/is-land": "^3.0.1",
+    "@hyrious/esbuild-plugin-http": "^0.1.1",
+    "concurrently": "^7.6.0",
+    "esbuild": "^0.17.5",
+    "esbuild-plugin-manifest": "^0.5.0",
+    "esbuild-plugin-purgecss-2": "^1.0.1",
+    "esbuild-plugin-solid": "^0.5.0",
+    "feather-icons": "^4.29.0",
+    "glob-all": "^3.3.1",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
+    "lightningcss-cli": "^1.18.0",
+    "purgecss": "^5.0.0",
+    "sass": "^1.58.0",
+    "solid-js": "^1.6.10"
   },
-  "homepage": "https://github.com/woodcox/city11#readme",
   "browserslist": [
     "> 0.2%",
     "last 2 versions",
