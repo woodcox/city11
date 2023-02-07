@@ -3,16 +3,36 @@ const htmlmin = require('html-minifier');
 const now = String(Date.now());
 const svgContent = require('./config/shortcodes/svgcontent.js');
 const iconShortcode = require('./config/shortcodes/feathericons.js');
+const postbuildPipeline = require('./config/build/postbuild.js');
 const sass = require("sass");
+const path = require("path");
 const esbuildPipeline = require('./config/build/esbuild.js');
+const manifest = require('./src/_data/manifest.json');
+const isProd = process.env.ELEVENTY_ENV === 'prod' ? true : false;
 
 const TEMPLATE_ENGINE = 'liquid';
 
 
 module.exports = function (eleventyConfig) {
+  // DEV SERVER
+  eleventyConfig.setServerOptions({
+    port: 8080,
+    watch: ["dist/assets/css/*.css"],
+    liveReload: true,
+    domDiff: true,
+  });
   
+  // WATCH
+  // esbuild is also watching the js & jsx files
+  eleventyConfig.watchIgnores.add("./src/_data/manifest.json");
+  eleventyConfig.watchIgnores.add("./src/_data/buildmeta.json");
+
+
   // BUILD HOOK
   eleventyConfig.on("eleventy.before", esbuildPipeline);
+  if (isProd){
+    eleventyConfig.on("eleventy.after", postbuildPipeline);
+  };
 
   // To Support .yaml Extension in _data
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
@@ -29,13 +49,6 @@ module.exports = function (eleventyConfig) {
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-
-  // WATCH the scss files
-  eleventyConfig.addWatchTarget('./assets/scss/city.scss');
-  eleventyConfig.addPassthroughCopy({ './_tmp': './assets/css' });
-  
-  // WATCH the js files for esbuild
-  eleventyConfig.addWatchTarget('./assets/js');
 
   // SHORTCODES
   // Add cache busting with {{ 'myurl' | version }} time string
