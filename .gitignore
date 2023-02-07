@@ -1,8 +1,16 @@
-_site/
-_tmp/
-.DS_Store
-node_modules/
-.env
+# dependencies installed by npm
+node_modules
 
-# Local Netlify folder
-.netlify
+# build artifacts
+dist
+_tmp
+
+# secrets and errors
+.env
+.log
+
+# macOS related files
+.DS_Store
+
+#IDE
+.vscode
