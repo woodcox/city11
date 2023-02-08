@@ -1,4 +1,5 @@
 ---
+#Social
 twitter: https://www.twitter.com/cecleeds/
 instagram: https://www.instagram.com/cecleeds/?hl=en
 facebook: https://www.facebook.com/CECLeeds/
@@ -7,6 +8,7 @@ footer:
   - email: office
   - email: pastor
 
+#Business
 office:
   - address: City Evangelical Church, Cemetery Road, Beeston, Leeds, LS11 8SX
     phone: <a aria-label="Phone number zero one one three two seven zero eight five six eight" href="tel:+441132708568">0113 2708568</a>
@@ -31,6 +33,7 @@ deputy_safeguard:
 citykidsmail: <script>contact1("hello","cecleeds",10,"")</script><noscript>You must enable JavaScript to view this text.</noscript>
 treasurer: <script>contact1("colin.bainbridge","cecleeds",10,"")</script><noscript>You must enable JavaScript to view this text.</noscript>
 
+# Leaders
 elders:
   - name: Michael Luehrmann
     role: Senior Pastor and Elder
@@ -45,6 +48,6 @@ elders:
     info: Andrew became an elder in June 2020. He is married to Lianna and they have two daughters.
     photo: '../assets/img/master/elder-as.jpeg'
   - name: Paul Woodcock
-    role: Elder
-    info: Paul became an elder in June 2020. He is married to Lensa and they have four daughters.
+    role: Trustee
+    info: Paul serves as a trustee of the church.
     photo: '../assets/img/master/elder-pw.jpeg'

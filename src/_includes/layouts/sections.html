@@ -2,6 +2,8 @@
 layout: layouts/base.html
 ---
 
+{%- include "partials/templates/hero.html" %}
+{%- include "partials/templates/secondary-nav.html" %}
 {%- for section in collections[section_type] -%}
 {%- assign crumbs = section.inputPath | split: '/' %}
 {%- assign id = crumbs.last %}

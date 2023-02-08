@@ -1,7 +1,7 @@
 {% include partials/modules/preloader.html %}
 
 <div class="logo">
-  <a href="{{ / | append: site.baseurl }}" class="brand-logo" aria-label="Homepage"><div id="svgColor">{% include svg/city-vector.svg %}</div></a>
+  <a href="{{ / | append: nav.baseurl }}" class="brand-logo" aria-label="Homepage"><div id="svgColor">{% include "partials/svg/city-vector.svg" %}</div></a>
 </div>
 <div class="hamburger-wrapper">
   <input class="checkbox-toggle" type="checkbox" id="prim-menu-checkbox" aria-label="Primary Menu" onclick="logoToggle()"/>
@@ -11,7 +11,7 @@
   <div class="hamburger-menu">
     <div>
       <div>
-        <ul>{% for link in site.data.nav.primary %}{% capture navhref %}{{ link.href | relative_url }}{% endcapture %}
+        <ul>{% for link in nav.primary %}{% capture navhref %}{{ link.href | url }}{% endcapture %}
           <li><a href="{{ navhref }}" class="animate-nav-link{% if link.href == page.url %} current{% endif %}">{{ link.text }}</a></li>{% endfor %}
         </ul>
       </div>

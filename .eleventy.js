@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
   // esbuild is also watching the js & jsx files
   eleventyConfig.watchIgnores.add("./src/_data/manifest.json");
   eleventyConfig.watchIgnores.add("./src/_data/buildmeta.json");
-
+  eleventyConfig.watchIgnores.add("./assets/images/svg");
 
   // BUILD HOOK
   eleventyConfig.on("eleventy.before", esbuildPipeline);
