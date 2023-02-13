@@ -1,3 +1,5 @@
+import site from './src/_data/meta.js';
+
 //=======================================
 // Initialize lozad library
 //=======================================
@@ -34,22 +36,23 @@ function logoToggle() {
   }
 }
 
-{% renderTemplate "liquid" %}
-{% if site.testing == true %}
 //=====================================================
 // Show or hide contact buttons
 //=====================================================
-{% for var in contact.footer %}
-function showBTNS{{ var.email}}() {
-  var element = document.getElementById("contactBTN{{ var.email}}");
-  element.classList.toggle("hide");
+
+for (const var of site){
+  function showBTNS{{ var.email}}() {
+    var element = document.getElementById("contactBTN{{ var.email}}");
+    element.classList.toggle("hide");
+  }
+
+
+  function hideBTN{{ var.email}}() {
+    var element = document.getElementById("emailBTN{{ var.email}}");
+    element.classList.toggle("hide");
+  }
 }
 
-function hideBTN{{ var.email}}() {
-  var element = document.getElementById("emailBTN{{ var.email}}");
-  element.classList.toggle("hide");
-}
-{% endfor %}
 //=====================================================
 // Copy contact button
 //=====================================================
@@ -95,8 +98,7 @@ contactEmailBtn.forEach(copyEmailBtn => {
 function r(a,b){return++b?String.fromCharCode((a=a.charCodeAt()+47,a>126?a-94:a)):a.replace(/[^ ]/g,r)};
 document.getElementById( "decryptoffice" ).innerHTML = r('@77:46o464=665D]4@]F<');
 document.getElementById( "decryptpastor" ).innerHTML = r('A2DE@Co464=665D]4@]F<');
-{% endif %}
-{% endrenderTemplate %}
+
 
 //=====================================================
 // Smooth scroll (plus polyfill)
