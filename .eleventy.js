@@ -45,6 +45,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
     "./assets/webfonts": "./assets/webfonts",
+    "./assets/js/contact.js": "./assets/js/contact.js"
   });
 
   // Copy Image Folder to /_site
