@@ -1,4 +1,5 @@
 module.exports = {
+  env: process.env.ELEVENTY_ENV,
   companyName: "City11",
   keywords: "City, evangelical, church, Leeds, best, christian, Jesus, bible, gospel, Christ, God, Faith, Lord",
   description: "A Eleventy theme &amp; Sass Boilerplate",
