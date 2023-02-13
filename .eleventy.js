@@ -9,6 +9,7 @@ const path = require("path");
 const esbuildPipeline = require('./config/build/esbuild.js');
 const manifest = require('./src/_data/manifest.json');
 const isProd = process.env.ELEVENTY_ENV === 'prod' ? true : false;
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 const TEMPLATE_ENGINE = 'liquid';
 
@@ -33,6 +34,8 @@ module.exports = function (eleventyConfig) {
   if (isProd){
     eleventyConfig.on("eleventy.after", postbuildPipeline);
   };
+
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   // To Support .yaml Extension in _data
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
