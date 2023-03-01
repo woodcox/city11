@@ -37,7 +37,7 @@
     "js-yaml": "^4.1.0",
     "lightningcss-cli": "^1.19.0",
     "purgecss": "^5.0.0",
-    "sass": "^1.58.1",
+    "sass": "^1.58.3",
     "solid-js": "^1.6.11"
   },
   "browserslist": [
