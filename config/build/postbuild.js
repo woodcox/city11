@@ -47,10 +47,10 @@ let purgecssPlugin = function purgecssPlugin(options) {
 
 module.exports = async () => {
   let result = await esbuild.build({
-    entryPoints: glob.sync(['dist/app/*.css']),
+    entryPoints: glob.sync(['dist/assets/*.css']),
     allowOverwrite: true,
     minify: true,
-    outdir: './dist/app',
+    outdir: './assets/app',
     plugins: [
       purgecssPlugin({
         // For your production build. Add other content by using a glob-all pattern glob.sync(["dist/*.html", "dist/**/index.html"])

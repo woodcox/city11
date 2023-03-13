@@ -12,14 +12,15 @@ const fs = require('fs');
 const path = require("path");
 
 const esbuildOpts = {
-  entryPoints: glob.sync(['src/scripts/**/*.jsx', 'src/scripts/**/*.js', 'dist/app/*.css']), // include css so that its in the manifest.json
+  entryPoints: glob.sync(['assets/js/*.js']), // include css so that its in the manifest.json
   entryNames: isProd ? '[name]-[hash]' : '[name]',
   outExtension: isProd ? {'.js': '.min.js', '.css': '.min.css'} : {'.js': '.js', '.css': '.css'},
   allowOverwrite: !isProd,  // overwrite dist/app/style.css when in dev mode
   bundle: true,
   minify: isProd,
   treeShaking: isProd,
-  outdir: './dist/app',
+  outdir: './dist',
+  outbase: 'dist',
   sourcemap: !isProd,
   target: isProd ? 'es6' : 'esnext',
   metafile: true,
@@ -30,10 +31,10 @@ const esbuildOpts = {
       schemes: { default_schemes },
       cache: cacheMap
     }),
-    solidPlugin(), 
+    //solidPlugin(), 
     manifestPlugin({
       // NOTE: Save to src/_data. This is always relative to `outdir`.
-      filename: '../../src/_data/manifest.json',
+      filename: './../src/_data/manifest.json',
       shortNames: true,
       extensionless: 'input',
       // Generate manifest.json - https://github.com/pellebjerkestrand/pokesite/blob/main/source/build/build-client.js

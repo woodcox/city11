@@ -1,5 +1,3 @@
-import site from './src/_data/meta.js';
-
 //=======================================
 // Initialize lozad library
 //=======================================
@@ -40,17 +38,23 @@ function logoToggle() {
 // Show or hide contact buttons
 //=====================================================
 
-for (const var of site){
-  function showBTNS{{ var.email}}() {
-    var element = document.getElementById("contactBTN{{ var.email}}");
-    element.classList.toggle("hide");
-  }
+function showBTNSoffice() {
+  var element = document.getElementById("contactBTNoffice");
+  element.classList.toggle("hide");
+}
 
+function hideBTNoffice() {
+  var element = document.getElementById("emailBTNoffice");
+  element.classList.toggle("hide");
+}
+function showBTNSpastor() {
+  var element = document.getElementById("contactBTNpastor");
+  element.classList.toggle("hide");
+}
 
-  function hideBTN{{ var.email}}() {
-    var element = document.getElementById("emailBTN{{ var.email}}");
-    element.classList.toggle("hide");
-  }
+function hideBTNpastor() {
+  var element = document.getElementById("emailBTNpastor");
+  element.classList.toggle("hide");
 }
 
 //=====================================================
