@@ -19,8 +19,8 @@ const esbuildOpts = {
   bundle: true,
   minify: isProd,
   treeShaking: isProd,
-  outdir: './dist',
-  outbase: 'dist',
+  outdir: './dist/assets/js',
+  //outbase: 'dist',
   sourcemap: !isProd,
   target: isProd ? 'es6' : 'esnext',
   metafile: true,
@@ -34,7 +34,7 @@ const esbuildOpts = {
     //solidPlugin(), 
     manifestPlugin({
       // NOTE: Save to src/_data. This is always relative to `outdir`.
-      filename: './../src/_data/manifest.json',
+      filename: '../../../src/_data/manifest.json',
       shortNames: true,
       extensionless: 'input',
       // Generate manifest.json - https://github.com/pellebjerkestrand/pokesite/blob/main/source/build/build-client.js

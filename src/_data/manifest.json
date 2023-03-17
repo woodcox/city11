@@ -1,1 +1,6 @@
-{}
+{
+  "contact": "contact.js",
+  "site": "site.js",
+  "smoothscroll-polyfill": "smoothscroll-polyfill.js",
+  "snap-slider.min": "snap-slider.min.js"
+}
