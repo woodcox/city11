@@ -21,7 +21,7 @@
     <meta name="msapplication-config" content="{{ '/browserconfig.xml' | url }}">
     <meta name="theme-color" content="{{ site.colors.cityblue }}">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-  <script src="{{ '/assets/js/contacts.js' | url | version }}"></script>
+  <script src="{{ '/assets/js/contacts.js' | url | hash }}"></script>
   {%- if site.counter_web_analytics %}<!-- Web Analytics -->
   <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"{{ site.counter_web_analytics }}",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>{% endif %}
   {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
