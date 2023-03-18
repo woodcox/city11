@@ -17,9 +17,9 @@
     {%- if meta.safari_pinned_tab %}<link rel="mask-icon" href="{{ meta.safari_pinned_tab | url }}" color="{{ site.colors.cityorange }}" />{% endif %}
     {%- if meta.favicon %}<link rel="shortcut icon" href="{{ meta.favicon | url }}" />{% endif %}
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | url }}" />
-    <meta name="msapplication-TileColor" content="{{ meta.colors.cityblue }}">
+    <meta name="msapplication-TileColor" content="{{ tester.colors.cityblue }}">
     <meta name="msapplication-config" content="{{ '/browserconfig.xml' | url }}">
-    <meta name="theme-color" content="{{ meta.colors.cityblue }}">
+    <meta name="theme-color" content="{{ tester.colors.cityblue }}">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script src="{{ '/assets/js/contacts.js' | url | hash }}"></script>
   {%- if meta.counter_web_analytics %}<!-- Web Analytics -->
