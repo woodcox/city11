@@ -1,5 +1,5 @@
 (() => {
-  // assets/js/contact.js
+  // assets/js/contacts.js
   var tld_ = new Array();
   tld_[0] = "com";
   tld_[1] = "org";
@@ -43,4 +43,4 @@
     return s.replace(/\?/g, ".");
   }
 })();
-//# sourceMappingURL=contact.js.map
+//# sourceMappingURL=contacts.js.map
