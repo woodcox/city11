@@ -1,6 +1,6 @@
 {
-  "contact": "contact-QXH4HYNK.min.js",
-  "site": "site-EA3ZXAQJ.min.js",
-  "smoothscroll-polyfill": "smoothscroll-polyfill-CDPJ2VBX.min.js",
-  "snap-slider": "snap-slider-OKUAXMWL.min.js"
+  "contact": "contact.js",
+  "site": "site.js",
+  "smoothscroll-polyfill": "smoothscroll-polyfill.js",
+  "snap-slider": "snap-slider.js"
 }
