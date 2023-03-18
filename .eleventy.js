@@ -19,8 +19,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     port: 8080,
     watch: ["dist/assets/css/*.css"],
-    liveReload: true,
-    domDiff: true,
   });
   
   // WATCH

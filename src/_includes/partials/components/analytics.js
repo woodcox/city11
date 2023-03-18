@@ -1,7 +1,7 @@
 {% if meta.google_analytics_key %}
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.google_analytics_key }}']);
+  _gaq.push(['_setAccount', '{{ meta.google_analytics_key }}']);
   _gaq.push(['_gat._forceSSL']);
   _gaq.push(['_gat._anonymizeIp']);
   _gaq.push(['_trackPageview']);

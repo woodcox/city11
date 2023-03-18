@@ -15,7 +15,7 @@ const esbuildOpts = {
   entryPoints: glob.sync(['assets/js/*.js']), // include css so that its in the manifest.json
   entryNames: isProd ? '[name]-[hash]' : '[name]',
   outExtension: isProd ? {'.js': '.min.js', '.css': '.min.css'} : {'.js': '.js', '.css': '.css'},
-  allowOverwrite: !isProd,  // overwrite dist/app/style.css when in dev mode
+  //allowOverwrite: !isProd,  // overwrite dist/app/style.css when in dev mode
   bundle: true,
   minify: isProd,
   treeShaking: isProd,
