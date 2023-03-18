@@ -1,7 +1,7 @@
 <style>
 {% capture up-button %}
 .scrollToTopBtn {
-  background-color: rgba({{ site.colors.cityblue }}, 0.75);
+  background-color: rgba({{ meta.colors.cityblue }}, 0.75);
   border: none;
   border-radius: 24px;
   color: white;
@@ -27,7 +27,7 @@
   
 .scrollToTopBtn:hover, .scrollToTopBtn:focus, .scrollToTopBtn:active {
   color: white;
-  background-color: darken({{ site.colors.cityblue }}, 10%);
+  background-color: darken({{ meta.colors.cityblue }}, 10%);
 }
 
 .showBtn {
