@@ -5,9 +5,9 @@ layout: null
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {%- for primary in site.data.nav.primary %}
+  {%- for primary in nav.primary %}
   <url>
-    <loc>{{ site.url }}{{ primary.href | relative_url }}</loc>
+    <loc>{{ meta.url }}{{ primary.href | url }}</loc>
     {%- if primary.lastmod == null %}
     <lastmod>{{ "now" | date: "%Y-%m-%d %H:%M" | date_to_xmlschema }}</lastmod>
     {%- else %}
@@ -21,10 +21,10 @@ layout: null
     {%- endif %}
   </url>
   {%- endfor %}
-  {%- for doc in site.documents %}
+  {%- for doc in meta.documents %}
   {%- if doc.sitemap == true %}
   <url>
-    <loc>{{ site.url }}{{ doc.url | relative_url }}</loc>
+    <loc>{{ meta.url }}{{ doc.url | url }}</loc>
     {%- if doc.lastmod == null %}
     <lastmod>{{ "now" | date: "%Y-%m-%d %H:%M" | date_to_xmlschema }}</lastmod>
     {%- else %}
@@ -35,10 +35,10 @@ layout: null
   </url>
   {%- endif %}
   {%- endfor %}
-  {%- for page in site.pages %}
+  {%- for page in meta.pages %}
   {%- if page.sitemap != null and page.sitemap != empty %}
   <url>
-    <loc>{{ site.url }}{{ page.url | relative_url }}</loc>
+    <loc>{{ meta.url }}{{ page.url | url }}</loc>
     <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
     <changefreq>{{ page.sitemap.changefreq }}</changefreq>
     <priority>{{ page.sitemap.priority }}</priority>
