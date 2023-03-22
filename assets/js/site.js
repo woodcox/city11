@@ -8,12 +8,12 @@
       };
     }
   }).observe();
-  const slider = new SnapSlider(".flex-row-slider", {
+  var slider = new SnapSlider(".flex-row-slider", {
     id: "media-slider-link",
     nav: ".slider-nav",
     start: "first"
   });
-  const svgElement = document.getElementById("svgColor");
+  var svgElement = document.getElementById("svgColor");
   function logoToggle() {
     if (document.getElementById("prim-menu-checkbox").checked == true) {
       svgElement.classList.add("toggle-svg");
@@ -22,22 +22,22 @@
     }
   }
   function showBTNSoffice() {
-    const element = document.getElementById("contactBTNoffice");
+    var element = document.getElementById("contactBTNoffice");
     element.classList.toggle("hide");
   }
   function hideBTNoffice() {
-    const element = document.getElementById("emailBTNoffice");
+    var element = document.getElementById("emailBTNoffice");
     element.classList.toggle("hide");
   }
   function showBTNSpastor() {
-    const element = document.getElementById("contactBTNpastor");
+    var element = document.getElementById("contactBTNpastor");
     element.classList.toggle("hide");
   }
   function hideBTNpastor() {
-    const element = document.getElementById("emailBTNpastor");
+    var element = document.getElementById("emailBTNpastor");
     element.classList.toggle("hide");
   }
-  const contactEmailBtn = document.querySelectorAll(".js-emailcopybtn");
+  var contactEmailBtn = document.querySelectorAll(".js-emailcopybtn");
   contactEmailBtn.forEach((copyEmailBtn) => {
     copyEmailBtn.addEventListener("click", function(event) {
       var emailLink = document.querySelector(".js-emaillink");
@@ -71,7 +71,7 @@
   ;
   document.getElementById("decryptoffice").innerHTML = r("@77:46o464=665D]4@]F<");
   document.getElementById("decryptpastor").innerHTML = r("A2DE@Co464=665D]4@]F<");
-  const links = document.querySelectorAll("nav ul a");
+  var links = document.querySelectorAll("nav ul a");
   for (const link of links) {
     link.addEventListener("click", clickHandler);
   }
@@ -84,7 +84,7 @@
       behavior: "smooth"
     });
   }
-  const TxtType = function(el, toRotate, period) {
+  var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -95,15 +95,15 @@
   };
   TxtType.prototype.tick = function() {
     var i = this.loopNum % this.toRotate.length;
-    const fullTxt = this.toRotate[i];
+    var fullTxt = this.toRotate[i];
     if (this.isDeleting) {
       this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
     this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-    const that = this;
-    const delta = 200 - Math.random() * 100;
+    var that = this;
+    var delta = 200 - Math.random() * 100;
     if (this.isDeleting) {
       delta /= 2;
     }
@@ -120,7 +120,7 @@
     }, delta);
   };
   window.onload = function() {
-    const elements = document.getElementsByClassName("typewrite");
+    var elements = document.getElementsByClassName("typewrite");
     for (var i = 0; i < elements.length; i++) {
       var toRotate = elements[i].getAttribute("data-type");
       var period = elements[i].getAttribute("data-period");
@@ -128,7 +128,7 @@
         new TxtType(elements[i], JSON.parse(toRotate), period);
       }
     }
-    const css = document.createElement("style");
+    var css = document.createElement("style");
     css.type = "text/css";
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #f19426";
     document.body.appendChild(css);
