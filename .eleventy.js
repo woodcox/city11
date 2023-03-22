@@ -18,7 +18,7 @@ module.exports = function (eleventyConfig) {
   // DEV SERVER
   eleventyConfig.setServerOptions({
     port: 8080,
-    watch: ["dist/assets/css/*.css"],
+    watch: ["dist/assets/css/*.css", "dist/assets/js/*.js"],
   });
   
   // WATCH

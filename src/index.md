@@ -1,5 +1,5 @@
 ---
-section_type: "about"
+section_type: "home"
 ---
 
 {% svg "github" %}
