@@ -19,8 +19,8 @@ const esbuildOpts = {
   bundle: true,
   minify: isProd,
   treeShaking: isProd,
-  //outdir: './dist/assets/js',
-  outbase: 'dist',
+  outdir: './dist/assets/js',
+  //outbase: 'dist',
   sourcemap: !isProd,
   target: isProd ? 'es6' : 'esnext',
   metafile: true,
@@ -63,7 +63,7 @@ module.exports = async () => {
     console.log("[esbuild] is watching for changes...");
   } else {
     // Build once and exit if not watch mode
-    await ctx.build().then(result => {
+    await ctx.rebuild().then(result => {
       ctx.dispose();
       fs.writeFileSync('./src/_data/buildmeta.json', JSON.stringify(result.metafile));
     })
