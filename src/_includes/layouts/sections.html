@@ -2,7 +2,7 @@
 layout: layouts/base.html
 ---
 
-{%- include "partials/templates/hero.html" %}
+{% for link in nav.primary %}{% if link.href == "/" %}{%- include "partials/templates/hero.html" %}{% else %}{%- include "partials/templates/page-hero.html" %}{% endif %}{% endfor %}
 {%- include "partials/templates/secondary-nav.html" %}
 {%- for section in collections[section_type] -%}
 {%- assign crumbs = section.inputPath | split: '/' %}
