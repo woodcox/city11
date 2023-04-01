@@ -2,9 +2,10 @@
 layout: layouts/base.html
 ---
 
-{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-{%- assign current_page = crumbs.last %}
-{%- if page.fileSlug == "/" %} {%- include "partials/templates/hero.html" %}{% else %}{%- include "partials/templates/page-hero.html" %}{% endif %}
+{%- comment %} [Assign crumbs] takes the url slug so that [if current_page] can be used to render the home hero.html or the page specific page-hero.html. {% endcomment %}
+{%- assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+{%- assign current_page = crumbs.last | append: "/" %}
+{%- if current_page == "/" %} {%- include "partials/templates/hero.html" %}{% else %}{%- include "partials/templates/page-hero.html" %}{% endif %}
 {%- include "partials/templates/secondary-nav.html" %}
 {%- for section in collections[section_type] -%}
 {%- assign crumbs = section.inputPath | split: '/' %}
