@@ -4,7 +4,7 @@ layout: layouts/base.html
 
 {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 {%- assign current_page = crumbs.last %}
-{%- if current_page == "" %} {%- include "partials/templates/hero.html" %}{% else %}{%- include "partials/templates/page-hero.html" %}{% endif %}
+{%- if page.fileSlug == "/" %} {%- include "partials/templates/hero.html" %}{% else %}{%- include "partials/templates/page-hero.html" %}{% endif %}
 {%- include "partials/templates/secondary-nav.html" %}
 {%- for section in collections[section_type] -%}
 {%- assign crumbs = section.inputPath | split: '/' %}
