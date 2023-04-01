@@ -1,11 +1,11 @@
 {%- capture jumplinks %}
-{%- for node in webpage %}
-{%- assign link_number = forloop.length %}
-{%- if link_number > 2 %}
-{%- capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-<li class="p-{{id}} flex-small justify-center"><a class="animate-nav-link" href="#{{id}}">{{node.title}}</a></li>
-{%- endif %}
-{%- endfor %}
+  {%- for node in section %}
+    {%- assign link_number = forloop.length %}
+    {%- if link_number > 2 %}
+    {%- capture nid %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+      <li class="p-{{id}} flex-small justify-center"><a class="animate-nav-link" href="#{{id}}">{{section.data.title}}</a></li>
+    {%- endif %}
+  {%- endfor %}
 {%- endcapture %}
 {%- if link_number > 2 %}
 <nav aria-label="Secondary">
