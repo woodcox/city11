@@ -1,11 +1,15 @@
 ---
-section_type: about
+section_type: connect
 permalink: test/
 ---
 
 # {{ title }}
  
  ## {{ collection_type }}
+ 
+ {%- for section in collections[section_type] -%}
+{{ section.templateContent }}
+{% endfor %}
  
  <div class="justify-center items-center">
     <div>
