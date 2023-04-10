@@ -1,4 +1,3 @@
----
 #Social
 twitter: https://www.twitter.com/cecleeds/
 instagram: https://www.instagram.com/cecleeds/?hl=en
@@ -35,19 +34,15 @@ treasurer: <script>contact1("colin.bainbridge","cecleeds",10,"")</script><noscri
 
 # Leaders
 elders:
-  - name: Michael Luehrmann
-    role: Senior Pastor and Elder
-    info: Michael has been the senior pastor since 2010. He is originally from Texus, USA. He is married to Emily and they have 7 children.
-    photo: '../assets/img/master/elder-ml.jpeg'
   - name: David Lovell
-    role: Associate Pastor and Elder
-    info: ahahah anahaha
+    role: Assistant Pastor and Elder
+    info: David joined the church in August 2019 as a pastor. David is from the North West, he enjoys running, hill walking, reading and films.
     photo: '../assets/img/master/elder-dl.jpeg'
   - name: Andrew Smith
     role: Elder
-    info: Andrew became an elder in June 2020. He is married to Lianna and they have two daughters.
+    info: Andrew became an elder in July 2020. He is married with two children. He was saved 20 years ago and has been at City 8 years.
     photo: '../assets/img/master/elder-as.jpeg'
-  - name: Paul Woodcock
-    role: Trustee
-    info: Paul serves as a trustee of the church.
+  - name: Tony Pullen
+    role: Elder
+    info: Tony became an elder in December 2022. He is married with two grown daughters and two grandsons. He has been a believer since he was eighteen and has served as a pastor and a missionary with WEC.
     photo: '../assets/img/master/elder-pw.jpeg'
