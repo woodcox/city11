@@ -1,7 +1,5 @@
 ---
 title: "Sunday's - Tots, Explorers & Fuel"
-collection_type: "kids-youth"
-layout: sectioned-page
 container-size: medium
 heading: 1
 href: ""
