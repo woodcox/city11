@@ -20,29 +20,9 @@ If you cannot come you can <a href="/media/">listen to the sermon</a> from eithe
   <a class="button" href="https://www.youtube.com/channel/UCALb0SwFaFdPY2gwOesvb_g">Catch up on Youtube</a>
 </div>
 
-## Safety in the church building
-You must follow our safety rules in the church building. This information is reviewed and updated when new government guidance is released.
+# What to expect
 
-Do not come to the service if:
-
-- You have tested positive for coronavirus
-- You are waiting for coronavirus test results
-- You have coronavirus symptoms
-- You or someone else in your household is self-isolating
-
-# What to expect and how to prepare
-
-It is now optional to wear a face mask at church. The morning service will last about 1.5 hours and the evening service 1 hour. They will include singing, prayer, a talk from the Bible and some news about upcoming events. After both services tea and coffee is available. During the morning service there is also a <a href="/under18#explorers">creche and groups for children</a> up to year 9 in school.
-
-> To keep you safe, we have:
->
->- Hand sanitiser stations, which we will ask you to use
->- Seating that is socially distanced or perpex dividers between seating
->
-> Please bring the following with you to the service:
->
->- A bible
->- A face mask (if you wish to wear one)
+The morning service will last about 1.5 hours and the evening service 1 hour. They will include singing, prayer, a talk from the Bible and some news about upcoming events. After both services tea and coffee is available. During the morning service there is also a <a href="/under18#explorers">self-service creche and groups for children</a> up to year 9 in school.
 
 # How to get here
 
