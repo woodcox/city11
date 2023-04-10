@@ -1,5 +1,5 @@
 ---
 permalink: about/
-section_type: about_us
+section_type: about-us
 layout: layouts/sections.html
 ---
