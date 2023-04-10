@@ -7,8 +7,8 @@ container-size: medium
 heading: 1
 href: ""
 impact-font:
-  - content: "When: Wednesday, 6pm - 7:15pm"
-  - content: "At: City Evangelical Church"
+  - text: "When: Wednesday, 6pm - 7:15pm"
+  - text: "At: City Evangelical Church"
 ---
 
 Woo-hoo! City Kids is a free, action-packed club for all Primary school children from Reception to Year 6. Games, Crafts, Quizzes, Prizes, Bible Stories and more!
