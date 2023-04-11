@@ -1,11 +1,9 @@
 {%- capture jumplinks %}
   {%- for node in collections[section_type] -%}
-  {%- assign crumbs = node.inputPath | split: '/' %}
-  {%- assign id = crumbs.last %}
+  {%- assign id = node.data.title %}
     {%- assign link_number = forloop.length %}
     {%- if link_number > 2 %}
-    {%- capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-      <li class="p-{{id}} flex-small justify-center"><a class="animate-nav-link" href="#{{id}}">{{section.data.title}}</a></li>
+      <li class="p-{{id}} flex-small justify-center"><a class="animate-nav-link" href="#{{id}}">{{node.data.title}}</a></li>
     {%- endif %}
   {%- endfor %}
 {%- endcapture %}
