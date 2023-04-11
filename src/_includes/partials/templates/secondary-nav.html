@@ -1,6 +1,6 @@
 {%- capture jumplinks %}
   {%- for node in collections[section_type] -%}
-  {%- assign id = node.data.title %}
+  {%- assign id = node.fileSlug %}
     {%- assign link_number = forloop.length %}
     {%- if link_number > 2 %}
       <li class="p-{{id}} flex-small justify-center"><a class="animate-nav-link" href="#{{id}}">{{node.data.title}}</a></li>
