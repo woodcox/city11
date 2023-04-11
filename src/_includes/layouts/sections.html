@@ -8,7 +8,7 @@ layout: layouts/base.html
 {%- if current_page == "/" %} {%- include "partials/templates/hero.html" %}{% else %}{%- include "partials/templates/page-hero.html" %}{% endif %}
 {%- include "partials/templates/secondary-nav.html" %}
 {%- for section in collections[section_type] -%}
-{%- assign id = section.fileSlug %}
+{%- assign id = section.fileSlug | slice: 2, 8 %}
   <section id="{{id}}" class="content-section {{ section.data.bg-color }}">
     <article>
       <div class="{{ section.data.container-size }}{%- if section.data.container-size == "small" or section.data.container-size == "medium" %}-{%- endif %}container {{ section.data.style }}">
