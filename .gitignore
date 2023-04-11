@@ -4,6 +4,7 @@ node_modules
 # build artifacts
 dist
 _tmp
+.cache
 
 # secrets and errors
 .env
