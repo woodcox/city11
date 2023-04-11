@@ -24,6 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "@11ty/eleventy-img": "^3.1.0",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/is-land": "^3.0.1",
     "@hyrious/esbuild-plugin-http": "^0.1.2",
