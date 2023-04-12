@@ -3,6 +3,7 @@ const htmlmin = require('html-minifier');
 const now = String(Date.now());
 const svgContent = require('./config/shortcodes/svgcontent.js');
 const iconShortcode = require('./config/shortcodes/feathericons.js');
+const imageShortcode = require('./config/shortcodes/image.js');
 const postbuildPipeline = require('./config/build/postbuild.js');
 const sass = require("sass");
 const path = require("path");
@@ -75,6 +76,9 @@ module.exports = function (eleventyConfig) {
   
   // Insert a feather-icon with {% icon "github" %} from https://feathericons.com/
   eleventyConfig.addShortcode('icon', iconShortcode);
+
+  // Image optimisation
+  eleventyConfig.addShortcode('image', imageShortcode);
 
   // FILTERS
   // add sass filter to template engine
