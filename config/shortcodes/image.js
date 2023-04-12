@@ -15,6 +15,15 @@ const imageShortcode = async (
     outputDir: 'dist/assets/images',
     urlPath: '/assets/images',
   });
+  
+  const imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(imageMetadata, imageAttributes);
 };
 
 module.exports =  imageShortcode;
