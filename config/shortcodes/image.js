@@ -13,7 +13,7 @@ const imageShortcode = async (
     widths: [...widths, null],
     formats: [...formats, null],
     outputDir: 'dist/assets/images',
-    urlPath: '/assets/images',
+    urlPath: 'city11/assets/images',
   });
   
   const imageAttributes = {
