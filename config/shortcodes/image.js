@@ -10,8 +10,8 @@ const imageShortcode = async (
 ) => {
   // we'll fill this in shortly
   const imageMetadata = await Image(src, {
-    widths: [...widths, null],
-    formats: [...formats, null],
+    widths: [...widths],
+    formats: [...formats],
     outputDir: 'dist/assets/images',
     urlPath: '/city11/assets/images',
   });
