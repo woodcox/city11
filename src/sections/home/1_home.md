@@ -22,6 +22,6 @@ Whoever you are and where ever you're from, come and see that the Lord is good. 
 The world looks a little different right now, which means community is more important than ever. Whether you’ve never been to church before or you’re trying to find a new church, why don’t you join us? Have a look around to find out more <a href="/about/">about us</a> and <a href="/whats-on/">what's going on</a>.
 
 
-{% image "assets/images/master/kid-heart.jpg", "A five year old boy kneeing on a wooden floor holding a red paper love heart in his hands." %}
+{% image "assets/images/master/kid-heart.jpg", "A five year old boy kneeing on a wooden floor holding a red paper love heart in his hands.", "400, 600, 800" %}
 
 {% include "partials/components/action-cards.html" %}
