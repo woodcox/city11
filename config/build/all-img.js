@@ -12,11 +12,10 @@ const allImages = async () => {
     outputDir: 'dist/assets/images',
     urlPath: '/city11/assets/images',
     filenameFormat: function (id, src, width, format, options) {
-      const extension = path.extname(src);
-      const name = path.basename(src, extension);
+      const { name } = path.parse(src);
       
       // writes all images to 'dist/assets/images' with formats of imageFileName-300w.webp and .jpg
-      return `${name}-${width}w.${format}`;
+      return `${name}-${width}.${format}`;
     }
   }); 
 };
