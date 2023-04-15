@@ -3,13 +3,13 @@ const glob = require('glob-all');
 const path = require("path");
 
 const allImages = async (
-  src = ['assets/images/master/*.jpg'],
+  url = ['assets/images/master/*.jpg'],
   widths = [400, 600, 800, 1000, 1160],
   formats = ['webp', 'jpeg']
 ) => {
 
   // Use original file slug to write images to dist
-  const imageMetadata = await Image(src, {
+  const imageMetadata = await Image(url, {
     widths: [...widths],
     formats: [...formats],
     outputDir: 'dist/assets/images',
