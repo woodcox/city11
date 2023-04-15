@@ -9,7 +9,7 @@ const allImages = async (
 
   // Use original file slug to write images to dist
   const imagePath = glob.sync(['assets/images/master/*.jpg']);
-  const imageMetadata = await Image(imagePath, {
+  await Image(imagePath, {
     widths: [...widths],
     formats: [...formats],
     outputDir: 'dist/assets/images',
