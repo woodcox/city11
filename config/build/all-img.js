@@ -7,7 +7,7 @@ const allImages = async () => {
   // Use original file slug to write images to dist
   const imagePath = glob.sync(['/assets/images/master/*.jpg']);
   console.log(imagePath);
-  await Image(imagePath, {
+  await Image(imagePath.map, {
     widths: [400, 600, 800, 1000, 1160],
     formats: ['webp', 'jpeg'],
     outputDir: 'dist/assets/images',
