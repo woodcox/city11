@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
 
   // BUILD HOOK
   eleventyConfig.on("eleventy.before", esbuildPipeline);
-  eleventyConfig.on("eleventy.before", allImage);
+  eleventyConfig.on("eleventy.before", allImages);
   if (isProd){
     eleventyConfig.on("eleventy.after", postbuildPipeline);
   };
