@@ -4,6 +4,7 @@ const now = String(Date.now());
 const svgContent = require('./config/shortcodes/svgcontent.js');
 const iconShortcode = require('./config/shortcodes/feathericons.js');
 const imageShortcode = require('./config/shortcodes/image.js');
+const allImages = require('./config/build/all-img.js');
 const postbuildPipeline = require('./config/build/postbuild.js');
 const sass = require("sass");
 const path = require("path");
@@ -30,6 +31,7 @@ module.exports = function (eleventyConfig) {
 
   // BUILD HOOK
   eleventyConfig.on("eleventy.before", esbuildPipeline);
+  eleventyConfig.on("eleventy.before", allImage);
   if (isProd){
     eleventyConfig.on("eleventy.after", postbuildPipeline);
   };
