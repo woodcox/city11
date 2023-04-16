@@ -82,6 +82,7 @@ $card-font-color: white;
   outline: 1px solid transparent;
   perspective: inherit;
   z-index: 2;
+  backface-visibility: hidden;
 }
 
 .card-container {
