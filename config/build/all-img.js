@@ -6,11 +6,8 @@ const allImages = async () => {
 
   // Use original file slug to write images to dist
   const imagePaths = glob.sync(['assets/images/master/*.jpg']);
-  console.log(imagePath);
 
-  // map each file in array
-  
-
+  // loop over each image file in array
   for (let imagePath of imagePaths) {
     const imageMetadata = await Image(imagePath, {
       widths: [400, 600, 800, 1000, 1160],
