@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 {
   "name":"{{ settings.name }}",
   "short_name":"{{ settings.shortname }}",
