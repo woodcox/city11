@@ -1654,7 +1654,6 @@ caption {
   z-index: 2;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  outline: 1px solid rgba(0, 0, 0, 0);
   padding: 2rem;
   position: absolute;
   top: 50%;
