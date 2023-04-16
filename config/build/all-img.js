@@ -5,20 +5,23 @@ const path = require("path");
 const allImages = async () => {
 
   // Use original file slug to write images to dist
-  const imagePath = glob.sync(['assets/images/master/*.jpg']);
+  const imagePaths = glob.sync(['assets/images/master/*.jpg']);
   console.log(imagePath);
- 
-  await Image(imagePath, {
-    widths: [400, 600, 800, 1000, 1160],
-    formats: ['webp', 'jpeg'],
-    outputDir: 'dist/assets/images',
-    urlPath: '/city11/assets/images',
-    filenameFormat: function(id, src, width, format, options) {
-      const { name } = path.parse(src);
-      console.log(name);
+
+  // map each file in array
+  await Promise.all(imagePaths.map(async (imagePath) => {
+    const imageMetadata = await Image(imagePath, {
+      widths: [400, 600, 800, 1000, 1160],
+      formats: ['webp', 'jpeg'],
+      outputDir: 'dist/assets/images',
+      urlPath: '/city11/assets/images',
+      filenameFormat: function(id, src, width, format, options) {
+        const { name } = path.parse(src);
+        console.log(name);
       
-      // writes all images to 'dist/assets/images' with formats of imageFileName-300w.webp and .jpg
-      return `${name}-${width}.${format}`;
+        // writes all images to 'dist/assets/images' with formats of imageFileName-300w.webp and .jpg
+        return `${name}-${width}.${format}`;
+      }
     }
   }); 
 };
