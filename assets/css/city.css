@@ -2239,7 +2239,7 @@ caption {
 
 .hero {
   height: 100vh;
-  background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../img/600/city-building-corner.jpg");
+  background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../image/city-building-corner-600.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
