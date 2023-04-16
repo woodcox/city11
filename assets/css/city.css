@@ -2239,7 +2239,7 @@ caption {
 
 .hero {
   height: 100vh;
-  background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("./assets/images/city-building-corner-600.jpg");
+  background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../assets/images/city-building-corner-600.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2272,21 +2272,21 @@ caption {
 @media (min-width: 37.5em) {
   .hero {
     height: 70vh;
-    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("./assets/images/city-building-corner-800.jpg");
+    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../assets/images/city-building-corner-800.jpg");
   }
 }
 
 @media (min-width: 50em) {
   .hero {
     height: 70vh;
-    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("./assets/images/city-building-corner-1000.jpg");
+    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../assets/images/city-building-corner-1000.jpg");
   }
 }
 
 @media (min-width: 62.5em) {
   .hero {
     height: 70vh;
-    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("./assets/images/city-building-corner-1160.jpg");
+    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../assets/images/city-building-corner-1160.jpg");
   }
 }
 
