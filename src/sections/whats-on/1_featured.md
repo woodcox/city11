@@ -25,7 +25,7 @@ flip-card:
     href: /whats-on/#growth-group
   - title: Prayer Meeting
     subtitle: 8pm - 9pm, first Wednesday of each month
-    url: ../assets/images/fire-400.jpg
+    url: ../assets/images/fire-400.webp
     content: Join us in person at church for our monthly prayer meeting.
     href: /whats-on/#prayer
 
