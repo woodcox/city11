@@ -1,6 +1,5 @@
 {
   "contacts": "contacts.js",
   "site": "site.js",
-  "smoothscroll-polyfill": "smoothscroll-polyfill.js",
   "snap-slider": "snap-slider.js"
 }
