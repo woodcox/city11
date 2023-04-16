@@ -22,8 +22,8 @@ const allImages = async () => {
         // writes all images to 'dist/assets/images' with formats of imageFileName-300w.webp and .jpg
         return `${name}-${width}.${format}`;
       }
-    }));
-  }); 
+    });
+  })); 
 };
 
 module.exports =  allImages;
