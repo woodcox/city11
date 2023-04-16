@@ -11,7 +11,7 @@ const allImages = async () => {
   // map each file in array
   
 
-  for (const imagePath of imagePaths) {
+  for (let imagePath of imagePaths) {
     const imageMetadata = await Image(imagePath, {
       widths: [400, 600, 800, 1000, 1160],
       formats: ['webp', 'jpeg'],
