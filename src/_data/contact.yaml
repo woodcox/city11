@@ -26,7 +26,7 @@ safeguard_lead:
 
 deputy_safeguard: 
   - name: Mark Molloy
-    phone: <a a aria-label="Phone number zero seven four three four six two six zero zero two" href="tel:+447434626002">07434626002</a>
+    phone: <a aria-label="Phone number zero seven four three four six two six zero zero two" href="tel:+447434626002">07434626002</a>
     mailing: <script>contact1("mark.molloy","cecleeds",10,"")</script><noscript>You must enable JavaScript to view this text.</noscript>
  
 citykidsmail: <script>contact1("hello","cecleeds",10,"")</script><noscript>You must enable JavaScript to view this text.</noscript>
