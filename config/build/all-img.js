@@ -5,15 +5,15 @@ const path = require("path");
 const allImages = async () => {
 
   // Use original file slug to write images to dist
-  const imagePath = glob.sync(['/assets/images/master/*.jpg']);
+  const imagePath = glob.sync(['assets/images/master/*.jpg']);
   console.log(imagePath);
-  const eachImage = Image.forEach(xc);
-  await Image(eachImage, {
+ 
+  await Image(imagePath, {
     widths: [400, 600, 800, 1000, 1160],
     formats: ['webp', 'jpeg'],
     outputDir: 'dist/assets/images',
     urlPath: '/city11/assets/images',
-    filenameFormat: function xc(id, src, width, format, options) {
+    filenameFormat: function(id, src, width, format, options) {
       const { name } = path.parse(src);
       console.log(name);
       
