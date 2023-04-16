@@ -9,7 +9,9 @@ const allImages = async () => {
   console.log(imagePath);
 
   // map each file in array
-  await Promise.all(imagePaths.map(async (imagePath) => {
+  
+
+  for (const imagePath of imagePaths) {
     const imageMetadata = await Image(imagePath, {
       widths: [400, 600, 800, 1000, 1160],
       formats: ['webp', 'jpeg'],
@@ -23,7 +25,7 @@ const allImages = async () => {
         return `${name}-${width}.${format}`;
       }
     });
-  })); 
+  }
 };
 
 module.exports =  allImages;
