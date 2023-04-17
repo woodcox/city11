@@ -1,6 +1,8 @@
----
-layout: null
----
+module.exports.data = {
+  myData: {
+    layout: null
+  }
+};
 
 module.exports = async function() {
   return await this.renderTemplate(`
