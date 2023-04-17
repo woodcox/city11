@@ -2,6 +2,8 @@
 layout: null
 ---
 
+{% renderTemplate "liquid" %}
+
 {
   "name":"{{ settings.name }}",
   "short_name":"{{ settings.shortname }}",
@@ -21,3 +23,4 @@ layout: null
   "background_color":"{{ settings.secondary_color }}",
   "display":"standalone"
 }
+{% endrenderTemplate %}
