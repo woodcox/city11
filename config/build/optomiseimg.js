@@ -4,7 +4,7 @@ const Image = require('@11ty/eleventy-img');
 const glob = require('glob-all');
 const path = require("path");
 
-const allImages = async () => {
+const optomiseImages = async () => {
   // Use original file slug to write images to dist
   const imagePaths = glob.sync(['assets/images/master/*.jpg']);
 
