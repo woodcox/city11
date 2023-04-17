@@ -1,7 +1,5 @@
 module.exports.data = {
-  myData: {
-    layout: null
-  }
+  layout: null
 };
 
 module.exports = async function() {
