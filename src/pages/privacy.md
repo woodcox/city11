@@ -2,6 +2,7 @@
 layout: layouts/page.html
 title: Privacy Notice
 permalink: privacy/
+tags: policy
 sitemap: 
   lastmod: 10/10/2021
   changefreq: yearly
