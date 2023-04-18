@@ -2,7 +2,7 @@
 title: Safeguarding Policy
 layout: layouts/page.html
 permalink: safeguarding/
-tag: policy
+tags: policy
 sitemap: 
   lastmod: 10/10/2021
   changefreq: yearly
