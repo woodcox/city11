@@ -9,10 +9,10 @@ permalink: '/sitemap.xml'
   {%- for primary in nav.primary %}
   <url>
     <loc>{{ nav.siteurl }}{{ primary.href | url }}</loc>
-    {%- if primary.lastmod == null %}
-    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
-    {%- else %}
+    {%- if primary.lastmod %}
     <lastmod>{{ primary.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
+    {%- else %}
+    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- endif %}
     <changefreq>monthly</changefreq>
     {%- if primary.text == "Home" %}
@@ -25,23 +25,21 @@ permalink: '/sitemap.xml'
   {%- for doc in collections.policy %}
   <url>
     <loc>{{ nav.siteurl }}{{ doc.url | url }}</loc>
-    {%- if doc.data.lastmod == null %}
-    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
-    {%- else %}
+    {%- if doc.data.lastmod %}
     <lastmod>{{ doc.data.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
+    {%- else %}
+    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- endif %}
+    {%- if doc.data.changefreq %}
+    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+    {%- else %}
     <changefreq>monthly</changefreq>
+    {%- endif %}
+    {%- if doc.data.priority %}
+    <priority>{{ page.sitemap.priority }}</priority>
+    {%- else %}
     <priority>0.5</priority>
+    {%- endif %}
   </url>
   {%- endfor %}
-  {%- for page in meta.pages %}
-  {%- if page.sitemap != null and page.sitemap != empty %}
-  <url>
-    <loc>{{ nav.siteurl }}{{ page.url | url }}</loc>
-    <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
-    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-    <priority>{{ page.sitemap.priority }}</priority>
-  </url>
-  {%- endif %}
-{%- endfor %}
 </urlset>
