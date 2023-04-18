@@ -2,4 +2,4 @@
 layout: none
 ---
 User-agent: *
-Sitemap: {{ settings.url }}{{ 'sitemap.xml' | relative_url }}
+Sitemap: {{ meta.url }}{{ 'sitemap.xml' | url }}
