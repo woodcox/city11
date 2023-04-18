@@ -1,5 +1,6 @@
 ---
-layout: none
+layout: null
+permalink: '/robot.txt'
 ---
 User-agent: *
 Sitemap: {{ meta.url }}{{ 'sitemap.xml' | url }}
