@@ -22,8 +22,8 @@ permalink: '/sitemap.xml'
     {%- endif %}
   </url>
   {%- endfor %}
-  {%- for doc in collections[tag] %}
-  {%- if doc.sitemap == true %}
+  {%- for doc in collections.sitemap %}
+  {%- if doc.lastmod == true %}
   <url>
     <loc>{{ nav.siteurl }}{{ doc.url | url }}</loc>
     {%- if doc.lastmod == null %}
