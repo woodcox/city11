@@ -3,50 +3,50 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/city11/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>/city11/sunday/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/sunday/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/city11/whats-on/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/whats-on/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/city11/about/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/about/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/city11/connect/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/connect/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/city11/under18/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/under18/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/city11/students/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/students/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/city11/media/</loc>
-    <lastmod>Tuesday, April 18, 2023 at 7:46 am +0000</lastmod>
+    <loc>https://woodcox.github.io/city11/media/</loc>
+    <lastmod>2023-04-18 07:56</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
