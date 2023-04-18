@@ -2,7 +2,7 @@
 title: Reporting concerns, complaints or whistleblowing
 layout: layouts/page.html
 permalink: concerns/
-tag: policy
+tags: policy
 sitemap: 
   lastmod: 10/12/2021
   changefreq: yearly
