@@ -10,7 +10,7 @@ permalink: '/sitemap.xml'
   <url>
     <loc>{{ nav.siteurl }}{{ primary.href | url }}</loc>
     {%- if primary.lastmod == null %}
-    <lastmod>{{ "now" | date: "%Y-%m-%d %H:%M" }}</lastmod>
+    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S", 360 }}</lastmod>
     {%- else %}
     <lastmod>{{ primary.lastmod | date: "%Y-%m-%dT%H:%M:%S", 360 }}</lastmod>
     {%- endif %}
