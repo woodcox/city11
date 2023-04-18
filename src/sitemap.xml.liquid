@@ -10,9 +10,9 @@ permalink: '/sitemap.xml'
   <url>
     <loc>{{ nav.siteurl }}{{ primary.href | url }}</loc>
     {%- if primary.lastmod == null %}
-    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S", 360 }}</lastmod>
+    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- else %}
-    <lastmod>{{ primary.lastmod | date: "%Y-%m-%dT%H:%M:%S", 360 }}</lastmod>
+    <lastmod>{{ primary.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- endif %}
     <changefreq>monthly</changefreq>
     {%- if primary.text == "Home" %}
@@ -27,9 +27,9 @@ permalink: '/sitemap.xml'
   <url>
     <loc>{{ nav.siteurl }}{{ doc.url | url }}</loc>
     {%- if doc.lastmod == null %}
-    <lastmod>{{ "now" | date: "%Y-%m-%d %H:%M" }}</lastmod>
+    <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- else %}
-    <lastmod>{{ doc.lastmod | date: "%Y-%m-%d %H:%M" }}</lastmod>
+    <lastmod>{{ doc.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- endif %}
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -40,7 +40,7 @@ permalink: '/sitemap.xml'
   {%- if page.sitemap != null and page.sitemap != empty %}
   <url>
     <loc>{{ nav.siteurl }}{{ page.url | url }}</loc>
-    <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d %H:%M" }}</lastmod>
+    <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     <changefreq>{{ page.sitemap.changefreq }}</changefreq>
     <priority>{{ page.sitemap.priority }}</priority>
   </url>
