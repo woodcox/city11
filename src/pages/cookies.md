@@ -2,7 +2,7 @@
 title: Cookies
 layout: layouts/page.html
 permalink: cookies/
-tag: policy
+tags: policy
 bg-color: alternate-background
 sitemap: 
   lastmod: 04/10/2021
