@@ -88,17 +88,9 @@ module.exports = function (eleventyConfig) {
     return sass.compileString(code).css.toString();
   });
 
-
-  // Change things based on the envirnoment
-  let env = process.env.ELEVENTY_ENV;
-
-  if (env === "prod") {
-    eleventyConfig.addPassthroughCopy({ './assets/images/favicon/11up.jpg': './assets/images/11up.jgp'})
-  }
-
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (
-      process.env.ELEVENTY_ENV === "prod" &&
+      isProd &&
       outputPath &&
       outputPath.endsWith('.html')
     ) {
@@ -120,7 +112,7 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: TEMPLATE_ENGINE,
     markdownTemplateEngine: TEMPLATE_ENGINE,
     htmlTemplateEngine: TEMPLATE_ENGINE,
-    templateFormats: ['html', 'md', TEMPLATE_ENGINE],
+    templateFormats: ['html', 'md' '11ty.js', TEMPLATE_ENGINE],
     dir: {
       input: 'src',
       output: 'dist',
