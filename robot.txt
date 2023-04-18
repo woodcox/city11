@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://woodcox.github.iositemap.xml
+Sitemap: https://woodcox.github.io/city11/sitemap.xml
