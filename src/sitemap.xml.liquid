@@ -25,11 +25,11 @@ permalink: '/sitemap.xml'
   {%- for doc in collections.policy %}
   {%- if doc.lastmod == true %}
   <url>
-    <loc>{{ nav.siteurl }}{{ doc.data.permalink | url }}</loc>
-    {%- if doc.lastmod == null %}
+    <loc>{{ nav.siteurl }}{{ doc.url | url }}</loc>
+    {%- if doc.data.lastmod == null %}
     <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- else %}
-    <lastmod>{{ doc.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
+    <lastmod>{{ doc.data.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- endif %}
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
