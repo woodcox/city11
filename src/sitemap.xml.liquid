@@ -22,7 +22,7 @@ permalink: '/sitemap.xml'
     {%- endif %}
   </url>
   {%- endfor %}
-  {%- for doc in collections.sitemap %}
+  {%- for doc in collections.policy %}
   {%- if doc.lastmod == true %}
   <url>
     <loc>{{ nav.siteurl }}{{ doc.data.permalink | url }}</loc>
