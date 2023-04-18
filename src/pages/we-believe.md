@@ -2,7 +2,7 @@
 title: What we believe
 layout: layouts/page.html
 permalink: beliefs/
-tag: policy
+tags: policy
 sitemap: 
   lastmod: 10/10/2021
   changefreq: yearly
