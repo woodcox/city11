@@ -22,6 +22,7 @@ const esbuildOpts = {
   outdir: './dist/assets/js',
   //outbase: 'dist',
   sourcemap: !isProd,
+  format: 'esm',
   target: isProd ? 'es6' : 'esnext',
   metafile: true,
   plugins: [
