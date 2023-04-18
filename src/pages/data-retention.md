@@ -2,7 +2,7 @@
 title: Retention Policy
 layout: layouts/page.html
 permalink: privacy/retention/
-tag: policy
+tags: policy
 sitemap: 
   lastmod: 04/10/2021
   changefreq: yearly
