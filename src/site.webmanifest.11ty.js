@@ -5,8 +5,8 @@ module.exports.data = {
 module.exports = async function() {
   return await this.renderTemplate(`
   {
-    "name":"{{ settings.name }}",
-    "short_name":"{{ settings.shortname }}",
+    "name":"{{ meta.name }}",
+    "short_name":"{{ meta.shortname }}",
     "icons":[
       {
         "src":"/android-chrome-192x192.png",
@@ -19,8 +19,8 @@ module.exports = async function() {
         "type":"image/png"
       }
     ],
-    "theme_color":"{{ settings.primary_color }}",
-    "background_color":"{{ settings.secondary_color }}",
+    "theme_color":"{{ meta.primary_color }}",
+    "background_color":"{{ meta.secondary_color }}",
     "display":"standalone"
   }`, "liquid");
 };
