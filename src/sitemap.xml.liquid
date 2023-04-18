@@ -23,7 +23,6 @@ permalink: '/sitemap.xml'
   </url>
   {%- endfor %}
   {%- for doc in collections.policy %}
-  {%- if doc.data.lastmod == true %}
   <url>
     <loc>{{ nav.siteurl }}{{ doc.url | url }}</loc>
     {%- if doc.data.lastmod == null %}
@@ -34,7 +33,6 @@ permalink: '/sitemap.xml'
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  {%- endif %}
   {%- endfor %}
   {%- for page in meta.pages %}
   {%- if page.sitemap != null and page.sitemap != empty %}
