@@ -4,86 +4,86 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://woodcox.github.io/city11/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/sunday/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/whats-on/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/about/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/connect/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/under18/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/students/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/media/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
+    <lastmod>2023-04-19T03:35:25+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/concerns/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/cookies/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/privacy/retention/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/privacy/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2021-10-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/safeguarding/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2021-10-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://woodcox.github.io/city11/beliefs/</loc>
-    <lastmod>2023-04-18T21:37:16+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2021-10-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
