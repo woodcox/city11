@@ -25,18 +25,18 @@ permalink: '/sitemap.xml'
   {%- for doc in collections.policy %}
   <url>
     <loc>{{ nav.siteurl }}{{ doc.url | url }}</loc>
-    {%- if doc.data.lastmod %}
-    <lastmod>{{ doc.data.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
+    {%- if doc.data.sitemap.lastmod %}
+    <lastmod>{{ doc.data.sitemap.lastmod | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- else %}
     <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S+00:00" }}</lastmod>
     {%- endif %}
-    {%- if doc.data.changefreq %}
-    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+    {%- if doc.data.sitemap.changefreq %}
+    <changefreq>{{ doc.data.sitemap.changefreq }}</changefreq>
     {%- else %}
     <changefreq>monthly</changefreq>
     {%- endif %}
-    {%- if doc.data.priority %}
-    <priority>{{ page.sitemap.priority }}</priority>
+    {%- if doc.data.sitemap.priority %}
+    <priority>{{ doc.data.sitemap.priority }}</priority>
     {%- else %}
     <priority>0.5</priority>
     {%- endif %}
