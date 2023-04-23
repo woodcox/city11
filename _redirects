@@ -90,39 +90,43 @@
 
 
 <main class="content " id="main-content" tabindex="-1">
-
-  <section class="content-section ">
-    <article>
-      <div class="container ">
-        <div class="text-center"><div class="nav-back">
-  <a class="arrow-left-icon animate-nav-link" href="/city11/"> HOME</a>
+<section class="hero full-container ">
+  <div class="container navbar-wrapper">
+  <div class="flex-row">
+    <div class="flex-medium">
+      <div></div>
+    </div>
+    <div class="flex-medium med-one-fourth">
+      <ul class="navbar-menu">
+        <li><a href="/city11/" class="animate-nav-link">Home</a></li>
+        <li><a href="/city11/sunday/" class="animate-nav-link">Sunday</a></li>
+        <li><a href="/city11/whats-on/" class="animate-nav-link">What's on</a></li>
+        <li><a href="/city11/about/" class="animate-nav-link">About us</a></li>
+      </ul>
+    </div>
+    <div class="flex-medium med-one-fourth">
+      <ul class="navbar-menu">
+        <li><a href="/city11/connect/" class="animate-nav-link">Connect</a></li>
+        <li><a href="/city11/under18/" class="animate-nav-link">Kids + Youth</a></li>
+        <li><a href="/city11/students/" class="animate-nav-link">Students</a></li>
+        <li><a href="/city11/media/" class="animate-nav-link">Media</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-        </div>
-        <h1>WHAT WE BELIEVE</h1>
-        <p>Below is the core beliefs of our church. This is in line with the <a href="https://fiec.org.uk/who-we-are/beliefs">FIEC statement</a> of faith that all <a href="https://fiec.org.uk/">FIEC churches</a> are united around.</p>
-<h2>1. God</h2>
-<p>There is one God, who exists eternally in three distinct but equal persons: the Father, the Son, and the Holy Spirit. God is unchangeable in his holiness, justice, wisdom and love. He is the almighty Creator; Saviour and Judge who sustains and governs all things according to his sovereign will for his own glory.</p>
-<h2>2. The Bible</h2>
-<p>God has revealed himself in the Bible, which consists of the Old and New Testaments alone. Every word was inspired by God through human authors, so that the Bible as originally given is in its entirety the Word of God, without error and fully reliable in fact and doctrine. The Bible alone speaks with final authority and is always sufficient for all matters of belief and practice.</p>
-<h2>3. The Human Race</h2>
-<p>All men and women, being created in the image of God, have inherent and equal dignity and worth. Their greatest purpose is to obey, worship and love God. As a result of the fall of our first parents, every aspect of human nature has been corrupted and all men and women are without spiritual life, guilty sinners and hostile to God. Every person is therefore under the just condemnation of God and needs to be born again, forgiven and reconciled to God in order to know and please him.</p>
-<h2>4. The Lord Jesus Christ</h2>
-<p>The Lord Jesus Christ is fully God and fully man. He was conceived by the Holy Spirit, born of a virgin, and lived a sinless life in obedience to the Father. He taught with authority and all his words are true. On the cross he died in the place of sinners, bearing God’s punishment for their sin, redeeming them by his blood. He rose from the dead and in his resurrection body ascended into heaven where he is exalted as Lord of all. He intercedes for his people in the presence of the Father.</p>
-<h2>5. Salvation</h2>
-<p>Salvation is entirely a work of God’s grace and cannot be earned or deserved. It has been accomplished by the Lord Jesus Christ and is offered to all in the gospel. God in his love forgives sinners whom he calls, granting them repentance and faith. All who believe in Christ are justified by faith alone, adopted into the family of God and receive eternal life.</p>
-<h2>6. The Holy Spirit</h2>
-<p>The Holy Spirit has been sent from heaven to glorify Christ and to apply his work of salvation. He convicts sinners, imparts spiritual life and gives a true understanding of the Scriptures. He indwells all believers, brings assurance of salvation and produces increasing likeness to Christ. He builds up the Church and empowers its members for worship, service and mission.</p>
-<h2>7. The Church</h2>
-<p>The universal Church is the body of which Christ is the head and to which all who are saved belong. It is made visible in local churches, which are congregations of believers who are committed to each other for the worship of God, the preaching of the Word, the administering of Baptism and the Lord’s Supper; for pastoral care and discipline, and for evangelism. The unity of the body of Christ is expressed within and between churches by mutual love, care and encouragement. True fellowship between churches exists only where they are faithful to the gospel.</p>
-<h2>8. Baptism and the Lord’s Supper</h2>
-<p>Baptism and the Lord’s Supper have been given to the churches by Christ as visible signs of the gospel. Baptism is a symbol of union with Christ and entry into his Church but does not impart spiritual life. The Lord’s Supper is a commemoration of Christ’s sacrifice offered once for all and involves no change in the bread and wine. All its blessings are received by faith.</p>
-<h2>9. The Future</h2>
-<p>The Lord Jesus Christ will return in glory. He will raise the dead and judge the world in righteousness. The wicked will be sent to eternal punishment and the righteous will be welcomed into a life of eternal joy in fellowship with God. God will make all things new and will be glorified forever.</p>
+  <div class="hero-buttons padding-top small-container">
+    <div class="nav-back">
+  <a class="arrow-left-icon animate-nav-link" href="/city11/_redirects"> _REDIRECTS</a>
+</div>
 
-      </div>
-    </article>
-  </section>
+  </div>
+  <div class="hero-text">
+    <h1 class="hero-text-h1"></h1>
+  </div>
+</section>
+
+
 
 </main>
 
