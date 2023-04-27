@@ -1,8 +1,6 @@
 ---
 title: "City Kids"
-redirect_from: 
-  - /kids/
-  - /youth/
+redirect_from: [/kids/, /youth/]
 container-size: medium
 heading: 1
 href: ""
