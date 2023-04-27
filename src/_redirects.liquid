@@ -4,8 +4,8 @@ permalink: /_redirects
 eleventyExcludeFromCollections: true
 ---
 {%- for page in collections.all -%}
-  {%- if page.url and page.data.redirectFrom -%}
-    {%- for oldUrl in page.data.redirectFrom %}
+  {%- if page.url and page.data.redirect_from -%}
+    {%- for oldUrl in page.data.redirect_from %}
 {{ oldUrl }}  {{ page.url }}
     {%- endfor -%}
   {%- endif -%}
