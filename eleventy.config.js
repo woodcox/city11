@@ -35,24 +35,19 @@ module.exports = function (eleventyConfig) {
   if (isProd){
     eleventyConfig.on("eleventy.after", postbuildPipeline);
   };
-
+  
+  // PLUGINS
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   // To Support .yaml Extension in _data
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
-  // COPY
-  // Copy Static Files to /_Site
+  // COPY Static Files to /dist
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
     "./assets/webfonts": "./assets/webfonts",
+    "./assets/images/favicon": "./assets/images/favicon",
   });
-
-  // Copy Image Folder to /_site
-  eleventyConfig.addPassthroughCopy("./src/assets/image");
-
-  // Copy favicon to route of /_site
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
   // SHORTCODES
   // Add cache busting with {{ 'myurl' | version }} time string
