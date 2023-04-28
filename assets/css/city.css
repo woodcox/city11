@@ -2284,13 +2284,6 @@ caption {
   }
 }
 
-@media (min-width: 62.5em) {
-  .hero {
-    height: 70vh;
-    background-image: linear-gradient(rgba(37, 156, 211, .95), rgba(37, 156, 211, .4)), url("../images/city-building-corner-1160.webp"), url("../images/city-building-corner-1160.jpeg");
-  }
-}
-
 footer {
   color: #fff;
   background: #113a5c;
