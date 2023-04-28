@@ -47,10 +47,3 @@
     background-image: linear-gradient(rgba($primary-color, 0.95),rgba($primary-color, 0.40)), url('../images/city-building-corner-1000.webp'), url('../images/city-building-corner-1000.jpeg');
   }
 }
-
-@include large-breakpoint {
-  .hero {
-    height: 70vh;
-    background-image: linear-gradient(rgba($primary-color, 0.95),rgba($primary-color, 0.40)), url('../images/city-building-corner-1160.webp'), url('../images/city-building-corner-1160.jpeg');
-  }
-}
