@@ -25,7 +25,7 @@
   <script src="{{ '/assets/js/contacts.js' | url | hash }}" type="module"></script>
   {% if meta.counter_web_analytics %}<!-- Web Analytics -->
   <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"{{ meta.counter_web_analytics }}",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>{% endif %}
-  {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+  {%- assign crumbs = page.url | remove:'/index.html' | split: '/' %}
   {%- assign current_page = crumbs.last %}
   {%- if current_page == "media" %}<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>{% endif %}
 </head>
