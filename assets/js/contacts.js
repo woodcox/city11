@@ -37,7 +37,7 @@ const createLink = (href, text, className) => {
 const contact1 = (name, dom, tl, params) => {
   const s = e(name, dom, tl);
   const link = createLink(`${m_}${s}${params}`, s);
-  document.body.appendChild(link);
+  element.appendChild(link); // add link to the specified div element
 };
 
 const contact2 = (name, dom, tl, params, display) => {
@@ -45,7 +45,7 @@ const contact2 = (name, dom, tl, params, display) => {
     `${m_}${e(name, dom, tl)}${params}`,
     display
   );
-  document.body.appendChild(link);
+  element.appendChild(link); // add link to the specified div element
 };
 
 const contact3 = (name, dom, tl, params, display) => {
@@ -54,7 +54,7 @@ const contact3 = (name, dom, tl, params, display) => {
     display,
     "button accent-button"
   );
-  document.body.appendChild(link);
+  element.appendChild(link); // add link to the specified div element
 };
 
 const e = (name, dom, tl) => {
