@@ -1,46 +1,69 @@
-// Email.js version 5
-const tld_ = new Array()
-tld_[0] = "com";
-tld_[1] = "org";
-tld_[2] = "net";
-tld_[3] = "ws";
-tld_[4] = "info";
-tld_[10] = "co.uk";
-tld_[11] = "org.uk";
-tld_[12] = "gov.uk";
-tld_[13] = "ac.uk";
+// Contacts.js version 6
+const tld_ = [
+  "com",
+  "org",
+  "net",
+  "so",
+  "io"'
+  "dev",
+  "co",
+  "uk",
+  "us",
+  "info",
+  "co.uk",
+  "org.uk",
+  "gov.uk",
+  "ac.uk"
+];
 const m_ = "mailto:";
 const a_ = "@";
 const d_ = ".";
 
-function contact1(name, dom, tl, params){
-  let s = e(name,dom,tl);
-  document.write('<a href="'+m_+s+params+'">'+s+'</a>');
-}
-function contact2(name, dom, tl, params, display){
-  document.write('<a href="'+m_+e(name,dom,tl)+params+'">'+display+'</a>');
-}
-function contact3(name, dom, tl, params, display){
-  document.write('<a class="button accent-button" href="'+m_+e(name,dom,tl)+params+'">'+display+'</a>');
-}
+const createLink = (href, text, className) => {
+  const link = document.createElement("a");
+  link.href = href;
+  link.textContent = text;
+  if (className) link.className = className;
+  return link;
+};
 
-function e(name, dom, tl){
-  let s = name+a_;
-  if (tl!=-2){
-    s+= dom;
-    if (tl>=0)
-      s+= d_+tld_[tl];
-  }
-  else
-    s+= swapper(dom);
+const contact1 = (name, dom, tl, params) => {
+  const s = e(name, dom, tl);
+  const link = createLink(`${m_}${s}${params}`, s);
+  document.body.appendChild(link);
+};
+
+const contact2 = (name, dom, tl, params, display) => {
+  const link = createLink(
+    `${m_}${e(name, dom, tl)}${params}`,
+    display
+  );
+  document.body.appendChild(link);
+};
+
+const contact3 = (name, dom, tl, params, display) => {
+  const link = createLink(
+    `${m_}${e(name, dom, tl)}${params}`,
+    display,
+    "button accent-button"
+  );
+  document.body.appendChild(link);
+};
+
+const e = (name, dom, tl) => {
+  let s = name + a_;
+  if (tl !== -2) {
+    s += dom;
+    if (tl >= 0) s += d_ + tld_[tl];
+  } else s += swapper(dom);
   return s;
-}
-function swapper(d){
+};
+
+const swapper = (d) => {
   let s = "";
-  for (let i=0; i<d.length; i+=2)
-    if (i+1==d.length)
-      s+= d.charAt(i)
-    else
-      s+= d.charAt(i+1)+d.charAt(i);
-  return s.replace(/\?/g,'.');
-}
+  for (let i = 0; i < d.length; i += 2)
+    if (i + 1 == d.length) s += d.charAt(i);
+    else s += d.charAt(i + 1) + d.charAt(i);
+  return s.replace(/\?/g, ".");
+};
+
