@@ -29,14 +29,14 @@ var createLink = (href, text, className) => {
 var contact1 = (name, dom, tl, params) => {
   const s = e(name, dom, tl);
   const link = createLink(`${m_}${s}${params}`, s);
-  element.appendChild(link);
+  return link;
 };
 var contact2 = (name, dom, tl, params, display) => {
   const link = createLink(
     `${m_}${e(name, dom, tl)}${params}`,
     display
   );
-  element.appendChild(link);
+  return link;
 };
 var contact3 = (name, dom, tl, params, display) => {
   const link = createLink(
@@ -44,7 +44,7 @@ var contact3 = (name, dom, tl, params, display) => {
     display,
     "button accent-button"
   );
-  element.appendChild(link);
+  return link;
 };
 var e = (name, dom, tl) => {
   let s = name + a_;
@@ -65,4 +65,24 @@ var swapper = (d) => {
       s += d.charAt(i + 1) + d.charAt(i);
   return s.replace(/\?/g, ".");
 };
+var contactElements = document.querySelectorAll(".contact");
+contactElements.forEach((contactElement) => {
+  const name = contactElement.getAttribute("data-name");
+  const dom = contactElement.getAttribute("data-dom");
+  const tl = parseInt(contactElement.getAttribute("data-tl"));
+  const params = contactElement.getAttribute("data-params");
+  const display = contactElement.textContent.trim();
+  let link;
+  if (contactElement.classList.contains("contact1")) {
+    link = contact1(name, dom, tl, params);
+  } else if (contactElement.classList.contains("contact2")) {
+    link = contact2(name, dom, tl, params, display);
+  } else if (contactElement.classList.contains("contact3")) {
+    link = contact3(name, dom, tl, params, display);
+  }
+  if (link) {
+    contactElement.innerHTML = "";
+    contactElement.appendChild(link);
+  }
+});
 //# sourceMappingURL=contacts.js.map
