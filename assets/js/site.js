@@ -1,45 +1,46 @@
 // assets/js/site.js
-lozad(".lozad", {
-  load: function(el) {
-    el.src = el.dataset.src;
-    el.onload = function() {
-      el.classList.add("fade");
-    };
+var lozadObserver = lozad(".lozad", {
+  loaded: function(el) {
+    el.classList.add("fade");
+  },
+  error: function(el) {
+    console.log("Error loading image:", el);
   }
-}).observe();
+});
+lozadObserver.observe();
 var slider = new SnapSlider(".flex-row-slider", {
   id: "media-slider-link",
   nav: ".slider-nav",
   start: "first"
 });
 var svgElement = document.getElementById("svgColor");
-function logoToggle() {
-  if (document.getElementById("prim-menu-checkbox").checked == true) {
+var logoToggle = () => {
+  if (document.getElementById("prim-menu-checkbox").checked) {
     svgElement.classList.add("toggle-svg");
   } else {
     svgElement.classList.remove("toggle-svg");
   }
-}
-function showBTNSoffice() {
-  var element = document.getElementById("contactBTNoffice");
+};
+var showBTNSoffice = () => {
+  const element = document.getElementById("contactBTNoffice");
   element.classList.toggle("hide");
-}
-function hideBTNoffice() {
-  var element = document.getElementById("emailBTNoffice");
+};
+var hideBTNoffice = () => {
+  const element = document.getElementById("emailBTNoffice");
   element.classList.toggle("hide");
-}
-function showBTNSpastor() {
-  var element = document.getElementById("contactBTNpastor");
+};
+var showBTNSpastor = () => {
+  const element = document.getElementById("contactBTNpastor");
   element.classList.toggle("hide");
-}
-function hideBTNpastor() {
-  var element = document.getElementById("emailBTNpastor");
+};
+var hideBTNpastor = () => {
+  const element = document.getElementById("emailBTNpastor");
   element.classList.toggle("hide");
-}
-var contactEmailBtn = document.querySelectorAll(".js-emailcopybtn");
-contactEmailBtn.forEach((copyEmailBtn) => {
-  copyEmailBtn.addEventListener("click", function(event) {
-    var emailLink = document.querySelector(".js-emaillink");
+};
+var contactEmailBtns = document.querySelectorAll(".js-emailcopybtn");
+contactEmailBtns.forEach((copyEmailBtn) => {
+  copyEmailBtn.addEventListener("click", (event) => {
+    const emailLink = document.querySelector(".js-emaillink");
     const selection = window.getSelection();
     const range = document.createRange();
     range.selectNode(emailLink);
@@ -64,10 +65,9 @@ contactEmailBtn.forEach((copyEmailBtn) => {
     }
   });
 });
-function r(a, b) {
+var r = (a, b) => {
   return ++b ? String.fromCharCode((a = a.charCodeAt() + 47, a > 126 ? a - 94 : a)) : a.replace(/[^ ]/g, r);
-}
-;
+};
 document.getElementById("decryptoffice").innerHTML = r("@77:46o464=665D]4@]F<");
 document.getElementById("decryptpastor").innerHTML = r("A2DE@Co464=665D]4@]F<");
 var links = document.querySelectorAll("nav ul a");
@@ -78,58 +78,60 @@ function clickHandler(e) {
   e.preventDefault();
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
-  scroll({
+  window.scroll({
     top: offsetTop,
     behavior: "smooth"
   });
 }
-var TxtType = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2e3;
-  this.txt = "";
-  this.tick();
-  this.isDeleting = false;
-};
-TxtType.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-  this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-  var that = this;
-  var delta = 200 - Math.random() * 100;
-  if (this.isDeleting) {
-    delta /= 2;
-  }
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === "") {
+var TxtType = class {
+  constructor(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2e3;
+    this.txt = "";
+    this.tick();
     this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
   }
-  setTimeout(function() {
-    that.tick();
-  }, delta);
+  tick() {
+    let i = this.loopNum % this.toRotate.length;
+    let fullTxt = this.toRotate[i];
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+    let that = this;
+    let delta = 200 - Math.random() * 100;
+    if (this.isDeleting) {
+      delta /= 2;
+    }
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+    setTimeout(() => {
+      that.tick();
+    }, delta);
+  }
 };
 window.onload = function() {
-  var elements = document.getElementsByClassName("typewrite");
-  for (var i = 0; i < elements.length; i++) {
-    var toRotate = elements[i].getAttribute("data-type");
-    var period = elements[i].getAttribute("data-period");
+  const elements = document.getElementsByClassName("typewrite");
+  for (let i = 0; i < elements.length; i++) {
+    const toRotate = elements[i].getAttribute("data-type");
+    const period = elements[i].getAttribute("data-period");
     if (toRotate) {
       new TxtType(elements[i], JSON.parse(toRotate), period);
     }
   }
-  var css = document.createElement("style");
+  const css = document.createElement("style");
   css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #f19426";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #f19426 }";
   document.body.appendChild(css);
 };
 //# sourceMappingURL=site.js.map
