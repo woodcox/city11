@@ -1,4 +1,11 @@
 // Contacts.js version 6
+
+// You can reference contact1 in HTML by calling it in a script tag, like this:
+// <script>
+//  contact1("name", "domain", 0, "?subject=Email Subject&body=Email Body");
+// </script>
+
+
 const tld_ = [
   "com",
   "org",
