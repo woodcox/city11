@@ -1,14 +1,15 @@
 //=======================================
 // Initialize lozad library
 //=======================================
-lozad('.lozad', {
-  load: function(el) {
-    el.src = el.dataset.src;
-    el.onload = function() {
-      el.classList.add('fade')
-    }
+const lozadObserver = lozad('.lozad', {
+  loaded: function(el) {
+    el.classList.add('fade');
+  },
+  error: function(el) {
+    console.log('Error loading image:', el);
   }
-}).observe()
+});
+lozadObserver.observe();
 
 //======================================
 // Initialize Snap slider
@@ -20,14 +21,13 @@ const slider = new SnapSlider('.flex-row-slider', {
   start: 'first',
 });
 
-
 //======================================
 // Logo svg color toggle
 //======================================
-var svgElement = document.getElementById("svgColor");
+const svgElement = document.getElementById("svgColor");
 
-function logoToggle() {
-  if (document.getElementById("prim-menu-checkbox").checked == true) {
+const logoToggle = () => {
+  if (document.getElementById("prim-menu-checkbox").checked) {
     svgElement.classList.add("toggle-svg");
   } else {
     svgElement.classList.remove("toggle-svg");
@@ -37,43 +37,41 @@ function logoToggle() {
 //=====================================================
 // Show or hide contact buttons
 //=====================================================
-
-function showBTNSoffice() {
-  var element = document.getElementById("contactBTNoffice");
+const showBTNSoffice = () => {
+  const element = document.getElementById("contactBTNoffice");
   element.classList.toggle("hide");
 }
 
-function hideBTNoffice() {
-  var element = document.getElementById("emailBTNoffice");
-  element.classList.toggle("hide");
-}
-function showBTNSpastor() {
-  var element = document.getElementById("contactBTNpastor");
+const hideBTNoffice = () => {
+  const element = document.getElementById("emailBTNoffice");
   element.classList.toggle("hide");
 }
 
-function hideBTNpastor() {
-  var element = document.getElementById("emailBTNpastor");
+const showBTNSpastor = () => {
+  const element = document.getElementById("contactBTNpastor");
+  element.classList.toggle("hide");
+}
+
+const hideBTNpastor = () => {
+  const element = document.getElementById("emailBTNpastor");
   element.classList.toggle("hide");
 }
 
 //=====================================================
 // Copy contact button
 //=====================================================
-var contactEmailBtn = document.querySelectorAll('.js-emailcopybtn');
+const contactEmailBtns = document.querySelectorAll('.js-emailcopybtn');
 
-contactEmailBtn.forEach(copyEmailBtn => {
-  copyEmailBtn.addEventListener('click', function(event) {  
-    // Select the email link anchor text
-    var emailLink = document.querySelector('.js-emaillink');
-    const selection = window.getSelection(); 
-    const range = document.createRange();  
+contactEmailBtns.forEach(copyEmailBtn => {
+  copyEmailBtn.addEventListener('click', (event) => {
+    const emailLink = document.querySelector('.js-emaillink');
+    const selection = window.getSelection();
+    const range = document.createRange();
     range.selectNode(emailLink);
     selection.removeAllRanges();
-    selection.addRange(range);  
+    selection.addRange(range);
 
-    try {  
-      // Now that we've selected the anchor text, execute the copy command  
+    try {
       document.execCommand('copy');
       selection.removeAllRanges();
 
@@ -85,7 +83,7 @@ contactEmailBtn.forEach(copyEmailBtn => {
         copyEmailBtn.textContent = original;
         copyEmailBtn.classList.remove('success');
       }, 1200);
-    } catch(e) {
+    } catch (e) {
       const errorMsg = document.querySelector('.error-msg');
       errorMsg.classList.add('show');
 
@@ -99,9 +97,14 @@ contactEmailBtn.forEach(copyEmailBtn => {
 //=====================================================
 // Decryption
 //=====================================================
-function r(a,b){return++b?String.fromCharCode((a=a.charCodeAt()+47,a>126?a-94:a)):a.replace(/[^ ]/g,r)};
-document.getElementById( "decryptoffice" ).innerHTML = r('@77:46o464=665D]4@]F<');
-document.getElementById( "decryptpastor" ).innerHTML = r('A2DE@Co464=665D]4@]F<');
+
+// Decryption
+//=====================================================
+const r = (a,b) => {
+  return ++b ? String.fromCharCode((a=a.charCodeAt()+47,a>126?a-94:a)) : a.replace(/[^ ]/g, r);
+};
+document.getElementById("decryptoffice").innerHTML = r('@77:46o464=665D]4@]F<');
+document.getElementById("decryptpastor").innerHTML = r('A2DE@Co464=665D]4@]F<');
 
 
 //=====================================================
@@ -118,7 +121,7 @@ function clickHandler(e) {
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
 
-  scroll({
+  window.scroll({
     top: offsetTop,
     behavior: "smooth"
   });
@@ -127,59 +130,61 @@ function clickHandler(e) {
 //=======================================
 // Typing text animation
 //=======================================
-var TxtType = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-  this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-  this.txt = fullTxt.substring(0, this.txt.length + 1);
+class TxtType {
+  constructor(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
   }
 
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  tick() {
+    let i = this.loopNum % this.toRotate.length;
+    let fullTxt = this.toRotate[i];
 
-  var that = this;
-  var delta = 200 - Math.random() * 100;
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
 
-  if (this.isDeleting) { delta /= 2; }
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-  delta = this.period;
-  this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-  this.isDeleting = false;
-  this.loopNum++;
-  delta = 500;
+    let that = this;
+    let delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(() => {
+      that.tick();
+    }, delta);
   }
-
-  setTimeout(function() {
-  that.tick();
-  }, delta);
-};
+}
 
 window.onload = function() {
-  var elements = document.getElementsByClassName('typewrite');
-    for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-type');
-    var period = elements[i].getAttribute('data-period');
+  const elements = document.getElementsByClassName('typewrite');
+  for (let i = 0; i < elements.length; i++) {
+    const toRotate = elements[i].getAttribute('data-type');
+    const period = elements[i].getAttribute('data-period');
     if (toRotate) {
       new TxtType(elements[i], JSON.parse(toRotate), period);
     }
   }
   // INJECT CSS
-  var css = document.createElement("style");
+  const css = document.createElement("style");
   css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #f19426";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #f19426 }";
   document.body.appendChild(css);
 };
