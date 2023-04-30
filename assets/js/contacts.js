@@ -1,9 +1,21 @@
 // Contacts.js version 6
 
-// You can reference contact1 in HTML by calling it in a script tag, like this:
-// <script>
-//  contact1("name", "domain", 0, "?subject=Email Subject&body=Email Body");
-// </script>
+// You can use data attributes in the HTML to provide the necessary information for each contact link. Here's an example of how you can modify the HTML to include data attributes:
+// <div class="contact-links">
+//  <a href="#" data-contact="1" data-name="John" data-dom="example" data-tl="0" data-params="?subject=Contact" class="contact-link">Contact John</a>
+//  <a href="#" data-contact="2" data-name="Jane" data-dom="example" data-tl="1" data-params="?subject=Contact" data-display="Email Jane" class="contact-link">Email Jane</a>
+//  <a href="#" data-contact="3" data-name="Bob" data-dom="example" data-tl="-2" data-params="?subject=Contact" data-display="Contact Bob" class="contact-link">Contact Bob</a>
+//</div>
+
+// Each link has the following data attributes:
+// - `data-contact`: A unique identifier for the contact link.
+// - `data-name`: The name of the contact.
+// - `data-dom`: The domain name of the contact's email address.
+// - `data-tl`: The index of the top-level domain in the `tld_` array (or -2 if the domain should be swapped).
+// - `data-params`: Additional query parameters to include in the email link.
+// - `data-display`: The text to display for the link (only used for `contact2` and `contact3`).
+
+// You can then use JavaScript to select all the links with the `contact-link` class and create the contact links dynamically based on the data attributes.
 
 
 const tld_ = [
