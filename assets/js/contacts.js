@@ -4,7 +4,7 @@ const tld_ = [
   "org",
   "net",
   "so",
-  "io"'
+  "io",
   "dev",
   "co",
   "uk",
