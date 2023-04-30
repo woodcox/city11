@@ -29,14 +29,14 @@ var createLink = (href, text, className) => {
 var contact1 = (name, dom, tl, params) => {
   const s = e(name, dom, tl);
   const link = createLink(`${m_}${s}${params}`, s);
-  document.body.appendChild(link);
+  element.appendChild(link);
 };
 var contact2 = (name, dom, tl, params, display) => {
   const link = createLink(
     `${m_}${e(name, dom, tl)}${params}`,
     display
   );
-  document.body.appendChild(link);
+  element.appendChild(link);
 };
 var contact3 = (name, dom, tl, params, display) => {
   const link = createLink(
@@ -44,7 +44,7 @@ var contact3 = (name, dom, tl, params, display) => {
     display,
     "button accent-button"
   );
-  document.body.appendChild(link);
+  element.appendChild(link);
 };
 var e = (name, dom, tl) => {
   let s = name + a_;
