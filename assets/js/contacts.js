@@ -37,7 +37,7 @@ const createLink = (href, text, className) => {
 const contact1 = (name, dom, tl, params) => {
   const s = e(name, dom, tl);
   const link = createLink(`${m_}${s}${params}`, s);
-  element.appendChild(link); // add link to the specified div element
+  return link;
 };
 
 const contact2 = (name, dom, tl, params, display) => {
@@ -45,7 +45,7 @@ const contact2 = (name, dom, tl, params, display) => {
     `${m_}${e(name, dom, tl)}${params}`,
     display
   );
-  element.appendChild(link); // add link to the specified div element
+  return link;
 };
 
 const contact3 = (name, dom, tl, params, display) => {
@@ -54,7 +54,7 @@ const contact3 = (name, dom, tl, params, display) => {
     display,
     "button accent-button"
   );
-  element.appendChild(link); // add link to the specified div element
+  return link;
 };
 
 const e = (name, dom, tl) => {
@@ -74,3 +74,26 @@ const swapper = (d) => {
   return s.replace(/\?/g, ".");
 };
 
+const contactElements = document.querySelectorAll(".contact");
+
+contactElements.forEach((contactElement) => {
+  const name = contactElement.getAttribute("data-name");
+  const dom = contactElement.getAttribute("data-dom");
+  const tl = parseInt(contactElement.getAttribute("data-tl"));
+  const params = contactElement.getAttribute("data-params");
+  const display = contactElement.textContent.trim();
+
+  let link;
+  if (contactElement.classList.contains("contact1")) {
+    link = contact1(name, dom, tl, params);
+  } else if (contactElement.classList.contains("contact2")) {
+    link = contact2(name, dom, tl, params, display);
+  } else if (contactElement.classList.contains("contact3")) {
+    link = contact3(name, dom, tl, params, display);
+  }
+
+  if (link) {
+    contactElement.innerHTML = "";
+    contactElement.appendChild(link);
+  }
+});
