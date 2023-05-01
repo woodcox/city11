@@ -65,7 +65,7 @@ var swapper = (d) => {
       s += d.charAt(i + 1) + d.charAt(i);
   return s.replace(/\?/g, ".");
 };
-var contactElements = document.querySelectorAll(".contact");
+var contactElements = document.querySelectorAll(".contact-link");
 contactElements.forEach((contactElement) => {
   const name = contactElement.getAttribute("data-name");
   const dom = contactElement.getAttribute("data-dom");
