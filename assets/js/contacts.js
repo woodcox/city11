@@ -86,7 +86,7 @@ const swapper = (d) => {
   return s.replace(/\?/g, ".");
 };
 
-const contactElements = document.querySelectorAll(".contact");
+const contactElements = document.querySelectorAll(".contact-link");
 
 contactElements.forEach((contactElement) => {
   const name = contactElement.getAttribute("data-name");
