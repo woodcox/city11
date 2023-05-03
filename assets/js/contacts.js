@@ -1,9 +1,9 @@
 // Contacts.js version 6
 
 // Use data attributes in the HTML to provide the props for each contact link. For example:
-//  <a href="#" data-name="John" data-dom="example" data-tl="0" data-params="?subject=Contact" class="contact-link"></a>
-//  <a href="#" data-name="Jane" data-dom="example" data-tl="1" data-params="?subject=Contact" data-display="Email Jane" class="contact-link">Email Jane</a>
-//  <a href="#" data-name="Bob" data-dom="example" data-tl="-2" data-params="?subject=Contact" data-display="Contact Bob" class="contact-link">Contact Bob</a>
+//  <a href="#" data-name="John" data-dom="example" data-tl="0" data-params="?subject=Contact" class="contact-link contact1"></a>
+//  <a href="#" data-name="Jane" data-dom="example" data-tl="1" data-params="?subject=Contact" data-display="Email Jane" class="contact-link contact2">Email Jane</a>
+//  <a href="#" data-name="Bob" data-dom="example" data-tl="-2" data-params="?subject=Contact" data-display="Contact Bob" class="contact-link contact1">Contact Bob</a>
 
 // Data attribute props:
 // - `data-name`: The name of the contact.
