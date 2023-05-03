@@ -38,14 +38,6 @@ var contact2 = (name, dom, tl, params, display) => {
   );
   return link;
 };
-var contact3 = (name, dom, tl, params, display) => {
-  const link = createLink(
-    `${m_}${e(name, dom, tl)}${params}`,
-    display,
-    "button accent-button"
-  );
-  return link;
-};
 var e = (name, dom, tl) => {
   let s = name + a_;
   if (tl !== -2) {
@@ -77,8 +69,6 @@ contactElements.forEach((contactElement) => {
     link = contact1(name, dom, tl, params);
   } else if (contactElement.classList.contains("contact2")) {
     link = contact2(name, dom, tl, params, display);
-  } else if (contactElement.classList.contains("contact3")) {
-    link = contact3(name, dom, tl, params, display);
   }
   if (link) {
     contactElement.innerHTML = "";
