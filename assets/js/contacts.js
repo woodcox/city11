@@ -1,19 +1,16 @@
 // Contacts.js version 6
 
-// You can use data attributes in the HTML to provide the necessary information for each contact link. Here's an example of how you can modify the HTML to include data attributes:
+// Use data attributes in the HTML to provide the props for each contact link. For example:
 //  <a href="#" data-name="John" data-dom="example" data-tl="0" data-params="?subject=Contact" class="contact-link"></a>
 //  <a href="#" data-name="Jane" data-dom="example" data-tl="1" data-params="?subject=Contact" data-display="Email Jane" class="contact-link">Email Jane</a>
 //  <a href="#" data-name="Bob" data-dom="example" data-tl="-2" data-params="?subject=Contact" data-display="Contact Bob" class="contact-link">Contact Bob</a>
 
-// Each link has the following data attributes:
+// Data attribute props:
 // - `data-name`: The name of the contact.
 // - `data-dom`: The domain name of the contact's email address.
 // - `data-tl`: The index of the top-level domain in the `tld_` array (or -2 if the domain should be swapped).
 // - `data-params`: Additional query parameters to include in the email link.
-// - `data-display`: The text to display for the link (only used for `contact2`).
-
-// You can then use JavaScript to select all the links with the `contact-link` class and create the contact links dynamically based on the data attributes.
-
+// - `display`: The text to display for the link (only used for `contact2`).
 
 const tld_ = [
   "com",
@@ -31,7 +28,6 @@ const tld_ = [
   "gov.uk",
   "ac.uk"
 ];
-
 const m_ = "mailto:";
 const a_ = "@";
 const d_ = ".";
@@ -67,6 +63,7 @@ const e = (name, dom, tl) => {
   return s;
 };
 
+// If data-tl="-2" Swapper function replaces a ? with . john@example?com
 const swapper = (d) => {
   let s = "";
   for (let i = 0; i < d.length; i += 2)
