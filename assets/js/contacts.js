@@ -1,19 +1,16 @@
 // Contacts.js version 6
 
 // You can use data attributes in the HTML to provide the necessary information for each contact link. Here's an example of how you can modify the HTML to include data attributes:
-// <div class="contact-links">
-//  <a href="#" data-contact="1" data-name="John" data-dom="example" data-tl="0" data-params="?subject=Contact" class="contact-link">Contact John</a>
-//  <a href="#" data-contact="2" data-name="Jane" data-dom="example" data-tl="1" data-params="?subject=Contact" data-display="Email Jane" class="contact-link">Email Jane</a>
-//  <a href="#" data-contact="3" data-name="Bob" data-dom="example" data-tl="-2" data-params="?subject=Contact" data-display="Contact Bob" class="contact-link">Contact Bob</a>
-//</div>
+//  <a href="#" data-name="John" data-dom="example" data-tl="0" data-params="?subject=Contact" class="contact-link"></a>
+//  <a href="#" data-name="Jane" data-dom="example" data-tl="1" data-params="?subject=Contact" data-display="Email Jane" class="contact-link">Email Jane</a>
+//  <a href="#" data-name="Bob" data-dom="example" data-tl="-2" data-params="?subject=Contact" data-display="Contact Bob" class="contact-link">Contact Bob</a>
 
 // Each link has the following data attributes:
-// - `data-contact`: A unique identifier for the contact link.
 // - `data-name`: The name of the contact.
 // - `data-dom`: The domain name of the contact's email address.
 // - `data-tl`: The index of the top-level domain in the `tld_` array (or -2 if the domain should be swapped).
 // - `data-params`: Additional query parameters to include in the email link.
-// - `data-display`: The text to display for the link (only used for `contact2` and `contact3`).
+// - `data-display`: The text to display for the link (only used for `contact2`).
 
 // You can then use JavaScript to select all the links with the `contact-link` class and create the contact links dynamically based on the data attributes.
 
@@ -34,6 +31,7 @@ const tld_ = [
   "gov.uk",
   "ac.uk"
 ];
+
 const m_ = "mailto:";
 const a_ = "@";
 const d_ = ".";
@@ -56,15 +54,6 @@ const contact2 = (name, dom, tl, params, display) => {
   const link = createLink(
     `${m_}${e(name, dom, tl)}${params}`,
     display
-  );
-  return link;
-};
-
-const contact3 = (name, dom, tl, params, display) => {
-  const link = createLink(
-    `${m_}${e(name, dom, tl)}${params}`,
-    display,
-    "button accent-button"
   );
   return link;
 };
@@ -100,8 +89,6 @@ contactElements.forEach((contactElement) => {
     link = contact1(name, dom, tl, params);
   } else if (contactElement.classList.contains("contact2")) {
     link = contact2(name, dom, tl, params, display);
-  } else if (contactElement.classList.contains("contact3")) {
-    link = contact3(name, dom, tl, params, display);
   }
 
   if (link) {
