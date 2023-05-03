@@ -60,7 +60,12 @@ const e = (name, dom, tl) => {
   return s;
 };
 
-// If data-tl="-2" Swapper function replaces a ? with . john@example?com
+// If data-tl="-2" the swapper function is activated. This takes the domain name and swaps pairs of characters, effectively "scrambling" the domain name. 
+// This scrambling can be used as a simple anti-spam technique by having the data-dom attribute scrambled in the html. Then the JS unscrambles it.
+// Specifically, the function swaps every two adjacent characters in the data-dom attribute, except for the last character if the string length is odd. 
+// The ? symbol is replaced with . in the resulting string.
+// For example: <a href="#" data-name="John" data-dom="xemalp?eocm" data-tl="-2" class="contact1 contact-link"></a>
+// Will be rendered as john@example.com
 const swapper = (d) => {
   let s = "";
   for (let i = 0; i < d.length; i += 2)
