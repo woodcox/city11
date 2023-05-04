@@ -1,3 +1,5 @@
+import SnapSlider from '@tannerhodges/snap-slider';
+
 //=======================================
 // Initialize lozad library
 //=======================================
