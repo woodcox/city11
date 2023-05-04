@@ -70,7 +70,7 @@ var require_snap_slider_min = __commonJS({
           return null != t2 && ("object" == e2 || "function" == e2);
         };
       }, function(t, e, n) {
-        var o = n(0), i = n(7), r2 = n(10), a = Math.max, s = Math.min;
+        var o = n(0), i = n(7), r = n(10), a = Math.max, s = Math.min;
         t.exports = function(t2, e2, n2) {
           var l, c, u, d, f, p, h = 0, v = false, g = false, b = true;
           if ("function" != typeof t2)
@@ -108,7 +108,7 @@ var require_snap_slider_min = __commonJS({
             }
             return void 0 === f && (f = setTimeout(x, e2)), d;
           }
-          return e2 = r2(e2) || 0, o(n2) && (v = !!n2.leading, u = (g = "maxWait" in n2) ? a(r2(n2.maxWait) || 0, e2) : u, b = "trailing" in n2 ? !!n2.trailing : b), k.cancel = function() {
+          return e2 = r(e2) || 0, o(n2) && (v = !!n2.leading, u = (g = "maxWait" in n2) ? a(r(n2.maxWait) || 0, e2) : u, b = "trailing" in n2 ? !!n2.trailing : b), k.cancel = function() {
             void 0 !== f && clearTimeout(f), h = 0, l = p = c = f = void 0;
           }, k.flush = function() {
             return void 0 === f ? d : w(i());
@@ -117,14 +117,14 @@ var require_snap_slider_min = __commonJS({
       }, function(t, e, n) {
         var o = n(1), i = n(0);
         t.exports = function(t2, e2, n2) {
-          var r2 = true, a = true;
+          var r = true, a = true;
           if ("function" != typeof t2)
             throw new TypeError("Expected a function");
-          return i(n2) && (r2 = "leading" in n2 ? !!n2.leading : r2, a = "trailing" in n2 ? !!n2.trailing : a), o(t2, e2, { leading: r2, maxWait: e2, trailing: a });
+          return i(n2) && (r = "leading" in n2 ? !!n2.leading : r, a = "trailing" in n2 ? !!n2.trailing : a), o(t2, e2, { leading: r, maxWait: e2, trailing: a });
         };
       }, function(t, e, n) {
-        var o = n(8), i = "object" == typeof self && self && self.Object === Object && self, r2 = o || i || Function("return this")();
-        t.exports = r2;
+        var o = n(8), i = "object" == typeof self && self && self.Object === Object && self, r = o || i || Function("return this")();
+        t.exports = r;
       }, function(t, e, n) {
         var o = n(3).Symbol;
         t.exports = o;
@@ -134,7 +134,7 @@ var require_snap_slider_min = __commonJS({
           t.exports = { polyfill: function() {
             var t2 = window, e2 = document;
             if (!("scrollBehavior" in e2.documentElement.style) || true === t2.__forceSmoothScrollPolyfill__) {
-              var n2, o = t2.HTMLElement || t2.Element, i = { scroll: t2.scroll || t2.scrollTo, scrollBy: t2.scrollBy, elementScroll: o.prototype.scroll || s, scrollIntoView: o.prototype.scrollIntoView }, r2 = t2.performance && t2.performance.now ? t2.performance.now.bind(t2.performance) : Date.now, a = (n2 = t2.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join("|")).test(n2) ? 1 : 0);
+              var n2, o = t2.HTMLElement || t2.Element, i = { scroll: t2.scroll || t2.scrollTo, scrollBy: t2.scrollBy, elementScroll: o.prototype.scroll || s, scrollIntoView: o.prototype.scrollIntoView }, r = t2.performance && t2.performance.now ? t2.performance.now.bind(t2.performance) : Date.now, a = (n2 = t2.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join("|")).test(n2) ? 1 : 0);
               t2.scroll = t2.scrollTo = function() {
                 void 0 !== arguments[0] && (true !== l(arguments[0]) ? h.call(t2, e2.body, void 0 !== arguments[0].left ? ~~arguments[0].left : t2.scrollX || t2.pageXOffset, void 0 !== arguments[0].top ? ~~arguments[0].top : t2.scrollY || t2.pageYOffset) : i.scroll.call(t2, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : t2.scrollX || t2.pageXOffset, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : t2.scrollY || t2.pageYOffset));
               }, t2.scrollBy = function() {
@@ -153,8 +153,8 @@ var require_snap_slider_min = __commonJS({
                 void 0 !== arguments[0] && (true !== l(arguments[0]) ? this.scroll({ left: ~~arguments[0].left + this.scrollLeft, top: ~~arguments[0].top + this.scrollTop, behavior: arguments[0].behavior }) : i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left + this.scrollLeft : ~~arguments[0] + this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top + this.scrollTop : ~~arguments[1] + this.scrollTop));
               }, o.prototype.scrollIntoView = function() {
                 if (true !== l(arguments[0])) {
-                  var n3 = f(this), o2 = n3.getBoundingClientRect(), r3 = this.getBoundingClientRect();
-                  n3 !== e2.body ? (h.call(this, n3, n3.scrollLeft + r3.left - o2.left, n3.scrollTop + r3.top - o2.top), "fixed" !== t2.getComputedStyle(n3).position && t2.scrollBy({ left: o2.left, top: o2.top, behavior: "smooth" })) : t2.scrollBy({ left: r3.left, top: r3.top, behavior: "smooth" });
+                  var n3 = f(this), o2 = n3.getBoundingClientRect(), r2 = this.getBoundingClientRect();
+                  n3 !== e2.body ? (h.call(this, n3, n3.scrollLeft + r2.left - o2.left, n3.scrollTop + r2.top - o2.top), "fixed" !== t2.getComputedStyle(n3).position && t2.scrollBy({ left: o2.left, top: o2.top, behavior: "smooth" })) : t2.scrollBy({ left: r2.left, top: r2.top, behavior: "smooth" });
                 } else
                   i.scrollIntoView.call(this, void 0 === arguments[0] || arguments[0]);
               };
@@ -186,11 +186,11 @@ var require_snap_slider_min = __commonJS({
               return t3;
             }
             function p(e3) {
-              var n3, o2, i2, a2, s2 = (r2() - e3.startTime) / 468;
+              var n3, o2, i2, a2, s2 = (r() - e3.startTime) / 468;
               a2 = s2 = s2 > 1 ? 1 : s2, n3 = 0.5 * (1 - Math.cos(Math.PI * a2)), o2 = e3.startX + (e3.x - e3.startX) * n3, i2 = e3.startY + (e3.y - e3.startY) * n3, e3.method.call(e3.scrollable, o2, i2), o2 === e3.x && i2 === e3.y || t2.requestAnimationFrame(p.bind(t2, e3));
             }
             function h(n3, o2, a2) {
-              var l2, c2, u2, d2, f2 = r2();
+              var l2, c2, u2, d2, f2 = r();
               n3 === e2.body ? (l2 = t2, c2 = t2.scrollX || t2.pageXOffset, u2 = t2.scrollY || t2.pageYOffset, d2 = i.scroll) : (l2 = n3, c2 = n3.scrollLeft, u2 = n3.scrollTop, d2 = s), p({ scrollable: l2, method: d2, startTime: f2, startX: c2, startY: u2, x: o2, y: a2 });
             }
           } };
@@ -198,11 +198,11 @@ var require_snap_slider_min = __commonJS({
       }, function(t, e) {
         var n = ["input", "select", "textarea", "a[href]", "button", "[tabindex]", "audio[controls]", "video[controls]", '[contenteditable]:not([contenteditable="false"])'], o = n.join(","), i = "undefined" == typeof Element ? function() {
         } : Element.prototype.matches || Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-        function r2(t2, e2) {
+        function r(t2, e2) {
           e2 = e2 || {};
-          var n2, r3, s2, l2 = [], d2 = [], f = t2.querySelectorAll(o);
+          var n2, r2, s2, l2 = [], d2 = [], f = t2.querySelectorAll(o);
           for (e2.includeContainer && i.call(t2, o) && (f = Array.prototype.slice.apply(f)).unshift(t2), n2 = 0; n2 < f.length; n2++)
-            a(r3 = f[n2]) && (0 === (s2 = c(r3)) ? l2.push(r3) : d2.push({ documentOrder: n2, tabIndex: s2, node: r3 }));
+            a(r2 = f[n2]) && (0 === (s2 = c(r2)) ? l2.push(r2) : d2.push({ documentOrder: n2, tabIndex: s2, node: r2 }));
           return d2.sort(u).map(function(t3) {
             return t3.node;
           }).concat(l2);
@@ -230,11 +230,11 @@ var require_snap_slider_min = __commonJS({
             return null === t3.offsetParent || "hidden" === getComputedStyle(t3).visibility;
           }(t2));
         }
-        r2.isTabbable = function(t2) {
+        r.isTabbable = function(t2) {
           if (!t2)
             throw new Error("No node provided");
           return false !== i.call(t2, o) && a(t2);
-        }, r2.isFocusable = function(t2) {
+        }, r.isFocusable = function(t2) {
           if (!t2)
             throw new Error("No node provided");
           return false !== i.call(t2, l) && s(t2);
@@ -252,7 +252,7 @@ var require_snap_slider_min = __commonJS({
         function d(t2) {
           return "INPUT" === t2.tagName;
         }
-        t.exports = r2;
+        t.exports = r;
       }, function(t, e, n) {
         var o = n(3);
         t.exports = function() {
@@ -275,11 +275,11 @@ var require_snap_slider_min = __commonJS({
         }
         t.exports = n;
       }, function(t, e, n) {
-        var o = n(11), i = n(0), r2 = n(13), a = /^[-+]0x[0-9a-f]+$/i, s = /^0b[01]+$/i, l = /^0o[0-7]+$/i, c = parseInt;
+        var o = n(11), i = n(0), r = n(13), a = /^[-+]0x[0-9a-f]+$/i, s = /^0b[01]+$/i, l = /^0o[0-7]+$/i, c = parseInt;
         t.exports = function(t2) {
           if ("number" == typeof t2)
             return t2;
-          if (r2(t2))
+          if (r(t2))
             return NaN;
           if (i(t2)) {
             var e2 = "function" == typeof t2.valueOf ? t2.valueOf() : t2;
@@ -309,14 +309,14 @@ var require_snap_slider_min = __commonJS({
           return "symbol" == typeof t2 || i(t2) && "[object Symbol]" == o(t2);
         };
       }, function(t, e, n) {
-        var o = n(4), i = n(15), r2 = n(16), a = o ? o.toStringTag : void 0;
+        var o = n(4), i = n(15), r = n(16), a = o ? o.toStringTag : void 0;
         t.exports = function(t2) {
-          return null == t2 ? void 0 === t2 ? "[object Undefined]" : "[object Null]" : a && a in Object(t2) ? i(t2) : r2(t2);
+          return null == t2 ? void 0 === t2 ? "[object Undefined]" : "[object Null]" : a && a in Object(t2) ? i(t2) : r(t2);
         };
       }, function(t, e, n) {
-        var o = n(4), i = Object.prototype, r2 = i.hasOwnProperty, a = i.toString, s = o ? o.toStringTag : void 0;
+        var o = n(4), i = Object.prototype, r = i.hasOwnProperty, a = i.toString, s = o ? o.toStringTag : void 0;
         t.exports = function(t2) {
-          var e2 = r2.call(t2, s), n2 = t2[s];
+          var e2 = r.call(t2, s), n2 = t2[s];
           try {
             t2[s] = void 0;
             var o2 = true;
@@ -351,7 +351,7 @@ var require_snap_slider_min = __commonJS({
             }
             return null;
           });
-        }, i = n(5), r2 = n.n(i), a = n(6), s = n.n(a), l = n(1), c = n.n(l), u = n(2), d = n.n(u);
+        }, i = n(5), r = n.n(i), a = n(6), s = n.n(a), l = n(1), c = n.n(l), u = n(2), d = n.n(u);
         function f(t2) {
           return Array.prototype.slice.call(t2);
         }
@@ -450,8 +450,8 @@ var require_snap_slider_min = __commonJS({
               return t4.trim();
             }), o3 = n3.pop(), i2 = n3.pop();
             if (!i2) {
-              var r3 = t3.closest("[data-snap-slider-nav]"), a2 = t3.closest("[data-snap-slider]");
-              r3 && (i2 = r3.getAttribute("data-snap-slider-nav")), a2 && (i2 = a2.getAttribute("data-snap-slider"));
+              var r2 = t3.closest("[data-snap-slider-nav]"), a2 = t3.closest("[data-snap-slider]");
+              r2 && (i2 = r2.getAttribute("data-snap-slider-nav")), a2 && (i2 = a2.getAttribute("data-snap-slider"));
             }
             if (!i2) {
               var s2 = t3.closest("data-snap-slider");
@@ -459,8 +459,8 @@ var require_snap_slider_min = __commonJS({
             }
             return { sliderID: i2, index: o3 };
           } }, { key: "handleGoto", value: function(e3) {
-            var n3 = e3.target.closest("[data-snap-slider-goto]"), o3 = t2.getButtonTarget(n3), i2 = o3.sliderID, r3 = o3.index, a2 = window._SnapSliders[i2];
-            a2 && a2.goto(r3, null, e3);
+            var n3 = e3.target.closest("[data-snap-slider-goto]"), o3 = t2.getButtonTarget(n3), i2 = o3.sliderID, r2 = o3.index, a2 = window._SnapSliders[i2];
+            a2 && a2.goto(r2, null, e3);
           } }, { key: "isRelative", value: function(t3) {
             return "prev" === t3 || "next" === t3;
           } }, { key: "notFound", value: function(t3) {
@@ -471,12 +471,12 @@ var require_snap_slider_min = __commonJS({
           } }, { key: "debug", value: function(e3) {
             var n3 = [];
             0 === arguments.length && (e3 = "[data-snap-slider]"), "string" == typeof e3 && v(window._SnapSliders, e3) && (e3 = '[data-snap-slider="'.concat(e3, '"]')), (n3 = h(e3)).length ? n3.forEach(function(o3, i2) {
-              var r3 = o3.closest("[data-snap-slider-goto]"), a2 = o3.closest("[data-snap-slider-nav]"), s2 = o3.closest("[data-snap-slider]"), l2 = n3.length > 1 ? "#".concat(i2 + 1, " ") : "";
-              if (r3) {
-                var c2 = t2.getButtonTarget(r3), u2 = window._SnapSliders[c2.sliderID], d2 = c2.index, f2 = t2.isValidIndex(d2) ? '"'.concat(d2, '"') : '\u{1F6AB} "'.concat(d2, '" - Yikes! This index is invalid.\n\nUse a positive number instead, or one of the following aliases:\n\n  ').concat(["first", "middle", "last", "prev", "next"].map(function(t3) {
+              var r2 = o3.closest("[data-snap-slider-goto]"), a2 = o3.closest("[data-snap-slider-nav]"), s2 = o3.closest("[data-snap-slider]"), l2 = n3.length > 1 ? "#".concat(i2 + 1, " ") : "";
+              if (r2) {
+                var c2 = t2.getButtonTarget(r2), u2 = window._SnapSliders[c2.sliderID], d2 = c2.index, f2 = t2.isValidIndex(d2) ? '"'.concat(d2, '"') : '\u{1F6AB} "'.concat(d2, '" - Yikes! This index is invalid.\n\nUse a positive number instead, or one of the following aliases:\n\n  ').concat(["first", "middle", "last", "prev", "next"].map(function(t3) {
                   return "\u2022\xA0".concat(t3);
                 }).join("\n")), h2 = c2.sliderID ? '"'.concat(c2.sliderID, '"') : "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Make sure your button is inside a `data-snap-slider-nav` element, or...\n  \u2022\xA0Include the slider ID you want to target in your `data-snap-slider-goto` attribute.\n      \u25E6 For example, `data-snap-slider-goto=\"example-slider:".concat(c2.index || "prev", '"`.'), v2 = '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022\xA0Double check that your slider ID is correct (\u{1F446}).\n  \u2022\xA0Make sure your slider has the same ID in its `data-snap-slider` attribute.\n      \u25E6 For example, `data-snap-slider="example-slider"`.', g2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Double check that your index is valid (\u{1F446}).\n  \u2022\xA0Make sure a slide actually exists at that index (\u{1F447}).", b2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Double check that your index is valid (\u{1F446}).\n  \u2022\xA0Make sure a slide actually exists at that index.\n  \u2022\xA0Make sure your slider recognizes the slide element as a slide.";
-                return u2 && u2.container && (v2 = u2.container, g2 = u2.getIndexNumber(d2), b2 = u2.getSlide(d2)), T.section({ heading: "\u{1F579} Button ".concat(l2), description: r3, groups: [{ heading: "1. What slider is this button targeting?", items: [{ heading: "Slider ID", description: h2 }, { heading: "Slider Element", description: v2 }, { heading: "Slider Object", description: u2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. Which slide will it go to?", items: [{ heading: "Slide Index", description: f2 }, { heading: "Slide Index (Number)", description: g2 }, { heading: "Slide Element", description: b2 }] }], collapsed: true });
+                return u2 && u2.container && (v2 = u2.container, g2 = u2.getIndexNumber(d2), b2 = u2.getSlide(d2)), T.section({ heading: "\u{1F579} Button ".concat(l2), description: r2, groups: [{ heading: "1. What slider is this button targeting?", items: [{ heading: "Slider ID", description: h2 }, { heading: "Slider Element", description: v2 }, { heading: "Slider Object", description: u2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. Which slide will it go to?", items: [{ heading: "Slide Index", description: f2 }, { heading: "Slide Index (Number)", description: g2 }, { heading: "Slide Element", description: b2 }] }], collapsed: true });
               }
               if (a2) {
                 var y2 = a2.getAttribute("data-snap-slider-nav"), m2 = window._SnapSliders[y2], S2 = p("[data-snap-slider-goto]", a2);
@@ -550,7 +550,7 @@ var require_snap_slider_min = __commonJS({
             var i2 = this.getSlide(o3);
             if (!i2)
               return false;
-            var r3 = this.getScrollOffset(i2), a2 = r3.top, s2 = r3.left;
+            var r2 = this.getScrollOffset(i2), a2 = r2.top, s2 = r2.left;
             return e3.immediate ? this.container.scroll({ top: a2, left: s2 }) : (this.startTransition(o3), this.container.scroll({ top: a2, left: s2, behavior: "smooth" })), this.current = o3, this.fireEvent("change", n3, e3), true;
           } }, { key: "buildGoto", value: function(t3) {
             var e3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "", n3 = "";
@@ -578,11 +578,11 @@ var require_snap_slider_min = __commonJS({
           } }, { key: "addGotoButtons", value: function(t3) {
             var e3 = this, n3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             g(t3) && (n3 = t3);
-            var o3 = h((n3 = k({ container: "", buttons: t3, prev: "", next: "" }, n3)).buttons, n3.container), i2 = h(n3.prev, n3.container), r3 = h(n3.next, n3.container);
+            var o3 = h((n3 = k({ container: "", buttons: t3, prev: "", next: "" }, n3)).buttons, n3.container), i2 = h(n3.prev, n3.container), r2 = h(n3.next, n3.container);
             i2.forEach(function(t4) {
               return t4.hasAttribute("data-snap-slider-goto") || e3.setGoto(i2, "prev");
-            }), r3.forEach(function(t4) {
-              return t4.hasAttribute("data-snap-slider-goto") || e3.setGoto(r3, "next");
+            }), r2.forEach(function(t4) {
+              return t4.hasAttribute("data-snap-slider-goto") || e3.setGoto(r2, "next");
             });
             var a2 = 1;
             return o3.forEach(function(t4) {
@@ -626,15 +626,15 @@ var require_snap_slider_min = __commonJS({
             var o3 = h((n3 = k({ container: t3, buttons: "", prev: "", next: "" }, n3)).container);
             return !!o3.length && (o3.forEach(function(t4) {
               t4.setAttribute("data-snap-slider-nav", e3.id);
-              var o4 = t4.getAttribute("data-snap-slider-buttons") || n3.buttons || "button", i2 = n3.prev || t4.getAttribute("data-snap-slider-prev"), r3 = n3.next || t4.getAttribute("data-snap-slider-next");
-              e3.addGotoButtons({ container: t4, buttons: o4, prev: i2, next: r3 });
+              var o4 = t4.getAttribute("data-snap-slider-buttons") || n3.buttons || "button", i2 = n3.prev || t4.getAttribute("data-snap-slider-prev"), r2 = n3.next || t4.getAttribute("data-snap-slider-next");
+              e3.addGotoButtons({ container: t4, buttons: o4, prev: i2, next: r2 });
             }), true);
           } }, { key: "getClosest", value: function() {
             var t3 = this;
             return this.slides.reduce(function(e3, n3, o3) {
               o3 += 1;
-              var i2 = t3.getScrollOffset(n3), r3 = { index: o3, slide: n3, diff: { top: Math.abs(t3.container.scrollTop - i2.top), left: Math.abs(t3.container.scrollLeft - i2.left) } };
-              return e3 ? r3.diff.left <= e3.diff.left && r3.diff.top <= e3.diff.top ? r3 : e3 : r3;
+              var i2 = t3.getScrollOffset(n3), r2 = { index: o3, slide: n3, diff: { top: Math.abs(t3.container.scrollTop - i2.top), left: Math.abs(t3.container.scrollLeft - i2.left) } };
+              return e3 ? r2.diff.left <= e3.diff.left && r2.diff.top <= e3.diff.top ? r2 : e3 : r2;
             }, false);
           } }, { key: "watchForChanges", value: function() {
             var t3 = this;
@@ -701,13 +701,13 @@ var require_snap_slider_min = __commonJS({
         }), function(t2) {
           "loading" !== document.readyState ? t2() : document.addEventListener("DOMContentLoaded", t2);
         }(function() {
-          o(window), r2.a.polyfill(), p("[data-snap-slider]").forEach(function(t2) {
+          o(window), r.a.polyfill(), p("[data-snap-slider]").forEach(function(t2) {
             return new I(t2);
           }), function(t2, e2, n2, o2) {
             var i2 = document.querySelector(t2);
             !!i2 && i2.addEventListener(e2, function(t3) {
-              for (var e3 = i2.querySelectorAll(n2), r3 = t3.target, a2 = 0, s2 = e3.length; a2 < s2; a2 += 1)
-                for (var l2 = r3, c2 = e3[a2]; l2 && l2 !== i2; ) {
+              for (var e3 = i2.querySelectorAll(n2), r2 = t3.target, a2 = 0, s2 = e3.length; a2 < s2; a2 += 1)
+                for (var l2 = r2, c2 = e3[a2]; l2 && l2 !== i2; ) {
                   if (l2 === c2)
                     return o2.call(c2, t3);
                   l2 = l2.parentNode;
@@ -730,7 +730,7 @@ var require_snap_slider_min = __commonJS({
             return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
           })(t2);
         }
-        function r2(t2) {
+        function r(t2) {
           return "object" === i(t2) ? "%o" : "number" == typeof t2 ? "%d" : "%s";
         }
         function a(t2) {
@@ -741,12 +741,12 @@ var require_snap_slider_min = __commonJS({
             var n3 = [], o2 = "";
             t3.items.forEach(function(t4) {
               var e4 = t4.heading, i3 = t4.description;
-              o2 += "\n%c".concat(r2(e4), "\n"), n3.push("text-decoration: underline;", e4), o2 += "\n%c".concat(r2(i3), "\n"), n3.push("text-decoration: none;", i3);
+              o2 += "\n%c".concat(r(e4), "\n"), n3.push("text-decoration: underline;", e4), o2 += "\n%c".concat(r(i3), "\n"), n3.push("text-decoration: none;", i3);
             }), (e3 = console).log.apply(e3, [o2].concat(n3)), console.groupEnd();
           }), console.log("\n");
         }
         n.r(e), n.d(e, "getSubstitution", function() {
-          return r2;
+          return r;
         }), n.d(e, "section", function() {
           return a;
         });
@@ -823,14 +823,9 @@ contactEmailBtns.forEach((copyEmailBtn) => {
     }
   });
 });
-var r = (a, b) => {
-  return ++b ? String.fromCharCode((a = a.charCodeAt() + 47, a > 126 ? a - 94 : a)) : a.replace(/[^ ]/g, r);
-};
-document.getElementById("decryptoffice").innerHTML = r("@77:46o464=665D]4@]F<");
-document.getElementById("decryptpastor").innerHTML = r("A2DE@Co464=665D]4@]F<");
-var links = document.querySelectorAll("nav ul a");
-for (const link of links) {
-  link.addEventListener("click", clickHandler);
+var smoothLinks = document.querySelectorAll("nav ul a");
+for (const s_link of smoothLinks) {
+  s_link.addEventListener("click", clickHandler);
 }
 function clickHandler(e) {
   e.preventDefault();
