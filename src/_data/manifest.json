@@ -1,5 +1,4 @@
 {
   "contacts": "contacts.js",
-  "site": "site.js",
-  "snap-slider": "snap-slider.js"
+  "site": "site.js"
 }
