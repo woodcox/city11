@@ -62,22 +62,6 @@ const hideBTNpastor = () => {
 //=====================================================
 // Copy contact button
 //=====================================================
-//=====================================================
-// Show or hide contact buttons
-//=====================================================
-const showBTNS = () => {
-  const element = document.getElementById("contactBTN");
-  element.classList.toggle("hide");
-}
-
-const hideBTN = () => {
-  const element = document.getElementById("emailBTN");
-  element.classList.toggle("hide");
-}
-
-//=====================================================
-// Copy contact button
-//=====================================================
 const copyEmailBtn = document.querySelector('.emailCopyBtn');
 
 copyEmailBtn.addEventListener('click', function(event) {  
