@@ -1,11 +1,32 @@
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 
-// assets/js/snap-slider.js
-var require_snap_slider = __commonJS({
-  "assets/js/snap-slider.js"(exports, module) {
+// node_modules/@tannerhodges/snap-slider/snap-slider.min.js
+var require_snap_slider_min = __commonJS({
+  "node_modules/@tannerhodges/snap-slider/snap-slider.min.js"(exports, module) {
     !function(t, e) {
       "object" == typeof exports && "object" == typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define([], e) : "object" == typeof exports ? exports.SnapSlider = e() : t.SnapSlider = e();
     }(window, function() {
@@ -42,7 +63,7 @@ var require_snap_slider = __commonJS({
           return n.d(e2, "a", e2), e2;
         }, n.o = function(t2, e2) {
           return Object.prototype.hasOwnProperty.call(t2, e2);
-        }, n.p = "", n(n.s = 16);
+        }, n.p = "", n(n.s = 18);
       }([function(t, e) {
         t.exports = function(t2) {
           var e2 = typeof t2;
@@ -51,15 +72,15 @@ var require_snap_slider = __commonJS({
       }, function(t, e, n) {
         var o = n(0), i = n(7), r = n(10), a = Math.max, s = Math.min;
         t.exports = function(t2, e2, n2) {
-          var l, c, u, d, f, p, h = 0, v = false, g = false, y = true;
+          var l, c, u, d, f, p, h = 0, v = false, g = false, b = true;
           if ("function" != typeof t2)
             throw new TypeError("Expected a function");
-          function b(e3) {
+          function y(e3) {
             var n3 = l, o2 = c;
             return l = c = void 0, h = e3, d = t2.apply(o2, n3);
           }
           function m(t3) {
-            return h = t3, f = setTimeout(x, e2), v ? b(t3) : d;
+            return h = t3, f = setTimeout(x, e2), v ? y(t3) : d;
           }
           function S(t3) {
             var n3 = t3 - p;
@@ -75,7 +96,7 @@ var require_snap_slider = __commonJS({
             }(t3));
           }
           function w(t3) {
-            return f = void 0, y && l ? b(t3) : (l = c = void 0, d);
+            return f = void 0, b && l ? y(t3) : (l = c = void 0, d);
           }
           function k() {
             var t3 = i(), n3 = S(t3);
@@ -83,11 +104,11 @@ var require_snap_slider = __commonJS({
               if (void 0 === f)
                 return m(p);
               if (g)
-                return clearTimeout(f), f = setTimeout(x, e2), b(p);
+                return clearTimeout(f), f = setTimeout(x, e2), y(p);
             }
             return void 0 === f && (f = setTimeout(x, e2)), d;
           }
-          return e2 = r(e2) || 0, o(n2) && (v = !!n2.leading, u = (g = "maxWait" in n2) ? a(r(n2.maxWait) || 0, e2) : u, y = "trailing" in n2 ? !!n2.trailing : y), k.cancel = function() {
+          return e2 = r(e2) || 0, o(n2) && (v = !!n2.leading, u = (g = "maxWait" in n2) ? a(r(n2.maxWait) || 0, e2) : u, b = "trailing" in n2 ? !!n2.trailing : b), k.cancel = function() {
             void 0 !== f && clearTimeout(f), h = 0, l = p = c = f = void 0;
           }, k.flush = function() {
             return void 0 === f ? d : w(i());
@@ -254,29 +275,41 @@ var require_snap_slider = __commonJS({
         }
         t.exports = n;
       }, function(t, e, n) {
-        var o = n(0), i = n(11), r = /^\s+|\s+$/g, a = /^[-+]0x[0-9a-f]+$/i, s = /^0b[01]+$/i, l = /^0o[0-7]+$/i, c = parseInt;
+        var o = n(11), i = n(0), r = n(13), a = /^[-+]0x[0-9a-f]+$/i, s = /^0b[01]+$/i, l = /^0o[0-7]+$/i, c = parseInt;
         t.exports = function(t2) {
           if ("number" == typeof t2)
             return t2;
-          if (i(t2))
+          if (r(t2))
             return NaN;
-          if (o(t2)) {
+          if (i(t2)) {
             var e2 = "function" == typeof t2.valueOf ? t2.valueOf() : t2;
-            t2 = o(e2) ? e2 + "" : e2;
+            t2 = i(e2) ? e2 + "" : e2;
           }
           if ("string" != typeof t2)
             return 0 === t2 ? t2 : +t2;
-          t2 = t2.replace(r, "");
+          t2 = o(t2);
           var n2 = s.test(t2);
           return n2 || l.test(t2) ? c(t2.slice(2), n2 ? 2 : 8) : a.test(t2) ? NaN : +t2;
         };
       }, function(t, e, n) {
-        var o = n(12), i = n(15);
+        var o = n(12), i = /^\s+/;
+        t.exports = function(t2) {
+          return t2 ? t2.slice(0, o(t2) + 1).replace(i, "") : t2;
+        };
+      }, function(t, e) {
+        var n = /\s/;
+        t.exports = function(t2) {
+          for (var e2 = t2.length; e2-- && n.test(t2.charAt(e2)); )
+            ;
+          return e2;
+        };
+      }, function(t, e, n) {
+        var o = n(14), i = n(17);
         t.exports = function(t2) {
           return "symbol" == typeof t2 || i(t2) && "[object Symbol]" == o(t2);
         };
       }, function(t, e, n) {
-        var o = n(4), i = n(13), r = n(14), a = o ? o.toStringTag : void 0;
+        var o = n(4), i = n(15), r = n(16), a = o ? o.toStringTag : void 0;
         t.exports = function(t2) {
           return null == t2 ? void 0 === t2 ? "[object Undefined]" : "[object Null]" : a && a in Object(t2) ? i(t2) : r(t2);
         };
@@ -334,10 +367,10 @@ var require_snap_slider = __commonJS({
         function g(t2) {
           return t2 && "Object" === t2.constructor.name;
         }
-        function y(t2, e2, n2) {
+        function b(t2, e2, n2) {
           return t2 = Math.min(n2, t2), t2 = Math.max(e2, t2);
         }
-        var b = function() {
+        var y = function() {
           var t2 = false;
           try {
             var e2 = Object.defineProperty({}, "passive", { get: function() {
@@ -359,15 +392,15 @@ var require_snap_slider = __commonJS({
             v(t2, n2) && e2.push(t2[n2]);
           return e2;
         }
-        var x = "function" == typeof Object.values ? Object.values : S;
-        function w(t2) {
-          return (w = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
+        "function" == typeof Object.values && Object.values;
+        function x(t2) {
+          return (x = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
             return typeof t3;
           } : function(t3) {
             return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
           })(t2);
         }
-        function k(t2, e2) {
+        function w(t2, e2) {
           var n2 = Object.keys(t2);
           if (Object.getOwnPropertySymbols) {
             var o2 = Object.getOwnPropertySymbols(t2);
@@ -377,12 +410,12 @@ var require_snap_slider = __commonJS({
           }
           return n2;
         }
-        function E(t2) {
+        function k(t2) {
           for (var e2 = 1; e2 < arguments.length; e2++) {
             var n2 = null != arguments[e2] ? arguments[e2] : {};
-            e2 % 2 ? k(Object(n2), true).forEach(function(e3) {
+            e2 % 2 ? w(Object(n2), true).forEach(function(e3) {
               O(t2, e3, n2[e3]);
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t2, Object.getOwnPropertyDescriptors(n2)) : k(Object(n2)).forEach(function(e3) {
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t2, Object.getOwnPropertyDescriptors(n2)) : w(Object(n2)).forEach(function(e3) {
               Object.defineProperty(t2, e3, Object.getOwnPropertyDescriptor(n2, e3));
             });
           }
@@ -391,20 +424,20 @@ var require_snap_slider = __commonJS({
         function O(t2, e2, n2) {
           return e2 in t2 ? Object.defineProperty(t2, e2, { value: n2, enumerable: true, configurable: true, writable: true }) : t2[e2] = n2, t2;
         }
-        function T(t2, e2) {
+        function E(t2, e2) {
           if (!(t2 instanceof e2))
             throw new TypeError("Cannot call a class as a function");
         }
-        function j(t2, e2) {
+        function A(t2, e2) {
           for (var n2 = 0; n2 < e2.length; n2++) {
             var o2 = e2[n2];
             o2.enumerable = o2.enumerable || false, o2.configurable = true, "value" in o2 && (o2.writable = true), Object.defineProperty(t2, o2.key, o2);
           }
         }
-        var A = n(17), I = 1, L = function() {
+        var T = n(19), j = 1, I = function() {
           function t2(e3) {
             var n3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-            T(this, t2), this.terms = { prev: /(prev|back|before|left|up)/, next: /(next|forward|after|right|down)/ }, this.callbacks = { load: [], change: [], "change.click": [], "change.scroll": [], "change.keydown": [], "change.focusin": [], scroll: [], "scroll.start": [], "scroll.end": [] }, this.init(e3, n3), this.container && (this.watchForChanges(), this.container.SnapSlider = this, window._SnapSliders[this.id] = this);
+            E(this, t2), this.terms = { prev: /(prev|back|before|left|up)/, next: /(next|forward|after|right|down)/ }, this.callbacks = { load: [], change: [], "change.click": [], "change.scroll": [], "change.keydown": [], "change.focusin": [], scroll: [], "scroll.start": [], "scroll.end": [] }, this.init(e3, n3), this.container && (this.watchForChanges(), this.container.SnapSlider = this, window._SnapSliders[this.id] = this);
           }
           var e2, n2, o2;
           return e2 = t2, o2 = [{ key: "isValidIndex", value: function(t3) {
@@ -430,10 +463,6 @@ var require_snap_slider = __commonJS({
             a2 && a2.goto(r2, null, e3);
           } }, { key: "isRelative", value: function(t3) {
             return "prev" === t3 || "next" === t3;
-          } }, { key: "handleResize", value: function() {
-            x(window._SnapSliders).forEach(function(t3) {
-              return t3.update();
-            });
           } }, { key: "notFound", value: function(t3) {
             console.log(`
 \u{1F622} Oh no! Snap Slider couldn't find a slider for "`.concat(t3, "\".\n\n-------------------------------------------------------------------------------------------\n\u2139\uFE0F NOTE: Make sure the elements you're trying to debug have a `data-snap-slider` attribute.\n-------------------------------------------------------------------------------------------\n\n"));
@@ -445,31 +474,31 @@ var require_snap_slider = __commonJS({
               var r2 = o3.closest("[data-snap-slider-goto]"), a2 = o3.closest("[data-snap-slider-nav]"), s2 = o3.closest("[data-snap-slider]"), l2 = n3.length > 1 ? "#".concat(i2 + 1, " ") : "";
               if (r2) {
                 var c2 = t2.getButtonTarget(r2), u2 = window._SnapSliders[c2.sliderID], d2 = c2.index, f2 = t2.isValidIndex(d2) ? '"'.concat(d2, '"') : '\u{1F6AB} "'.concat(d2, '" - Yikes! This index is invalid.\n\nUse a positive number instead, or one of the following aliases:\n\n  ').concat(["first", "middle", "last", "prev", "next"].map(function(t3) {
-                  return "\u2022 ".concat(t3);
-                }).join("\n")), h2 = c2.sliderID ? '"'.concat(c2.sliderID, '"') : "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022 Make sure your button is inside a `data-snap-slider-nav` element, or...\n  \u2022 Include the slider ID you want to target in your `data-snap-slider-goto` attribute.\n      \u25E6 For example, `data-snap-slider-goto=\"example-slider:".concat(c2.index || "prev", '"`.'), v2 = '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022 Double check that your slider ID is correct (\u{1F446}).\n  \u2022 Make sure your slider has the same ID in its `data-snap-slider` attribute.\n      \u25E6 For example, `data-snap-slider="example-slider"`.', g2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022 Double check that your index is valid (\u{1F446}).\n  \u2022 Make sure a slide actually exists at that index (\u{1F447}).", y2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022 Double check that your index is valid (\u{1F446}).\n  \u2022 Make sure a slide actually exists at that index.\n  \u2022 Make sure your slider recognizes the slide element as a slide.";
-                return u2 && u2.container && (v2 = u2.container, g2 = u2.getIndexNumber(d2), y2 = u2.getSlide(d2)), A.section({ heading: "\u{1F579} Button ".concat(l2), description: r2, groups: [{ heading: "1. What slider is this button targeting?", items: [{ heading: "Slider ID", description: h2 }, { heading: "Slider Element", description: v2 }, { heading: "Slider Object", description: u2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. Which slide will it go to?", items: [{ heading: "Slide Index", description: f2 }, { heading: "Slide Index (Number)", description: g2 }, { heading: "Slide Element", description: y2 }] }], collapsed: true });
+                  return "\u2022\xA0".concat(t3);
+                }).join("\n")), h2 = c2.sliderID ? '"'.concat(c2.sliderID, '"') : "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Make sure your button is inside a `data-snap-slider-nav` element, or...\n  \u2022\xA0Include the slider ID you want to target in your `data-snap-slider-goto` attribute.\n      \u25E6 For example, `data-snap-slider-goto=\"example-slider:".concat(c2.index || "prev", '"`.'), v2 = '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022\xA0Double check that your slider ID is correct (\u{1F446}).\n  \u2022\xA0Make sure your slider has the same ID in its `data-snap-slider` attribute.\n      \u25E6 For example, `data-snap-slider="example-slider"`.', g2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Double check that your index is valid (\u{1F446}).\n  \u2022\xA0Make sure a slide actually exists at that index (\u{1F447}).", b2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Double check that your index is valid (\u{1F446}).\n  \u2022\xA0Make sure a slide actually exists at that index.\n  \u2022\xA0Make sure your slider recognizes the slide element as a slide.";
+                return u2 && u2.container && (v2 = u2.container, g2 = u2.getIndexNumber(d2), b2 = u2.getSlide(d2)), T.section({ heading: "\u{1F579} Button ".concat(l2), description: r2, groups: [{ heading: "1. What slider is this button targeting?", items: [{ heading: "Slider ID", description: h2 }, { heading: "Slider Element", description: v2 }, { heading: "Slider Object", description: u2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. Which slide will it go to?", items: [{ heading: "Slide Index", description: f2 }, { heading: "Slide Index (Number)", description: g2 }, { heading: "Slide Element", description: b2 }] }], collapsed: true });
               }
               if (a2) {
-                var b2 = a2.getAttribute("data-snap-slider-nav"), m2 = window._SnapSliders[b2], S2 = p("[data-snap-slider-goto]", a2);
-                b2 = b2 ? '"'.concat(b2, '"') : '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022 Include the slider ID you want to target in your `data-snap-slider-nav` attribute.\n      \u25E6 For example, `data-snap-slider-nav="example-slider"`.';
-                var x2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022 Make sure the ID in your container's `data-snap-slider` attribute and the ID in your nav's `data-snap-slider-nav` attribute both match.";
-                return S2.length || (S2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022 Make sure your buttons have a `data-snap-slider-goto` attribute."), m2 && m2.container && (x2 = m2.container), A.section({ heading: "\u{1F5FA} Navigation ".concat(l2), description: a2, groups: [{ heading: "1. What slider is this nav targeting?", items: [{ heading: "Slider ID", description: b2 }, { heading: "Slider Element", description: x2 }, { heading: "Slider Object", description: m2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. What buttons are in this nav?", items: [{ heading: "Buttons", description: S2 }] }], collapsed: true });
+                var y2 = a2.getAttribute("data-snap-slider-nav"), m2 = window._SnapSliders[y2], S2 = p("[data-snap-slider-goto]", a2);
+                y2 = y2 ? '"'.concat(y2, '"') : '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022\xA0Include the slider ID you want to target in your `data-snap-slider-nav` attribute.\n      \u25E6 For example, `data-snap-slider-nav="example-slider"`.';
+                var x2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Make sure the ID in your container's `data-snap-slider` attribute and the ID in your nav's `data-snap-slider-nav` attribute both match.";
+                return S2.length || (S2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Make sure your buttons have a `data-snap-slider-goto` attribute."), m2 && m2.container && (x2 = m2.container), T.section({ heading: "\u{1F5FA} Navigation ".concat(l2), description: a2, groups: [{ heading: "1. What slider is this nav targeting?", items: [{ heading: "Slider ID", description: y2 }, { heading: "Slider Element", description: x2 }, { heading: "Slider Object", description: m2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. What buttons are in this nav?", items: [{ heading: "Buttons", description: S2 }] }], collapsed: true });
               }
               if (s2) {
-                var w2 = s2.getAttribute("data-snap-slider"), k2 = window._SnapSliders[w2], E2 = p('[data-snap-slider-nav="'.concat(w2, '"]')), O2 = k2 ? k2.getButtons() : [];
-                return w2 = w2 ? '"'.concat(w2, '"') : '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022 Include the slider ID you want in your `data-snap-slider` attribute.\n      \u25E6 For example, `data-snap-slider="example-slider"`.', E2.length || (E2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022 Make sure the ID in your container's `data-snap-slider` attribute and the ID in your nav's `data-snap-slider-nav` attribute both match."), O2.length || (O2 = '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022 Make sure your button is inside a `data-snap-slider-nav` element, or...\n  \u2022 Include the slider ID you want to target in your `data-snap-slider-goto` attribute.\n      \u25E6 For example, `data-snap-slider-goto="example-slider:prev"`.'), A.section({ heading: "\u{1F968} Slider ".concat(l2), description: s2, groups: [{ heading: "1. What slider is this?", items: [{ heading: "Slider ID", description: w2 }, { heading: "Slider Object", description: k2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. What navs target this slider?", items: [{ heading: "Navs", description: E2 }] }, { heading: "3. What buttons target this slider?", items: [{ heading: "Buttons", description: O2 }] }], collapsed: true });
+                var w2 = s2.getAttribute("data-snap-slider"), k2 = window._SnapSliders[w2], O2 = p('[data-snap-slider-nav="'.concat(w2, '"]')), E2 = k2 ? k2.getButtons() : [];
+                return w2 = w2 ? '"'.concat(w2, '"') : '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022\xA0Include the slider ID you want in your `data-snap-slider` attribute.\n      \u25E6 For example, `data-snap-slider="example-slider"`.', O2.length || (O2 = "\u{1F937}\u200D\u2640\uFE0F We couldn't find any.\n\n  \u2022\xA0Make sure the ID in your container's `data-snap-slider` attribute and the ID in your nav's `data-snap-slider-nav` attribute both match."), E2.length || (E2 = '\u{1F937}\u200D\u2640\uFE0F We couldn\'t find any.\n\n  \u2022\xA0Make sure your button is inside a `data-snap-slider-nav` element, or...\n  \u2022\xA0Include the slider ID you want to target in your `data-snap-slider-goto` attribute.\n      \u25E6 For example, `data-snap-slider-goto="example-slider:prev"`.'), T.section({ heading: "\u{1F968} Slider ".concat(l2), description: s2, groups: [{ heading: "1. What slider is this?", items: [{ heading: "Slider ID", description: w2 }, { heading: "Slider Object", description: k2 || "\u{1F937}\u200D\u2640\uFE0F We couldn't find any." }] }, { heading: "2. What navs target this slider?", items: [{ heading: "Navs", description: O2 }] }, { heading: "3. What buttons target this slider?", items: [{ heading: "Buttons", description: E2 }] }], collapsed: true });
               }
               return t2.notFound(e3);
             }) : t2.notFound(e3);
           } }], (n2 = [{ key: "init", value: function(t3) {
             var e3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-            g(t3) && (e3 = t3), this.options = E({ container: t3, id: "", slides: "", nav: "", buttons: "", prev: "", next: "", start: 0, loop: null, on: {} }, e3);
+            g(t3) && (e3 = t3), this.options = k({ container: t3, id: "", slides: "", nav: "", buttons: "", prev: "", next: "", start: 0, loop: null, on: {} }, e3);
             var n3 = h(this.options.container).shift();
             if (n3) {
               for (var o3 in this.container = n3, this.options.buttons = e3.buttons || this.container.getAttribute("data-snap-slider-buttons"), this.options.prev = e3.prev || this.container.getAttribute("data-snap-slider-prev"), this.options.next = e3.next || this.container.getAttribute("data-snap-slider-next"), this.id = this.getMaybeSetID(n3, this.options.id), this.slides = this.getMaybeSetSlides(n3, this.options.slides), this.align = this.getMaybeSetAlign(n3, this.options.align), this.current = this.getMaybeSetStart(n3, this.options.start), this.loop = this.getMaybeSetLoop(n3, this.options.loop), this.transition = null, this.scrolling = false, this.options.on)
                 v(this.options.on, o3) && this.on(o3, this.options.on[o3]);
               var i2 = m(this.options, ["buttons", "prev", "next"]);
-              this.addGotoButtons(E(E({}, i2), {}, { container: n3 })), this.addNav('[data-snap-slider-nav="'.concat(this.id, '"]'), i2), this.options.nav && this.addNav(this.options.nav, i2), this.update();
+              this.addGotoButtons(k(k({}, i2), {}, { container: n3 })), this.addNav('[data-snap-slider-nav="'.concat(this.id, '"]'), i2), this.options.nav && this.addNav(this.options.nav, i2), this.update();
             } else
               console.log(`
 \u{1F6AB} Whoops! Snap Slider can't find a container element matching "`.concat(this.options.container, `".
@@ -481,7 +510,7 @@ var require_snap_slider = __commonJS({
 
 `), this.options, "\n\n");
           } }, { key: "getMaybeSetID", value: function(t3, e3) {
-            return (e3 = e3 || t3.getAttribute("data-snap-slider") || t3.id) || (e3 = "slider-".concat(I), I += 1), t3.setAttribute("data-snap-slider", e3), e3;
+            return (e3 = e3 || t3.getAttribute("data-snap-slider") || t3.id) || (e3 = "slider-".concat(j), j += 1), t3.setAttribute("data-snap-slider", e3), e3;
           } }, { key: "getMaybeSetSlides", value: function(t3, e3) {
             e3 = e3 && "string" == typeof e3 ? e3 : t3.getAttribute("data-snap-slider-slides"), t3.setAttribute("data-snap-slider-slides", e3 || "");
             var n3 = e3 ? h(e3, t3) : f(t3.children);
@@ -511,10 +540,10 @@ var require_snap_slider = __commonJS({
             return e3 = "first" === t3 ? 1 : "middle" === t3 ? Math.ceil(this.slides.length / 2) : "last" === t3 ? this.slides.length : "prev" === t3 ? this.current - 1 : "next" === t3 ? this.current + 1 : parseInt(t3, 10) || -1, this.loop ? (e3 < 1 && (e3 = this.slides.length), e3 > this.slides.length && (e3 = 1)) : (e3 < 1 || e3 > this.slides.length) && (e3 = -1), e3 || 1;
           } }, { key: "getScrollOffset", value: function(t3) {
             var e3 = this.container, n3 = this.getSnapAlign(t3), o3 = t3.offsetTop, i2 = t3.offsetLeft;
-            return n3.indexOf("center") >= 0 ? (o3 = t3.offsetTop + t3.offsetHeight / 2 - e3.offsetHeight / 2, i2 = t3.offsetLeft + t3.offsetWidth / 2 - e3.offsetWidth / 2) : n3.indexOf("end") >= 0 && (o3 = t3.offsetTop - e3.offsetHeight + t3.offsetHeight, i2 = t3.offsetLeft - e3.offsetWidth + t3.offsetWidth), { top: o3 = y(o3, 0, e3.scrollHeight), left: i2 = y(i2, 0, e3.scrollWidth) };
+            return n3.indexOf("center") >= 0 ? (o3 = t3.offsetTop + t3.offsetHeight / 2 - e3.offsetHeight / 2, i2 = t3.offsetLeft + t3.offsetWidth / 2 - e3.offsetWidth / 2) : n3.indexOf("end") >= 0 && (o3 = t3.offsetTop - e3.offsetHeight + t3.offsetHeight, i2 = t3.offsetLeft - e3.offsetWidth + t3.offsetWidth), { top: o3 = b(o3, 0, e3.scrollHeight), left: i2 = b(i2, 0, e3.scrollWidth) };
           } }, { key: "goto", value: function(t3) {
             var e3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, n3 = arguments.length > 2 ? arguments[2] : void 0;
-            e3 = E({ focus: true, force: false, ignoreCallbacks: false, immediate: false }, e3);
+            e3 = k({ focus: true, force: false, ignoreCallbacks: false, immediate: false }, e3);
             var o3 = this.getIndexNumber(t3);
             if (!e3.force && o3 === this.current)
               return false;
@@ -549,7 +578,7 @@ var require_snap_slider = __commonJS({
           } }, { key: "addGotoButtons", value: function(t3) {
             var e3 = this, n3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             g(t3) && (n3 = t3);
-            var o3 = h((n3 = E({ container: "", buttons: t3, prev: "", next: "" }, n3)).buttons, n3.container), i2 = h(n3.prev, n3.container), r2 = h(n3.next, n3.container);
+            var o3 = h((n3 = k({ container: "", buttons: t3, prev: "", next: "" }, n3)).buttons, n3.container), i2 = h(n3.prev, n3.container), r2 = h(n3.next, n3.container);
             i2.forEach(function(t4) {
               return t4.hasAttribute("data-snap-slider-goto") || e3.setGoto(i2, "prev");
             }), r2.forEach(function(t4) {
@@ -594,7 +623,7 @@ var require_snap_slider = __commonJS({
           } }, { key: "addNav", value: function(t3) {
             var e3 = this, n3 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             g(t3) && (n3 = t3);
-            var o3 = h((n3 = E({ container: t3, buttons: "", prev: "", next: "" }, n3)).container);
+            var o3 = h((n3 = k({ container: t3, buttons: "", prev: "", next: "" }, n3)).container);
             return !!o3.length && (o3.forEach(function(t4) {
               t4.setAttribute("data-snap-slider-nav", e3.id);
               var o4 = t4.getAttribute("data-snap-slider-buttons") || n3.buttons || "button", i2 = n3.prev || t4.getAttribute("data-snap-slider-prev"), r2 = n3.next || t4.getAttribute("data-snap-slider-next");
@@ -624,23 +653,27 @@ var require_snap_slider = __commonJS({
               t3.scrolling && !t3.transition || (t3.slides.forEach(function(t4, i2) {
                 t4.contains(e3.target) && (n3 = t4, o3 = i2 + 1);
               }, null), n3 && t3.goto(o3, null, e3));
-            }, setTimeout(function() {
-              t3.container.addEventListener("scroll", t3.scrollListener, b), t3.container.addEventListener("scroll", t3.scrollEndListener, b), t3.container.addEventListener("keydown", t3.arrowKeyListener), t3.container.addEventListener("focusin", t3.focusListener), t3.fireEvent("load");
+            }, this.resizeObserver = { observe: function() {
+            }, disconnect: function() {
+            } }, "ResizeObserver" in window && (this.resizeObserver = new ResizeObserver(this.resizeCallback.bind(this))), setTimeout(function() {
+              t3.container.addEventListener("scroll", t3.scrollListener, y), t3.container.addEventListener("scroll", t3.scrollEndListener, y), t3.container.addEventListener("keydown", t3.arrowKeyListener), t3.container.addEventListener("focusin", t3.focusListener), t3.resizeObserver.observe(t3.container), t3.fireEvent("load");
             }, 100);
           } }, { key: "hasLoaded", value: function() {
             this.container.classList.add("has-loaded");
           } }, { key: "update", value: function() {
             this.goto(this.current, { focus: false, force: true, ignoreCallbacks: true, immediate: true });
           } }, { key: "destroy", value: function() {
-            for (var t3 in this.stopTransition(), this.container.removeEventListener("scroll", this.scrollListener), this.container.removeEventListener("scroll", this.scrollEndListener), this.container.removeEventListener("keydown", this.arrowKeyListener), this.callbacks)
+            for (var t3 in this.stopTransition(), this.container.removeEventListener("scroll", this.scrollListener), this.container.removeEventListener("scroll", this.scrollEndListener), this.container.removeEventListener("keydown", this.arrowKeyListener), this.resizeObserver.disconnect(), this.callbacks)
               v(this.callbacks, t3) && (this.callbacks[t3] = []);
             delete this.container.SnapSlider, delete window._SnapSliders[this.id];
           } }, { key: "reset", value: function() {
             var t3 = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, e3 = this.options;
-            delete e3.on, delete t3.container, delete t3.id, this.init(this.container, E(E({}, e3), t3));
+            delete e3.on, delete t3.container, delete t3.id, this.init(this.container, k(k({}, e3), t3));
+          } }, { key: "resizeCallback", value: function() {
+            this.update();
           } }, { key: "fireEvent", value: function(t3, e3) {
             var n3 = this, o3 = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
-            if (v(this.callbacks, t3) && (o3 = E({ focus: true, ignoreCallbacks: false }, o3), "load" === t3 && this.hasLoaded(), "change" === t3 && (this.updateButtons(), this.updateSlides()), o3.focus && this.handleFocus(t3, e3), !o3.ignoreCallbacks)) {
+            if (v(this.callbacks, t3) && (o3 = k({ focus: true, ignoreCallbacks: false }, o3), "load" === t3 && this.hasLoaded(), "change" === t3 && (this.updateButtons(), this.updateSlides()), o3.focus && this.handleFocus(t3, e3), !o3.ignoreCallbacks)) {
               e3 = e3 || {};
               var i2 = [t3];
               v(this.callbacks, "".concat(t3, ".").concat(e3.type)) && i2.push("".concat(t3, ".").concat(e3.type)), i2.forEach(function(t4) {
@@ -659,17 +692,17 @@ var require_snap_slider = __commonJS({
               this.transition.diff <= 1 && "change" === e3 && this.getCurrentSlide().focus({ preventScroll: true }), this.transition.diff > 1 && "scroll.end" === e3 && (document.activeElement && document.activeElement !== document.body && !document.activeElement.closest("[data-snap-slider-goto]") || this.getCurrentSlide().focus({ preventScroll: true }));
             }
           } }, { key: "on", value: function(t3, e3) {
-            v(this.callbacks, t3) ? "function" == typeof e3 ? this.callbacks[t3].push(e3) : console.log('\n  \u{1F6AB} Whoops! Snap Slider can only add functions as callbacks.\n\n  \u{1F440} It looks like you passed a "'.concat(w(e3), '" instead.\n\n'), e3, "\n\n") : console.log(`
+            v(this.callbacks, t3) ? "function" == typeof e3 ? this.callbacks[t3].push(e3) : console.log('\n  \u{1F6AB} Whoops! Snap Slider can only add functions as callbacks.\n\n  \u{1F440} It looks like you passed a "'.concat(x(e3), '" instead.\n\n'), e3, "\n\n") : console.log(`
 \u{1F6AB} Whoops! Snap Slider can't add events for "`.concat(t3, '".\n\n\u{1F4DD} Please make sure your event matches one of the ones in this list:\n\n'), Object.keys(this.callbacks), "\n\n");
-          } }]) && j(e2.prototype, n2), o2 && j(e2, o2), t2;
+          } }]) && A(e2.prototype, n2), o2 && A(e2, o2), t2;
         }();
-        window._SnapSliders = [], window.SnapSlider = L, "undefined" != typeof $ && ($.fn.snapSlider = function(t2) {
-          return new L(this, t2);
+        window._SnapSliders = [], window.SnapSlider = I, "undefined" != typeof $ && ($.fn.snapSlider = function(t2) {
+          return new I(this, t2);
         }), function(t2) {
           "loading" !== document.readyState ? t2() : document.addEventListener("DOMContentLoaded", t2);
         }(function() {
           o(window), r.a.polyfill(), p("[data-snap-slider]").forEach(function(t2) {
-            return new L(t2);
+            return new I(t2);
           }), function(t2, e2, n2, o2) {
             var i2 = document.querySelector(t2);
             !!i2 && i2.addEventListener(e2, function(t3) {
@@ -680,9 +713,9 @@ var require_snap_slider = __commonJS({
                   l2 = l2.parentNode;
                 }
             });
-          }("body", "click", "[data-snap-slider-goto]", L.handleGoto), window.addEventListener("resize", L.handleResize);
+          }("body", "click", "[data-snap-slider-goto]", I.handleGoto);
         });
-        e.default = L;
+        e.default = I;
       }, function(t, e, n) {
         "use strict";
         function o(t2) {
@@ -721,5 +754,7 @@ var require_snap_slider = __commonJS({
     });
   }
 });
-export default require_snap_slider();
+
+// assets/js/snap-slider.js
+var import_snap_slider = __toESM(require_snap_slider_min());
 //# sourceMappingURL=snap-slider.js.map
