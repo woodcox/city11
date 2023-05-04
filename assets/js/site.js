@@ -40,12 +40,12 @@ const logoToggle = () => {
 // Show or hide contact buttons
 //=====================================================
 const showBTNSoffice = () => {
-  const element = document.getElementById("contactBTNoffice");
+  const element = document.getElementById("contactBTN");
   element.classList.toggle("hide");
 }
 
 const hideBTNoffice = () => {
-  const element = document.getElementById("emailBTNoffice");
+  const element = document.getElementById("emailBTN");
   element.classList.toggle("hide");
 }
 
