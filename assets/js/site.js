@@ -97,22 +97,12 @@ contactEmailBtns.forEach(copyEmailBtn => {
 });
 
 //=====================================================
-// Decryption
-//=====================================================
-const r = (a,b) => {
-  return ++b ? String.fromCharCode((a=a.charCodeAt()+47,a>126?a-94:a)) : a.replace(/[^ ]/g, r);
-};
-document.getElementById("decryptoffice").innerHTML = r('@77:46o464=665D]4@]F<');
-document.getElementById("decryptpastor").innerHTML = r('A2DE@Co464=665D]4@]F<');
-
-
-//=====================================================
 // Smooth scroll (plus polyfill)
 //=====================================================
-const links = document.querySelectorAll("nav ul a");
+const smoothLinks = document.querySelectorAll("nav ul a");
 
-for (const link of links) {
-  link.addEventListener("click", clickHandler);
+for (const s_link of smoothLinks) {
+  s_link.addEventListener("click", clickHandler);
 }
 
 function clickHandler(e) {
