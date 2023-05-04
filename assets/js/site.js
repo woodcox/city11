@@ -779,12 +779,12 @@ var logoToggle = () => {
     svgElement.classList.remove("toggle-svg");
   }
 };
-var showBTNSoffice = () => {
-  const element = document.getElementById("contactBTNoffice");
+var showBTNS = () => {
+  const element = document.getElementById("contactBTN");
   element.classList.toggle("hide");
 };
-var hideBTNoffice = () => {
-  const element = document.getElementById("emailBTNoffice");
+var hideBTN = () => {
+  const element = document.getElementById("emailBTN");
   element.classList.toggle("hide");
 };
 var showBTNSpastor = () => {
