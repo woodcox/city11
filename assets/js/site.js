@@ -812,14 +812,21 @@ copyEmailBtn.addEventListener("click", function(event) {
     setTimeout(() => {
       copyEmailBtn.textContent = original;
       copyEmailBtn.classList.remove("success");
-    }, 1200);
+      showBTNS();
+      hideBTN();
+    }, 2e3);
   } catch (e) {
-    const errorMsg = document.querySelector(".error-msg");
+    const errorMsg = document.querySelector(".errorMsg");
     errorMsg.classList.add("show");
     setTimeout(() => {
       errorMsg.classList.remove("show");
     }, 1200);
   }
+});
+var sendEmailLink = document.querySelector('.button[href^="mailto:"]');
+sendEmailLink.addEventListener("click", function(event) {
+  showBTNS();
+  hideBTN();
 });
 var smoothLinks = document.querySelectorAll("nav ul a");
 for (const s_link of smoothLinks) {
