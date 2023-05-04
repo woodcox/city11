@@ -1,10 +1,10 @@
-<div class="text-center">{% for item in contact.footer %}
+<div class="text-center">
   <div id="emailBTN">
-    <button id="decrypt" class="round-button muted-button js-emaillink" onclick="showBTNS(); hideBTN();"></button>
+    <button class="round-button muted-button js-emaillink" onclick="showBTNS(); hideBTN();"></button>
   </div>
   <div class="hide" id="contactBTN">
     <button class="muted-button js-emailcopybtn">Copy Email</button>
-    <script>contact3("{{ item.email }}","cecleeds",10,"","Send Email")</script><noscript>You must enable JavaScript to view this text.</noscript>
+    <a href="john@exapmle.test.com">john@example.com</a>
     <p class="errorMsg hide"><strong>Sorry the email address can't be copied.</strong></p>
-  </div>{% endfor %}
+  </div>
 </div>

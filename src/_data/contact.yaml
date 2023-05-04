@@ -3,33 +3,31 @@ twitter: https://www.twitter.com/cecleeds/
 instagram: https://www.instagram.com/cecleeds/?hl=en
 facebook: https://www.facebook.com/CECLeeds/
 youtube: https://www.youtube.com/channel/UCALb0SwFaFdPY2gwOesvb_g
-footer: 
-  - email: office
 
 #Business
 office:
   - address: City Evangelical Church, Cemetery Road, Beeston, Leeds, LS11 8SX
     phone: <a aria-label="Phone number zero one one three two seven zero eight five six eight" href="tel:+441132708568">0113 2708568</a>
-    mailing:  <a href="#" data-name="John" data-dom="example" data-tl="10" data-params="?subject=Contact" class="contact1 contact-link"></a> <noscript>You must enable JavaScript to view this text.</noscript>
+    mailing: <a href="#" data-name="office" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link"></a>
     maplocation: <a href="https://goo.gl/maps/EoD83hYx9Lob5TpK6">Get directions</a>
 
 pastor:
-  - name: Michael Luehrmann
+  - name: Vacant position
     phone: <a aria-label="Phone number zero seven five eight four four three seven three eight zero" href="tel:+447584437380">07584437380</a>
-    mailing: <script>contact1("pastor","cecleeds",10,"");</script><noscript>You must enable JavaScript to view this text.</noscript>
+    mailing: <a href="#" data-name="office" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link">
 
 safeguard_lead:
   - name: Lianna Smith
     phone: <a aria-label="Phone number zero seven eight two eight one one three nine five seven" href="tel:+447828113957">07828113957</a>
-    mailing: <script>contact1("lianna.smith","cecleeds",10,"");</script><noscript>You must enable JavaScript to view this text.</noscript>
+    mailing: <a href="#" data-name="lianna.smith" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link">
 
 deputy_safeguard: 
   - name: Mark Molloy
     phone: <a aria-label="Phone number zero seven four three four six two six zero zero two" href="tel:+447434626002">07434626002</a>
-    mailing: <script>contact1("mark.molloy","cecleeds",10,"");</script><noscript>You must enable JavaScript to view this text.</noscript>
+    mailing: <a href="#" data-name="mark.molloy" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link">
  
-citykidsmail: <script>contact1("hello","cecleeds",10,"")</script><noscript>You must enable JavaScript to view this text.</noscript>
-treasurer: <script>contact1("colin.bainbridge","cecleeds",10,"");</script><noscript>You must enable JavaScript to view this text.</noscript>
+citykidsmail: <a href="#" data-name="hello" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link">
+treasurer: <a href="#" data-name="colin.bainbridge" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link">
 
 # Leaders
 elders:
