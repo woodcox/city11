@@ -9,7 +9,7 @@
     <meta name="description" content="A Eleventy theme &amp; Sass Boilerplate">
     <meta name="author" content="woodcox">
   <!-- CSS  -->
-  <link rel="stylesheet" href="/city11/assets/css/city.css?v=1683217436225" />
+  <link rel="stylesheet" href="/city11/assets/css/city.css?v=1683238124624" />
   <link rel="apple-touch-icon" sizes="180x180" href="/city11/assets/images/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/city11/assets/images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/city11/assets/images/favicon/favicon-16x16.png" />
@@ -22,7 +22,7 @@
     <meta name="theme-color" content="#259cd3">
   <!-- JS  -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-  <script src="/city11/assets/js/contacts.js"></script>
+  <script type="text/javascript" src="/city11/assets/js/contacts.js"></script>
   <!-- Web Analytics -->
   <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"rusticola",utcoffset:"0"}))};sessionStorage.setItem("_swa","1");</script>
 </head>
@@ -142,9 +142,17 @@
       <h2>Contact us</h2>
       <p class="footer-link external-link-icon">City Evangelical Church, Cemetery Road, Beeston, Leeds, LS11 8SX - <a href="https://goo.gl/maps/EoD83hYx9Lob5TpK6">Get directions</a> </p>
       <p class="footer-link"><a aria-label="Phone number zero one one three two seven zero eight five six eight" href="tel:+441132708568">0113 2708568</a></p>
-      <p class="footer-link"><a href="#" data-name="John" data-dom="example" data-tl="10" data-params="?subject=Contact" class="contact1 contact-link"></a> <noscript>You must enable JavaScript to view this text.</noscript></p>
-      <p class="footer-link"><script>contact1("pastor","cecleeds",10,"");</script><noscript>You must enable JavaScript to view this text.</noscript></p>
+      <p class="footer-link"><a href="#" data-name="office" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link"></a></p>
+      <p class="footer-link"><a href="#" data-name="office" data-dom="cecleeds" data-tl="10" data-params="" class="contact1 contact-link"></p>
       <div class="text-center">
+  <div id="emailBTN">
+    <button class="round-button muted-button js-emaillink" onclick="showBTNS(); hideBTN();"></button>
+  </div>
+  <div class="hide" id="contactBTN">
+    <button class="muted-button js-emailcopybtn">Copy Email</button>
+    <a href="john@exapmle.test.com">john@example.com</a>
+    <p class="errorMsg hide"><strong>Sorry the email address can't be copied.</strong></p>
+  </div>
 </div>
 <a class="button muted-button round-button external-link-icon" href="https://login.churchsuite.co.uk/" target="_blank" rel="noopener">ChurchSuite Login </a>
     </div>

@@ -796,32 +796,30 @@ var hideBTNpastor = () => {
   element.classList.toggle("hide");
 };
 var contactEmailBtns = document.querySelectorAll(".js-emailcopybtn");
-contactEmailBtns.forEach((copyEmailBtn) => {
-  copyEmailBtn.addEventListener("click", (event) => {
-    const emailLink = document.querySelector(".js-emaillink");
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNode(emailLink);
+copyEmailBtn.addEventListener("click", function(event) {
+  const emailLink = document.querySelector(".js-emaillink");
+  const selection = window.getSelection();
+  const range = document.createRange();
+  range.selectNode(emailLink);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  try {
+    document.execCommand("copy");
     selection.removeAllRanges();
-    selection.addRange(range);
-    try {
-      document.execCommand("copy");
-      selection.removeAllRanges();
-      const original = copyEmailBtn.textContent;
-      copyEmailBtn.textContent = "Copied!";
-      copyEmailBtn.classList.add("success");
-      setTimeout(() => {
-        copyEmailBtn.textContent = original;
-        copyEmailBtn.classList.remove("success");
-      }, 1200);
-    } catch (e) {
-      const errorMsg = document.querySelector(".error-msg");
-      errorMsg.classList.add("show");
-      setTimeout(() => {
-        errorMsg.classList.remove("show");
-      }, 1200);
-    }
-  });
+    const original = copyEmailBtn.textContent;
+    copyEmailBtn.textContent = "Copied!";
+    copyEmailBtn.classList.add("success");
+    setTimeout(() => {
+      copyEmailBtn.textContent = original;
+      copyEmailBtn.classList.remove("success");
+    }, 1200);
+  } catch (e) {
+    const errorMsg = document.querySelector(".error-msg");
+    errorMsg.classList.add("show");
+    setTimeout(() => {
+      errorMsg.classList.remove("show");
+    }, 1200);
+  }
 });
 var smoothLinks = document.querySelectorAll("nav ul a");
 for (const s_link of smoothLinks) {
