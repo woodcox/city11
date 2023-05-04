@@ -62,6 +62,22 @@ const hideBTNpastor = () => {
 //=====================================================
 // Copy contact button
 //=====================================================
+//=====================================================
+// Show or hide contact buttons
+//=====================================================
+const showBTNS = () => {
+  const element = document.getElementById("contactBTN");
+  element.classList.toggle("hide");
+}
+
+const hideBTN = () => {
+  const element = document.getElementById("emailBTN");
+  element.classList.toggle("hide");
+}
+
+//=====================================================
+// Copy contact button
+//=====================================================
 const copyEmailBtn = document.querySelector('.emailCopyBtn');
 
 copyEmailBtn.addEventListener('click', function(event) {  
@@ -85,15 +101,23 @@ copyEmailBtn.addEventListener('click', function(event) {
     setTimeout(() => {
       copyEmailBtn.textContent = original;
       copyEmailBtn.classList.remove('success');
-    }, 1200);
+      showBTNS();
+      hideBTN();
+    }, 2000);
   } catch(e) {
-    const errorMsg = document.querySelector('.error-msg');
+    const errorMsg = document.querySelector('.errorMsg');
     errorMsg.classList.add('show');
 
     setTimeout(() => {
       errorMsg.classList.remove('show');
     }, 1200);
   }
+});
+
+const sendEmailLink = document.querySelector('.button[href^="mailto:"]');
+sendEmailLink.addEventListener('click', function(event) {
+  showBTNS();
+  hideBTN();
 });
 
 //=====================================================
