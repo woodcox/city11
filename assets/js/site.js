@@ -62,11 +62,11 @@ const hideBTNpastor = () => {
 //=====================================================
 // Copy contact button
 //=====================================================
-const contactEmailBtns = document.querySelectorAll('.js-emailcopybtn');
+const copyEmailBtn = document.querySelector('.emailCopyBtn');
 
 copyEmailBtn.addEventListener('click', function(event) {  
   // Select the email link anchor text  
-  const emailLink = document.querySelector('.js-emaillink');
+  const emailLink = document.querySelector('.emailLink');
   const selection = window.getSelection(); 
   const range = document.createRange();  
   range.selectNode(emailLink);
