@@ -65,18 +65,20 @@ const hideBTNpastor = () => {
 const copyEmailBtn = document.querySelector('.emailCopyBtn');
 
 copyEmailBtn.addEventListener('click', function(event) {  
-  // Select the email link anchor text  
-  const emailLink = document.querySelector('.emailLink');
-  const selection = window.getSelection(); 
-  const range = document.createRange();  
-  range.selectNode(emailLink);
-  selection.removeAllRanges();
-  selection.addRange(range);  
+  // Get the email address from the href attribute of the Send Email link
+  const sendEmailLink = document.querySelector('a[href^="mailto:"]');
+  const emailAddress = sendEmailLink.href.replace(/^mailto:/, '');
+
+  // Create a temporary textarea element to hold the email address and select it
+  const tempTextArea = document.createElement('textarea');
+  tempTextArea.value = emailAddress;
+  document.body.appendChild(tempTextArea);
+  tempTextArea.select();
 
   try {  
-    // Now that we've selected the anchor text, execute the copy command  
+    // Now that we've selected the email address, execute the copy command  
     document.execCommand('copy');
-    selection.removeAllRanges();
+    document.body.removeChild(tempTextArea);
 
     const original = copyEmailBtn.textContent;
     copyEmailBtn.textContent = 'Copied!';
@@ -94,14 +96,8 @@ copyEmailBtn.addEventListener('click', function(event) {
 
     setTimeout(() => {
       errorMsg.classList.remove('show');
-    }, 1200);
+    }, 2000);
   }
-});
-
-const sendEmailLink = document.querySelector('.button[href^="mailto:"]');
-sendEmailLink.addEventListener('click', function(event) {
-  showBTNS();
-  hideBTN();
 });
 
 //=====================================================
