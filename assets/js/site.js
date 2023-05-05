@@ -100,12 +100,18 @@ copyEmailBtn.addEventListener('click', function(event) {
   }
 });
 
+const sendEmailLink = document.querySelector('.emailLink[href^="mailto:"]');
+sendEmailLink.addEventListener('click', function(event) {
+  showBTNS();
+  hideBTN();
+});
+
 //=====================================================
 // Smooth scroll (plus polyfill)
 //=====================================================
-const smoothLinks = document.querySelectorAll("nav ul a");
+/* const smoothLinks = document.querySelectorAll("nav ul a");
 
-for (const s_link of smoothLinks) {
+ for (const s_link of smoothLinks) {
   s_link.addEventListener("click", clickHandler);
 }
 
@@ -118,7 +124,7 @@ function clickHandler(e) {
     top: offsetTop,
     behavior: "smooth"
   });
-}
+} */
 
 //=======================================
 // Typing text animation
