@@ -66,7 +66,7 @@ const copyEmailBtn = document.querySelector('.emailCopyBtn');
 
 copyEmailBtn.addEventListener('click', function(event) {  
   // Get the email address from the href attribute of the Send Email link
-  const sendEmailLink = document.querySelector('a[href^="mailto:"]');
+  const sendEmailLink = document.querySelector('.emailLink');
   const emailAddress = sendEmailLink.href.replace(/^mailto:/, '');
 
   // Create a temporary textarea element to hold the email address and select it
@@ -100,7 +100,7 @@ copyEmailBtn.addEventListener('click', function(event) {
   }
 });
 
-const sendEmailLink = document.querySelector('.emailLink[href^="mailto:"]');
+const sendEmailLink = document.querySelector('.emailLink');
 sendEmailLink.addEventListener('click', function(event) {
   showBTNS();
   hideBTN();
