@@ -787,14 +787,6 @@ var hideBTN = () => {
   const element = document.getElementById("emailBTN");
   element.classList.toggle("hide");
 };
-var showBTNSpastor = () => {
-  const element = document.getElementById("contactBTNpastor");
-  element.classList.toggle("hide");
-};
-var hideBTNpastor = () => {
-  const element = document.getElementById("emailBTNpastor");
-  element.classList.toggle("hide");
-};
 var copyEmailBtn = document.querySelector(".emailCopyBtn");
 copyEmailBtn.addEventListener("click", function(event) {
   const sendEmailLink2 = document.querySelector(".emailLink");
