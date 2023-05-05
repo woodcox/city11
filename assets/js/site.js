@@ -797,8 +797,8 @@ var hideBTNpastor = () => {
 };
 var copyEmailBtn = document.querySelector(".emailCopyBtn");
 copyEmailBtn.addEventListener("click", function(event) {
-  const sendEmailLink = document.querySelector('a[href^="mailto:"]');
-  const emailAddress = sendEmailLink.href.replace(/^mailto:/, "");
+  const sendEmailLink2 = document.querySelector('a[href^="mailto:"]');
+  const emailAddress = sendEmailLink2.href.replace(/^mailto:/, "");
   const tempTextArea = document.createElement("textarea");
   tempTextArea.value = emailAddress;
   document.body.appendChild(tempTextArea);
@@ -823,19 +823,11 @@ copyEmailBtn.addEventListener("click", function(event) {
     }, 2e3);
   }
 });
-var smoothLinks = document.querySelectorAll("nav ul a");
-for (const s_link of smoothLinks) {
-  s_link.addEventListener("click", clickHandler);
-}
-function clickHandler(e) {
-  e.preventDefault();
-  const href = this.getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
-  window.scroll({
-    top: offsetTop,
-    behavior: "smooth"
-  });
-}
+var sendEmailLink = document.querySelector('.emailLink[href^="mailto:"]');
+sendEmailLink.addEventListener("click", function(event) {
+  showBTNS();
+  hideBTN();
+});
 var TxtType = class {
   constructor(el, toRotate, period) {
     this.toRotate = toRotate;
