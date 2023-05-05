@@ -49,16 +49,6 @@ const hideBTN = () => {
   element.classList.toggle("hide");
 }
 
-const showBTNSpastor = () => {
-  const element = document.getElementById("contactBTNpastor");
-  element.classList.toggle("hide");
-}
-
-const hideBTNpastor = () => {
-  const element = document.getElementById("emailBTNpastor");
-  element.classList.toggle("hide");
-}
-
 //=====================================================
 // Copy contact button
 //=====================================================
