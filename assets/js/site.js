@@ -797,7 +797,7 @@ var hideBTNpastor = () => {
 };
 var copyEmailBtn = document.querySelector(".emailCopyBtn");
 copyEmailBtn.addEventListener("click", function(event) {
-  const sendEmailLink2 = document.querySelector('a[href^="mailto:"]');
+  const sendEmailLink2 = document.querySelector(".emailLink");
   const emailAddress = sendEmailLink2.href.replace(/^mailto:/, "");
   const tempTextArea = document.createElement("textarea");
   tempTextArea.value = emailAddress;
@@ -823,7 +823,7 @@ copyEmailBtn.addEventListener("click", function(event) {
     }, 2e3);
   }
 });
-var sendEmailLink = document.querySelector('.emailLink[href^="mailto:"]');
+var sendEmailLink = document.querySelector(".emailLink");
 sendEmailLink.addEventListener("click", function(event) {
   showBTNS();
   hideBTN();
