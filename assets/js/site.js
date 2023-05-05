@@ -797,15 +797,15 @@ var hideBTNpastor = () => {
 };
 var copyEmailBtn = document.querySelector(".emailCopyBtn");
 copyEmailBtn.addEventListener("click", function(event) {
-  const emailLink = document.querySelector(".emailLink");
-  const selection = window.getSelection();
-  const range = document.createRange();
-  range.selectNode(emailLink);
-  selection.removeAllRanges();
-  selection.addRange(range);
+  const sendEmailLink = document.querySelector('a[href^="mailto:"]');
+  const emailAddress = sendEmailLink.href.replace(/^mailto:/, "");
+  const tempTextArea = document.createElement("textarea");
+  tempTextArea.value = emailAddress;
+  document.body.appendChild(tempTextArea);
+  tempTextArea.select();
   try {
     document.execCommand("copy");
-    selection.removeAllRanges();
+    document.body.removeChild(tempTextArea);
     const original = copyEmailBtn.textContent;
     copyEmailBtn.textContent = "Copied!";
     copyEmailBtn.classList.add("success");
@@ -820,13 +820,8 @@ copyEmailBtn.addEventListener("click", function(event) {
     errorMsg.classList.add("show");
     setTimeout(() => {
       errorMsg.classList.remove("show");
-    }, 1200);
+    }, 2e3);
   }
-});
-var sendEmailLink = document.querySelector('.button[href^="mailto:"]');
-sendEmailLink.addEventListener("click", function(event) {
-  showBTNS();
-  hideBTN();
 });
 var smoothLinks = document.querySelectorAll("nav ul a");
 for (const s_link of smoothLinks) {
