@@ -819,7 +819,24 @@ var sendEmailLink = document.querySelector(".emailLink");
 sendEmailLink.addEventListener("click", function(event) {
   showBTNS();
   hideBTN();
+  setTimeout(() => {
+    showBTNS();
+    hideBTN();
+  }, 4e3);
 });
+var smoothLinks = document.querySelectorAll("nav ul a");
+for (const s_link of smoothLinks) {
+  s_link.addEventListener("click", clickHandler);
+}
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+  window.scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
 var TxtType = class {
   constructor(el, toRotate, period) {
     this.toRotate = toRotate;
