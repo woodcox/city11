@@ -94,12 +94,18 @@ const sendEmailLink = document.querySelector('.emailLink');
 sendEmailLink.addEventListener('click', function(event) {
   showBTNS();
   hideBTN();
+  
+  // if neither the 'copyEmailBtn' nor the 'emailLink' element are clicked within 4 seconds, the email address button will be displayed again.
+  setTimeout(() => {
+    showBTNS();
+    hideBTN();
+  }, 4000);
 });
 
 //=====================================================
 // Smooth scroll (plus polyfill)
 //=====================================================
-/* const smoothLinks = document.querySelectorAll("nav ul a");
+const smoothLinks = document.querySelectorAll("nav ul a");
 
  for (const s_link of smoothLinks) {
   s_link.addEventListener("click", clickHandler);
@@ -114,7 +120,7 @@ function clickHandler(e) {
     top: offsetTop,
     behavior: "smooth"
   });
-} */
+}
 
 //=======================================
 // Typing text animation
