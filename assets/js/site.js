@@ -37,6 +37,14 @@ const logoToggle = () => {
 }
 
 //=====================================================
+// Decryption office contact button
+//=====================================================
+const r = (a,b) => {
+  return ++b ? String.fromCharCode((a=a.charCodeAt()+47,a>126?a-94:a)) : a.replace(/[^ ]/g, r);
+};
+document.getElementById("decryptoffice").innerHTML = r('@77:46o464=665D]4@]F<');
+
+//=====================================================
 // Show or hide contact buttons
 //=====================================================
 const showBTNS = () => {
