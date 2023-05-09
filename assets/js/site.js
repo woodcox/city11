@@ -782,10 +782,16 @@ var logoToggle = () => {
 var showBTNS = () => {
   const element = document.getElementById("contactBTN");
   element.classList.toggle("hide");
+  setTimeout(() => {
+    element.classList.add("hide");
+  }, 7e3);
 };
 var hideBTN = () => {
   const element = document.getElementById("emailBTN");
   element.classList.toggle("hide");
+  setTimeout(() => {
+    element.classList.remove("hide");
+  }, 7e3);
 };
 var copyEmailBtn = document.querySelector(".emailCopyBtn");
 copyEmailBtn.addEventListener("click", function(event) {
@@ -819,10 +825,6 @@ var sendEmailLink = document.querySelector(".emailLink");
 sendEmailLink.addEventListener("click", function(event) {
   showBTNS();
   hideBTN();
-  setTimeout(() => {
-    showBTNS();
-    hideBTN();
-  }, 4e3);
 });
 var smoothLinks = document.querySelectorAll("nav ul a");
 for (const s_link of smoothLinks) {
