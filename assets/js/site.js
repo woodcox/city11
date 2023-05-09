@@ -42,11 +42,19 @@ const logoToggle = () => {
 const showBTNS = () => {
   const element = document.getElementById("contactBTN");
   element.classList.toggle("hide");
+  // if neither the 'copyEmailBtn' nor the 'emailLink' element are clicked within 7 seconds, the email address button will be displayed again.
+  setTimeout(() => {
+    element.classList.add('hide');
+  }, 7000);
 }
 
 const hideBTN = () => {
   const element = document.getElementById("emailBTN");
   element.classList.toggle("hide");
+  // if neither the 'copyEmailBtn' nor the 'emailLink' element are clicked within 7 seconds, the email address button will be displayed again.
+  setTimeout(() => {
+    element.classList.add('hide');
+  }, 7000);
 }
 
 //=====================================================
@@ -94,12 +102,6 @@ const sendEmailLink = document.querySelector('.emailLink');
 sendEmailLink.addEventListener('click', function(event) {
   showBTNS();
   hideBTN();
-  
-  // if neither the 'copyEmailBtn' nor the 'emailLink' element are clicked within 4 seconds, the email address button will be displayed again.
-  setTimeout(() => {
-    showBTNS();
-    hideBTN();
-  }, 4000);
 });
 
 //=====================================================
