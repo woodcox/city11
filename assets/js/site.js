@@ -53,7 +53,7 @@ const hideBTN = () => {
   element.classList.toggle("hide");
   // if neither the 'copyEmailBtn' nor the 'emailLink' element are clicked within 7 seconds, the email address button will be displayed again.
   setTimeout(() => {
-    element.classList.add('hide');
+    element.classList.remove('hide');
   }, 7000);
 }
 
